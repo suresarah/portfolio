@@ -303,3 +303,24 @@ figcaption { font-size: .88rem; color: var(--ink-soft); margin-top: .6rem; }
 .cs-body figure.wide img { max-width: 56rem; margin-inline: auto; }
 .cs-body figure.wide figcaption { max-width: 56rem; margin-inline: auto; }
 .cs-section figure img { max-height: 90vh; width: auto; }
+
+/* ---------- Inline case study (homepage) ---------- */
+.detail { border-top: 1px solid var(--ink); background: var(--paper); }
+.detail-bar {
+  position: sticky; top: 0; z-index: 5;
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  padding: .75rem var(--gutter);
+  background: var(--tone, var(--paper));
+  border-bottom: 1px solid rgba(0,0,0,.18);
+  font-size: .9rem; font-weight: 600; letter-spacing: .02em;
+}
+.detail-close {
+  all: unset; cursor: pointer;
+  padding: .35rem .8rem; border: 1px solid var(--ink); border-radius: 999px;
+  font-weight: 600;
+}
+.detail-close:hover { background: var(--ink); color: var(--paper); }
+.detail-close:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.detail-body:focus { outline: none; }
+.detail-body > .cs-hero { border-top: 0; }
+.detail.is-loading .detail-body { min-height: 50vh; opacity: .4; }
