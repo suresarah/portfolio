@@ -9,7 +9,7 @@
   <meta name="robots" content="noindex">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Newsreader:opsz,wght@6..72,300;6..72,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=League+Spartan:wght@700&family=Newsreader:opsz,wght@6..72,300;6..72,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -31,6 +31,7 @@
       <section class="tenet tenet--intro is-open" data-id="intro" style="--tone: var(--c-intro)">
         <button class="tenet-tab" aria-expanded="true" aria-controls="p-intro"><span>Intro</span></button>
         <div class="tenet-panel" id="p-intro" role="region" aria-label="Intro">
+          <img class="panel-media art" src="assets/ill-character.png" alt="" loading="eager">
           <p class="eyebrow">Senior Product Designer · Pax8</p>
           <h1>I turn ambiguous problems into something a team can build.</h1>
           <p class="lede">Sometimes that's making a complicated product understandable for customers. Sometimes it's a research practice, a mentorship program, or a new way to get design into production. Right now it's partner programs and AI agents at Pax8.</p>
@@ -90,15 +91,75 @@
         </div>
       </section>
 
+      <section class="tenet" data-id="illustration" style="--tone: var(--c-illus)">
+        <button class="tenet-tab" aria-expanded="false" aria-controls="p-illustration"><span>Illustration</span></button>
+        <div class="tenet-panel" id="p-illustration" role="region" aria-label="Illustration" hidden>
+          <img class="panel-media art" src="assets/ill-queso-guy.png" alt="" loading="lazy">
+          <p class="eyebrow">Side projects · Ongoing</p>
+          <h2>I also draw.</h2>
+          <p class="lede">Posters, stickers, team swag, and a lot of dogs.</p>
+          <a class="read" href="work/illustration.html">See illustrations <span aria-hidden="true">↓</span></a>
+        </div>
+      </section>
+
       <section class="tenet" data-id="about" style="--tone: var(--c-about)">
         <button class="tenet-tab" aria-expanded="false" aria-controls="p-about"><span>About</span></button>
         <div class="tenet-panel" id="p-about" role="region" aria-label="About" hidden>
+          <img class="panel-media art portrait" src="assets/ill-self-portrait.png" alt="" loading="lazy">
           <p class="eyebrow">About</p>
           <h2>A decade in product design, based in Denver.</h2>
-          <p class="lede">Before design I worked in ad sales and creative recruiting, which is probably why I care about the business model as much as the button.</p>
-          <p class="lede">Pax8, Homebot, Travelers Haven, Verizon, Avanade. Outside work I build things, including a she shed made from more than 100 reclaimed windows.</p>
+          <ol class="timeline" aria-label="Career timeline">
+            <li class="tl-band" style="--band: var(--tl-lime)">
+              <p class="tl-when">Jan 2023 – now</p>
+              <h3 class="tl-name">Pax8</h3>
+              <p class="tl-desc"><strong>Senior Product Designer.</strong> Partner programs and AI agents for IT providers.</p>
+              <ul class="tl-list"><li>Voyager Alliance rewards</li><li>Horizon agent console</li><li>Designing in code</li></ul>
+              <img class="tl-img" src="assets/voyager-keynote.jpg" alt="Voyager Alliance Rewards on the main stage at Beyond 2025." loading="lazy">
+            </li>
+            <li class="tl-band" style="--band: var(--tl-orange)">
+              <p class="tl-when">2019 – 2022</p>
+              <h3 class="tl-name">Homebot</h3>
+              <p class="tl-desc"><strong>Senior Product Designer.</strong> Product work, plus the structures that helped the team learn and decide together.</p>
+              <ul class="tl-list"><li>Mentorship program</li><li>Research Council</li><li>Kickoff frameworks</li></ul>
+              <img class="tl-img" src="assets/homebot-product.jpg" alt="Homebot's homeowner report." loading="lazy">
+            </li>
+            <li class="tl-band" style="--band: var(--tl-blue)">
+              <p class="tl-when">2018 – 2019</p>
+              <h3 class="tl-name">Travelers Haven</h3>
+              <p class="tl-desc"><strong><mark class="confirm">Role?</mark></strong> Corporate housing. Reworked a booking flow that took about 30 steps.</p>
+              <ul class="tl-list"><li>Booking flow</li><li>Availability before background checks</li></ul>
+              <img class="tl-img" src="assets/archive-travelers.jpg" alt="Travelers Haven booking confirmation dialog." loading="lazy">
+            </li>
+            <li class="tl-band" style="--band: var(--tl-green)">
+              <p class="tl-when">2016 – 2018</p>
+              <h3 class="tl-name">Verizon</h3>
+              <p class="tl-desc"><strong><mark class="confirm">Role?</mark></strong> Location Services: a family location app and navigation for a cross-country rally.</p>
+              <ul class="tl-list"><li>Gethr</li><li>MINI Takes the States</li></ul>
+              <img class="tl-img" src="assets/archive-mini.jpg" alt="Rally to the Rockies route map." loading="lazy">
+            </li>
+            <li class="tl-band" style="--band: var(--tl-slate)">
+              <p class="tl-when"><mark class="confirm">Years?</mark></p>
+              <h3 class="tl-name">Avanade</h3>
+              <p class="tl-desc"><strong><mark class="confirm">Role?</mark></strong> <mark class="confirm">One line on what you did there.</mark></p>
+              <ul class="tl-list"></ul>
+            </li>
+            <li class="tl-band tl-band--dark" style="--band: var(--tl-maroon)">
+              <p class="tl-when"><mark class="confirm">Years?</mark></p>
+              <h3 class="tl-name">Before design</h3>
+              <p class="tl-desc"><strong>Ad sales and creative recruiting.</strong> Probably why I care about the business model as much as the button.</p>
+              <ul class="tl-list"></ul>
+            </li>
+            <li class="tl-band" style="--band: var(--tl-lilac)">
+              <p class="tl-when">Alongside</p>
+              <h3 class="tl-name">Outside work</h3>
+              <p class="tl-desc"><strong>Things I design and build on my own time.</strong> </p>
+              <ul class="tl-list"><li><a href="https://sarahweddingdesign.com">Sarah Wedding Design</a>, since 2025</li><li><a href="https://sarahleach.design/sheshed/">A she shed from 100+ reclaimed windows</a></li><li><a href="https://sarahleachdesign.com/branding">Logos and branding</a></li></ul>
+              <img class="tl-img" src="assets/side-sheshed.jpg" alt="The she shed, walled with reclaimed windows." loading="lazy">
+            </li>
+          </ol>
           <dl>
             <dt>Resume</dt><dd><a href="https://drive.google.com/file/d/15aXWUky98PD7f1Rd7QLlB9RpOPIoIAGL/view?usp=sharing">PDF</a></dd>
+            <dt>Side projects</dt><dd><a href="work/archive.html#side-h">Outside work</a></dd>
             <dt>Writing</dt><dd><a href="https://medium.com/@suresarah">Medium</a></dd>
             <dt>Contact</dt><dd>saraha.leach@gmail.com</dd>
           </dl>
@@ -118,9 +179,23 @@
 
     <!-- Decorative type band, after the reference's "What's the Leap" marquee. -->
     <div class="band" aria-hidden="true">
+      <span class="band-dot band-dot--1"><img src="assets/ill-queso-guy.png" alt=""></span>
+      <span class="band-dot band-dot--2"><img src="assets/ill-beagle.png" alt=""></span>
+      <span class="band-dot band-dot--3"><img src="assets/ill-sock-monkey.png" alt=""></span>
       <div class="band-row"><span>Ambiguous → buildable ✺ Ambiguous → buildable ✺ Ambiguous → buildable ✺ </span><span>Ambiguous → buildable ✺ Ambiguous → buildable ✺ Ambiguous → buildable ✺ </span></div>
       <div class="band-row band-row--rev"><span>Clarity for teams ✺ Clarity for teams ✺ Clarity for teams ✺ Clarity for teams ✺ </span><span>Clarity for teams ✺ Clarity for teams ✺ Clarity for teams ✺ Clarity for teams ✺ </span></div>
     </div>
+
+    <!-- Statement "slide" and colour-block menu, after Sarah's presentation deck. -->
+    <section class="slide slide--green" aria-label="How I work">
+      <p class="slide-serif">I'm not the person who always has the answer.</p>
+      <p class="slide-caps">I'm the person who makes the problem <em>clear enough</em> for a team to find one.</p>
+    </section>
+    <nav class="blocks" aria-label="Where next">
+      <a class="block block--blue" href="#voyager">See the work</a>
+      <a class="block block--rust" href="#about">Meet me</a>
+      <a class="block block--blush" href="mailto:saraha.leach@gmail.com">Give me a shout</a>
+    </nav>
 
     <noscript>
       <ul style="padding:0 var(--gutter)">
@@ -128,6 +203,7 @@
         <li><a href="work/designing-in-code.html">Designing in code</a></li>
         <li><a href="work/homebot.html">Homebot</a></li>
         <li><a href="work/archive.html">Earlier work</a></li>
+        <li><a href="work/illustration.html">Illustration</a></li>
       </ul>
     </noscript>
   </main>
