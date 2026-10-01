@@ -35,11 +35,11 @@
     // If a case study is showing, keep it in step with the open panel.
     const tenet = tenets[index];
     const link = tenet.querySelector('.read');
-    if (shownId && shownId !== tenet.id) {
+    if (shownId && shownId !== tenet.dataset.id) {
       if (link) showDetail(tenet, { scroll: false });
-      else hideDetail({ updateHash: false });
+      else hideDetail({ focusLink: false }); // Intro / About: back to the full accordion
     }
-    if (updateHash) setHash(index === 0 ? '' : tenet.id + (shownId === tenet.id ? '/read' : ''));
+    if (updateHash) setHash(index === 0 ? '' : tenet.dataset.id + (shownId === tenet.dataset.id ? '/read' : ''));
   }
 
   // Fetch a case-study page and return its content, with relative URLs
@@ -66,38 +66,41 @@
   async function showDetail(tenet, { scroll = true } = {}) {
     const link = tenet.querySelector('.read');
     if (!link) return;
-    shownId = tenet.id;
+    shownId = tenet.dataset.id;
     detail.hidden = false;
+    root.classList.add('is-compact');
     detail.style.setProperty('--tone', tenet.style.getPropertyValue('--tone'));
     detailTitle.textContent = tenet.querySelector('.tenet-tab span').textContent;
     detail.classList.add('is-loading');
     try {
       const content = await loadPage(link.getAttribute('href'));
-      if (shownId !== tenet.id) return; // another panel was picked meanwhile
+      if (shownId !== tenet.dataset.id) return; // another panel was picked meanwhile
       detailBody.replaceChildren(content);
     } catch (e) {
       // If loading fails (e.g. opened from a file), fall back to the page itself.
+      root.classList.remove('is-compact');
       location.href = link.href;
       return;
     } finally {
       detail.classList.remove('is-loading');
     }
-    setHash(tenet.id + '/read');
+    setHash(tenet.dataset.id + '/read');
     if (scroll) {
       detail.scrollIntoView({ behavior: scrollBehavior, block: 'start' });
       detailBody.focus({ preventScroll: true });
     }
   }
 
-  function hideDetail({ updateHash = true } = {}) {
+  function hideDetail({ focusLink = true } = {}) {
     const wasId = shownId;
     shownId = null;
     detail.hidden = true;
     detailBody.replaceChildren();
-    if (updateHash) {
-      setHash(wasId || '');
-      root.scrollIntoView({ behavior: scrollBehavior, block: 'start' });
-      const i = tenets.findIndex(t => t.id === wasId);
+    root.classList.remove('is-compact');
+    setHash(wasId || '');
+    window.scrollTo({ top: 0, behavior: scrollBehavior });
+    if (focusLink) {
+      const i = tenets.findIndex(t => t.dataset.id === wasId);
       if (i >= 0) tenets[i].querySelector('.read')?.focus({ preventScroll: true });
     }
   }
@@ -131,7 +134,7 @@
 
   function openFromHash() {
     const [id, mode] = location.hash.slice(1).split('/');
-    const i = tenets.findIndex(t => t.id === id);
+    const i = tenets.findIndex(t => t.dataset.id === id);
     if (i >= 0 || !location.hash) open(i >= 0 ? i : 0, { updateHash: false });
     if (i >= 0 && mode === 'read') {
       showDetail(tenets[i]);
