@@ -29,4 +29,4 @@ Repo Settings → Pages → Source: "Deploy from a branch" → `main` / root.
 
 **This repo is public.** Do not commit Assistant or Horizon screens, videos, or unreleased details, even if you plan to put them behind a password. A client-side password on a static site doesn't protect anything, because the files are still downloadable from GitHub.
 
-Host the full Agentic Platform case study somewhere with real access control (a password-protected Readymag project, or a private link you send on request) and link to it from `work/agentic-platform.html`.
+Host the full Designing in Code case study somewhere with real access control (a password-protected Readymag project, or a private link you send on request) and link to it from `work/designing-in-code.html`.
