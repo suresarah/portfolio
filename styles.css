@@ -291,3 +291,9 @@ figcaption { font-size: .88rem; color: var(--ink-soft); margin-top: .6rem; }
 .tile h2 { font-size: 1.2rem; margin: 0 0 .25rem; letter-spacing: -.01em; }
 .tile .meta { font-size: .85rem; color: var(--ink-soft); margin: 0 0 .75rem; }
 .tile p { margin: 0 0 .75rem; font-size: .97rem; }
+
+/* Case-study screenshots */
+.cs-body figure img { border: 1px solid var(--ink); background: #000; }
+.cs-body figure.wide img { max-width: 56rem; margin-inline: auto; }
+.cs-body figure.wide figcaption { max-width: 56rem; margin-inline: auto; }
+.cs-section figure img { max-height: 90vh; width: auto; }
