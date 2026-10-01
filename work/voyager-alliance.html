@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Voyager Alliance — Sarah Leach</title>
+  <meta name="description" content="Redesigning Pax8's partner rewards program as a three-sided system for partners, vendors, and Pax8.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="name" href="../">Sarah Leach</a>
+    <nav aria-label="Primary">
+      <a href="../#work">Work</a>
+      <a href="../#about">About</a>
+      <a href="mailto:saraha.leach@gmail.com">Email</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- 30-second version: everything a skimmer needs is in this block. -->
+    <section class="cs-hero" style="--tone: var(--c-voyager)">
+      <p class="eyebrow">Pax8 · Voyager Alliance · 2025</p>
+      <h1>Pax8's last rewards program died because Pax8 paid for all of it.</h1>
+      <p class="lede">I led the research and design for its replacement: a three-sided rewards system where partners earn, vendors fund, and Pax8 runs the whole loop.</p>
+      <dl class="facts">
+        <div><dt>My role</dt><dd>Senior Product Designer. Led research, product and design strategy, and UX/UI.</dd></div>
+        <div><dt>Worked with</dt><dd>Product, Finance, Vendor Ops, Engineering, Marketing</dd></div>
+        <div><dt>Designed</dt><dd>Partner dashboard, rewards marketplace, redemption, admin tooling, vendor participation</dd></div>
+        <div><dt>Launch</dt><dd><mark class="confirm">Rolled out at Beyond 2025. About 70% of eligible partners opted in during the first week.</mark></dd></div>
+      </dl>
+    </section>
+
+    <div class="cs-body">
+
+      <figure class="wide" style="margin-top:3rem">
+        <div class="shot"><span><strong>Hero image: partner rewards dashboard, final UI, high resolution.</strong> Proves craft on a complex screen.</span></div>
+      </figure>
+
+      <section class="cs-section">
+        <h2>Context</h2>
+        <div class="content">
+          <p>Pax8 is a cloud marketplace in the middle of two groups. Managed service providers (MSPs) buy, sell, and manage cloud software through it. Software vendors rely on it to reach those MSPs. Pax8 only grows if both sides do.</p>
+          <p>Competitors were launching loyalty programs, and vendors were shifting from direct sales to marketplaces. Pax8 needed a rewards program that would bring partners back, and it had tried before.</p>
+        </div>
+      </section>
+
+      <section class="cs-section">
+        <h2>Why the last one failed</h2>
+        <div class="content">
+          <p class="big">The previous program was one-sided. Only partners earned points, and Pax8 funded every reward.</p>
+          <p>That had a chain of consequences: there was little to earn and little worth redeeming, so engagement stayed low. Nothing set it apart from competitors. And without vendor funding it couldn't scale, so it was discontinued.</p>
+          <p>The direction I was given was to build a new partner loyalty program. The brief included vendor-funded rewards. My job was to figure out what the program should actually be and how that model would work for the three groups who'd use it.</p>
+          <div class="diagram" role="img" aria-label="Diagram. Before: Pax8 funds rewards and partners earn them, a one-way line. After: vendors fund rewards into a shared marketplace, partners earn and redeem there, and Pax8 runs the program and sees the data, forming a loop.">
+            <svg viewBox="0 0 760 260" font-family="Inter, system-ui, sans-serif" font-size="14">
+              <text x="0" y="20" font-weight="600" letter-spacing=".08em" font-size="12">BEFORE</text>
+              <rect x="0" y="50" width="130" height="50" fill="#fff" stroke="#161616"/>
+              <text x="65" y="80" text-anchor="middle">Pax8</text>
+              <line x1="130" y1="75" x2="230" y2="75" stroke="#161616" stroke-width="1.5" marker-end="url(#a)"/>
+              <text x="180" y="65" text-anchor="middle" font-size="12" fill="#4a4a48">pays for all</text>
+              <rect x="235" y="50" width="130" height="50" fill="#fff" stroke="#161616"/>
+              <text x="300" y="80" text-anchor="middle">Partners</text>
+              <text x="0" y="140" font-size="12" fill="#4a4a48">One-way. Pax8 carries the full cost.</text>
+
+              <text x="430" y="20" font-weight="600" letter-spacing=".08em" font-size="12">AFTER</text>
+              <rect x="430" y="50" width="120" height="44" fill="#fff" stroke="#161616"/>
+              <text x="490" y="77" text-anchor="middle">Vendors</text>
+              <rect x="620" y="50" width="130" height="44" fill="#fff" stroke="#161616"/>
+              <text x="685" y="77" text-anchor="middle">Partners</text>
+              <rect x="520" y="170" width="140" height="44" fill="#bcd6e6" stroke="#161616"/>
+              <text x="590" y="197" text-anchor="middle">Rewards marketplace</text>
+              <line x1="500" y1="94" x2="555" y2="168" stroke="#161616" stroke-width="1.5" marker-end="url(#a)"/>
+              <text x="470" y="140" font-size="12" fill="#4a4a48">fund rewards</text>
+              <line x1="670" y1="94" x2="625" y2="168" stroke="#161616" stroke-width="1.5" marker-end="url(#a)"/>
+              <line x1="640" y1="168" x2="690" y2="96" stroke="#161616" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#a)"/>
+              <text x="712" y="140" text-anchor="middle" font-size="12" fill="#4a4a48">earn · redeem</text>
+              <line x1="550" y1="72" x2="618" y2="72" stroke="#161616" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#a)"/>
+              <text x="584" y="64" text-anchor="middle" font-size="12" fill="#4a4a48">reach</text>
+              <text x="430" y="245" font-size="12" fill="#4a4a48">Pax8 runs the program: tiers, accruals, admin, reporting.</text>
+              <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0l10 5-10 5z" fill="#161616"/></marker></defs>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <section class="cs-section">
+        <h2>What partners wanted</h2>
+        <div class="content">
+          <p>Before designing, I ran a 72-person survey of people at MSPs. It included both Pax8 and non-Pax8 partners, all familiar with programs like TD Synnex Hyve, Ingram Micro Xvantage, Microsoft's partner incentives, and Amex business cards. I also audited those programs and others from Dell and Microsoft.</p>
+          <p class="big">Partners liked programs that were easy to earn from and easy to spend. They tuned out narrow, vendor-specific perks.</p>
+          <p>The programs partners rated highest balanced two things: quick, frequent wins ("points dump" programs like Amex and Dell) and rewards that helped their business grow, like training, enablement, and support services. Concierge-style perks and single-vendor rewards felt irrelevant.</p>
+          <p>There was a second finding about context. Partners run in what one summary called "organized chaos," using anywhere from 4 to 20 tools a day. Pax8 is one of many. If the program took effort to understand, it would get ignored.</p>
+          <figure>
+            <div class="shot" style="aspect-ratio: 16/7"><span><strong>One chart only:</strong> the survey result that most directly shaped the marketplace. Proves the design came from evidence.</span></div>
+          </figure>
+          <p style="font-size:.9rem;color:var(--ink-soft)">A caveat I kept in the work: the partner research panel represents about 2% of Pax8 partner users, and people who opt into research tend to be similar to each other. We treated the findings as direction, not certainty.</p>
+        </div>
+      </section>
+
+      <section class="cs-section">
+        <h2>Key decisions</h2>
+        <div class="content">
+          <p><mark class="confirm">Sarah: confirm each decision was yours and what the alternatives were. Replace or cut any that weren't.</mark></p>
+
+          <div class="decision">
+            <h3>1. One flexible marketplace instead of vendor-specific perks</h3>
+            <div class="options">
+              <div><strong>Considered</strong>Rewards tied to individual vendors, which is how many competitor programs work.</div>
+              <div class="chosen"><strong>Chose</strong>A single marketplace with broad categories: cashback, services, training, and tools.</div>
+            </div>
+            <p>The survey was clear that narrow perks get ignored. A single marketplace also gives vendors a reason to participate, since their rewards are seen by every partner, not just their own customers.</p>
+            <div class="shot"><span><strong>Rewards marketplace + redemption flow.</strong> Proves the decision became real UI.</span></div>
+          </div>
+
+          <div class="decision">
+            <h3>2. Three ways for vendors to participate</h3>
+            <div class="options">
+              <div><strong>Considered</strong>Require every vendor to both fund rewards and offer redemption.</div>
+              <div class="chosen"><strong>Chose</strong>Three models: earn-only, redeem-only, and full loop.</div>
+            </div>
+            <p>The old program failed because vendor funding never came through. Lowering the commitment for vendors made the funding model more likely to hold.</p>
+          </div>
+
+          <div class="decision">
+            <h3>3. Show partners exactly how they earned</h3>
+            <div class="options">
+              <div><strong>Considered</strong>A points balance and a catalog.</div>
+              <div class="chosen"><strong>Chose</strong>A dashboard that shows accruals, point types, tier progress, and redemptions.</div>
+            </div>
+            <p>The research pointed to four needs: clarity (what do I get?), simplicity (don't make me dig), and transparency (how did I earn this?), and flexibility (let me choose). For a program competing with 4 to 20 other tools for attention, clarity was the feature.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cs-section">
+        <h2>The system</h2>
+        <div class="content">
+          <p>Voyager runs on three surfaces, one for each group.</p>
+          <ul>
+            <li><strong>Partners:</strong> track accruals and tier progress, browse rewards, and redeem.</li>
+            <li><strong>Pax8 admins:</strong> approve or opt out partners, adjust points (including in bulk), and monitor program health and financials.</li>
+            <li><strong>Vendors:</strong> fund rewards, create offers, and see the return.</li>
+          </ul>
+          <p>Edge cases mattered because points are money. I designed for cancellations, returns, and partial redemptions, so accruals stayed accurate when real orders changed.</p>
+          <figure>
+            <div class="shot"><span><strong>Admin: bulk point management.</strong> Proves the ability to design dense, operational UI. Pick the screen with the hardest state.</span></div>
+          </figure>
+        </div>
+      </section>
+
+      <section class="cs-section">
+        <h2>Launch &amp; after</h2>
+        <div class="content">
+          <p class="big"><mark class="confirm">Voyager rolled out at Beyond 2025. About 70% of eligible partners opted in during the first week, and partners were redeeming rewards right away.</mark></p>
+          <p><mark class="confirm">General availability was planned for December. Did it happen, and when?</mark></p>
+          <p>Over the following year the program kept changing: enrollment, spend-based tiers, eligibility rules, earning and redeeming, tier benefits, notifications, and the admin experience. <mark class="confirm">Pick the one change that taught you the most and say why it happened.</mark></p>
+          <figure>
+            <div class="shot" style="aspect-ratio: 16/7"><span><strong>Before / after of one screen that evolved after launch.</strong> Proves you kept learning from real use.</span></div>
+          </figure>
+        </div>
+      </section>
+
+      <section class="cs-section">
+        <h2>Looking back</h2>
+        <div class="content">
+          <p><mark class="confirm">Two or three sentences in your own words: what you'd do differently, or what this project taught you about designing for a marketplace with three groups to satisfy.</mark></p>
+        </div>
+      </section>
+
+    </div>
+
+    <nav class="next" aria-label="Next project">
+      <a href="../">← All work</a>
+      <a href="agentic-platform.html">Next: Agentic Platform →</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 Sarah Leach</span>
+    <ul>
+      <li><a href="https://www.linkedin.com/in/saleach/">LinkedIn</a></li>
+      <li><a href="mailto:saraha.leach@gmail.com">saraha.leach@gmail.com</a></li>
+    </ul>
+  </footer>
+</body>
+</html>
