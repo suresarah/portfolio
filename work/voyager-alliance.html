@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Voyager Alliance — Sarah Leach</title>
-  <meta name="description" content="Redesigning Pax8's partner rewards program as a three-sided system for partners, vendors, and Pax8.">
+  <meta name="description" content="Designing how partners understand, join, and move through Pax8's tiered rewards program.">
   <meta name="robots" content="noindex">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,26 +27,27 @@
     <section class="cs-hero" style="--tone: var(--c-voyager)">
       <p class="eyebrow">Pax8 · Voyager Alliance · 2025</p>
       <h1>Pax8's last rewards program died because Pax8 paid for all of it.</h1>
-      <p class="lede">I led the research and design for its replacement: a three-sided rewards system where partners earn, vendors fund, and Pax8 runs the whole loop.</p>
+      <p class="lede">The replacement is a tiered program that vendors help fund. The business rules were complicated, so my job was making them understandable: where a partner stands, what to do next, and what they unlock.</p>
       <dl class="facts">
-        <div><dt>My role</dt><dd>Senior Product Designer. Led research, product and design strategy, and UX/UI.</dd></div>
+        <div><dt>My role</dt><dd>Senior Product Designer. Led research and the design of the partner, admin, and vendor experiences.</dd></div>
         <div><dt>Worked with</dt><dd>Product, Finance, Vendor Ops, Engineering, Marketing</dd></div>
-        <div><dt>Designed</dt><dd>Partner dashboard, rewards marketplace, redemption, admin tooling, vendor participation</dd></div>
-        <div><dt>Launch</dt><dd><mark class="confirm">Rolled out at Beyond 2025. About 70% of eligible partners opted in during the first week.</mark></dd></div>
+        <div><dt>Designed</dt><dd>Pre-opt-in and enrollment, tier progression, eligibility states, partner dashboard, redemption, admin tooling</dd></div>
+        <div><dt>Shipped</dt><dd>MVP launched alongside Beyond 2025</dd></div>
       </dl>
     </section>
 
     <div class="cs-body">
 
       <figure class="wide" style="margin-top:3rem">
-        <div class="shot"><span><strong>Hero image: partner rewards dashboard, final UI, high resolution.</strong> Proves craft on a complex screen.</span></div>
+        <img src="../assets/voyager-dashboard.jpg" alt="Voyager Alliance Rewards dashboard. An Ignite Partner badge sits next to the points balance, above a track showing progress toward the next tiers, a row of vendor rebate rewards, and recent activity: opt-in, a bonus point drop, and a redemption." loading="eager" width="1546" height="1800">
+        <figcaption>Partner dashboard: current tier, points, the path to the next tier, rewards to spend on, and a record of every point in and out.</figcaption>
       </figure>
 
       <section class="cs-section">
         <h2>Context</h2>
         <div class="content">
-          <p>Pax8 is a cloud marketplace in the middle of two groups. Managed service providers (MSPs) buy, sell, and manage cloud software through it. Software vendors rely on it to reach those MSPs. Pax8 only grows if both sides do.</p>
-          <p>Competitors were launching loyalty programs, and vendors were shifting from direct sales to marketplaces. Pax8 needed a rewards program that would bring partners back, and it had tried before.</p>
+          <p>Pax8 is a cloud marketplace that sits between two groups. Managed service providers (MSPs) buy, sell, and manage cloud software through it, and software vendors rely on it to reach those MSPs. Pax8 only grows if both sides do.</p>
+          <p>Competitors were launching loyalty programs, and Pax8 had tried one before.</p>
         </div>
       </section>
 
@@ -54,9 +55,8 @@
         <h2>Why the last one failed</h2>
         <div class="content">
           <p class="big">The previous program was one-sided. Only partners earned points, and Pax8 funded every reward.</p>
-          <p>That had a chain of consequences: there was little to earn and little worth redeeming, so engagement stayed low. Nothing set it apart from competitors. And without vendor funding it couldn't scale, so it was discontinued.</p>
-          <p>The direction I was given was to build a new partner loyalty program. The brief included vendor-funded rewards. My job was to figure out what the program should actually be and how that model would work for the three groups who'd use it.</p>
-          <div class="diagram" role="img" aria-label="Diagram. Before: Pax8 funds rewards and partners earn them, a one-way line. After: vendors fund rewards into a shared marketplace, partners earn and redeem there, and Pax8 runs the program and sees the data, forming a loop.">
+          <p>That meant little to earn, little worth redeeming, and low engagement. Nothing set it apart from competitors, and without vendor funding it couldn't scale. It was discontinued.</p>
+          <div class="diagram" role="img" aria-label="Diagram. Before: Pax8 funds rewards and partners earn them, a one-way line. After: vendors fund rewards into a shared marketplace, partners earn and redeem there, and Pax8 runs the program.">
             <svg viewBox="0 0 760 260" font-family="Inter, system-ui, sans-serif" font-size="14">
               <text x="0" y="20" font-weight="600" letter-spacing=".08em" font-size="12">BEFORE</text>
               <rect x="0" y="50" width="130" height="50" fill="#fff" stroke="#161616"/>
@@ -89,66 +89,79 @@
       </section>
 
       <section class="cs-section">
-        <h2>What partners wanted</h2>
+        <h2>What was mine</h2>
         <div class="content">
-          <p>Before designing, I ran a 72-person survey of people at MSPs. It included both Pax8 and non-Pax8 partners, all familiar with programs like TD Synnex Hyve, Ingram Micro Xvantage, Microsoft's partner incentives, and Amex business cards. I also audited those programs and others from Dell and Microsoft.</p>
+          <p>The business set the direction: a new loyalty program, funded in part by vendors, with tiers based on monthly spend. The tier thresholds came from the program model, not from me.</p>
+          <p class="big">My part was everything a partner sees and does: how they understand their tier, what qualifies them for the next one, what changes when they move up or down, and what happens when they become eligible or drop out.</p>
+          <p>I also led the research behind it and designed the admin tools Pax8 uses to run the program.</p>
+        </div>
+      </section>
+
+      <section class="cs-section">
+        <h2>Research</h2>
+        <div class="content">
+          <p>I ran a 72-person survey of people at MSPs, including partners who don't use Pax8. All of them knew programs like TD Synnex Hyve, Ingram Micro Xvantage, Microsoft's partner incentives, or Amex business cards. I also audited those programs and Dell's.</p>
           <p class="big">Partners liked programs that were easy to earn from and easy to spend. They tuned out narrow, vendor-specific perks.</p>
-          <p>The programs partners rated highest balanced two things: quick, frequent wins ("points dump" programs like Amex and Dell) and rewards that helped their business grow, like training, enablement, and support services. Concierge-style perks and single-vendor rewards felt irrelevant.</p>
-          <p>There was a second finding about context. Partners run in what one summary called "organized chaos," using anywhere from 4 to 20 tools a day. Pax8 is one of many. If the program took effort to understand, it would get ignored.</p>
-          <figure>
-            <div class="shot" style="aspect-ratio: 16/7"><span><strong>One chart only:</strong> the survey result that most directly shaped the marketplace. Proves the design came from evidence.</span></div>
-          </figure>
-          <p style="font-size:.9rem;color:var(--ink-soft)">A caveat I kept in the work: the partner research panel represents about 2% of Pax8 partner users, and people who opt into research tend to be similar to each other. We treated the findings as direction, not certainty.</p>
+          <p>The highest-rated programs combined quick, frequent wins with rewards that help the business grow, like training, enablement, and support services. Partners also run in "organized chaos," juggling anywhere from 4 to 20 tools a day. Pax8 is one of many, so if the program took effort to understand, it would get ignored.</p>
+          <p>In December usability testing, every participant found Voyager Alliance from the left navigation, and 55% preferred keeping the "Voyager Alliance Rewards Program" name.</p>
+          <p style="font-size:.9rem;color:var(--ink-soft)">A caveat I kept in the work: the partner research panel is about 2% of Pax8 partner users, and people who opt into research tend to be alike. We treated findings as direction, not certainty.</p>
         </div>
       </section>
 
       <section class="cs-section">
         <h2>Key decisions</h2>
         <div class="content">
-          <p><mark class="confirm">Sarah: confirm each decision was yours and what the alternatives were. Replace or cut any that weren't.</mark></p>
 
-          <div class="decision">
-            <h3>1. One flexible marketplace instead of vendor-specific perks</h3>
+          <div class="decision" style="margin-top:0">
+            <h3>1. Turn the tier rules into "spend → qualify → earn"</h3>
             <div class="options">
-              <div><strong>Considered</strong>Rewards tied to individual vendors, which is how many competitor programs work.</div>
-              <div class="chosen"><strong>Chose</strong>A single marketplace with broad categories: cashback, services, training, and tools.</div>
+              <div><strong>The rules</strong>Four spend tiers, each with its own bonuses, multipliers, and eligibility conditions.</div>
+              <div class="chosen"><strong>What partners see</strong>Where they are now, what to do next, and what they unlock when they get there.</div>
             </div>
-            <p>The survey was clear that narrow perks get ignored. A single marketplace also gives vendors a reason to participate, since their rewards are seen by every partner, not just their own customers.</p>
-            <div class="shot"><span><strong>Rewards marketplace + redemption flow.</strong> Proves the decision became real UI.</span></div>
+            <p>Partners don't need the whole rulebook. They need their next step. Ignite became the threshold that matters in the experience, because $500 a month in eligible spend is where a partner starts earning points and rewards.</p>
+            <figure>
+              <img src="../assets/voyager-tier-progress.jpg" alt="Tier progress track. A filled blue line ends at the partner's current position, and markers ahead show each tier's bonus: plus 500 points a month, then 1.5x, 2x, and 2.5x point multipliers with larger monthly bonuses." loading="lazy" width="1800" height="233">
+              <figcaption>The track answers "what's next?" without asking partners to read tier rules.</figcaption>
+            </figure>
           </div>
 
           <div class="decision">
-            <h3>2. Three ways for vendors to participate</h3>
+            <h3>2. Design for every state, not just the happy path</h3>
             <div class="options">
-              <div><strong>Considered</strong>Require every vendor to both fund rewards and offer redemption.</div>
-              <div class="chosen"><strong>Chose</strong>Three models: earn-only, redeem-only, and full loop.</div>
+              <div><strong>Simple version</strong>One tier dashboard for partners who qualify.</div>
+              <div class="chosen"><strong>What I designed</strong>Separate states for the three-month welcome period, eligible, approaching eligibility, downgraded, and below Ignite.</div>
             </div>
-            <p>The old program failed because vendor funding never came through. Lowering the commitment for vendors made the funding model more likely to hold.</p>
+            <p>The hardest one was a partner dropping below Ignite. Earning new points pauses, but points they've already earned can't look like they've disappeared. In a program built on trust, a balance that seems to vanish is the fastest way to lose a partner.</p>
+            <div class="shot"><span><strong>Export from Figma: the below-Ignite or downgraded state, ideally beside the eligible state.</strong> Proves edge-case thinking. This is the screen that best shows judgment.</span></div>
           </div>
 
           <div class="decision">
-            <h3>3. Show partners exactly how they earned</h3>
+            <h3>3. Make the value clear before asking anyone to join</h3>
             <div class="options">
-              <div><strong>Considered</strong>A points balance and a catalog.</div>
-              <div class="chosen"><strong>Chose</strong>A dashboard that shows accruals, point types, tier progress, and redemptions.</div>
+              <div><strong>Typical approach</strong>A marketing page with a "Join" button.</div>
+              <div class="chosen"><strong>What I designed</strong>A pre-opt-in experience where partners compare tiers, see requirements and benefits, read FAQs and legal terms, and preview the rewards catalog.</div>
             </div>
-            <p>The research pointed to four needs: clarity (what do I get?), simplicity (don't make me dig), and transparency (how did I earn this?), and flexibility (let me choose). For a program competing with 4 to 20 other tools for attention, clarity was the feature.</p>
+            <p>The goal was informed enrollment, not the most clicks. A partner who joins without understanding the program becomes a confused partner later, and a support ticket.</p>
+            <figure>
+              <img src="../assets/voyager-pre-opt-in.jpg" alt="Pre-opt-in page titled Voyager Alliance Rewards. Three steps (enroll, earn, redeem), four tier cards from Ignite to Galactic with spend ranges and point bonuses, and three ways to redeem: vendor offers, professional services, and Academy courses." loading="lazy" width="1127" height="1800">
+              <figcaption>Before opting in, partners can see every tier, what it takes to reach it, and what they can spend points on.</figcaption>
+            </figure>
           </div>
         </div>
       </section>
 
       <section class="cs-section">
-        <h2>The system</h2>
+        <h2>Running the program</h2>
         <div class="content">
-          <p>Voyager runs on three surfaces, one for each group.</p>
-          <ul>
-            <li><strong>Partners:</strong> track accruals and tier progress, browse rewards, and redeem.</li>
-            <li><strong>Pax8 admins:</strong> approve or opt out partners, adjust points (including in bulk), and monitor program health and financials.</li>
-            <li><strong>Vendors:</strong> fund rewards, create offers, and see the return.</li>
-          </ul>
-          <p>Edge cases mattered because points are money. I designed for cancellations, returns, and partial redemptions, so accruals stayed accurate when real orders changed.</p>
+          <p>Voyager has three groups of users. Partners track progress, browse rewards, and redeem. Pax8 admins approve or opt out partners, adjust points (individually or in bulk), and set up rewards. Vendors fund rewards and offer them.</p>
+          <p>Points are money, so edge cases on the order side mattered too: cancellations, returns, and partial redemptions all had to keep balances accurate.</p>
           <figure>
-            <div class="shot"><span><strong>Admin: bulk point management.</strong> Proves the ability to design dense, operational UI. Pick the screen with the hardest state.</span></div>
+            <img src="../assets/voyager-redeem.jpg" alt="Redemption dialog over the dashboard for a SentinelOne rebate marked as a 24-hour deal, with a seat quantity selector, points price of 5,000, and a Redeem for 5,000 points button. Below, an expanded activity row shows the details of a past redemption." loading="lazy" width="1546" height="1800">
+            <figcaption>Redemption: the cost in points is on the button, and every past redemption can be expanded to see what was bought.</figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/voyager-admin-edit-reward.jpg" alt="Admin Edit Reward form: reward type, vendor, product, name, description, terms, image, start and expiration dates, active status, and a pricing section with points per seat, value per point, purchase limits, total seats available, and redemption limit per partner." loading="lazy" width="1074" height="1600">
+            <figcaption>Admin reward setup. The pricing section is where points meet real money: value per point, seat limits, and caps per partner.</figcaption>
           </figure>
         </div>
       </section>
@@ -156,19 +169,16 @@
       <section class="cs-section">
         <h2>Launch &amp; after</h2>
         <div class="content">
-          <p class="big"><mark class="confirm">Voyager rolled out at Beyond 2025. About 70% of eligible partners opted in during the first week, and partners were redeeming rewards right away.</mark></p>
-          <p><mark class="confirm">General availability was planned for December. Did it happen, and when?</mark></p>
-          <p>Over the following year the program kept changing: enrollment, spend-based tiers, eligibility rules, earning and redeeming, tier benefits, notifications, and the admin experience. <mark class="confirm">Pick the one change that taught you the most and say why it happened.</mark></p>
-          <figure>
-            <div class="shot" style="aspect-ratio: 16/7"><span><strong>Before / after of one screen that evolved after launch.</strong> Proves you kept learning from real use.</span></div>
-          </figure>
+          <p>The MVP launched alongside Beyond 2025. We set two success criteria for the pilot: <strong>70% of eligible partners opting in</strong> and <strong>10% redeeming a reward</strong>.</p>
+          <p><mark class="confirm">Post-launch results. Add the measured opt-in and redemption numbers once you've checked the analytics. Until then, leave the targets labeled as targets.</mark></p>
+          <p>Over the following year the program kept changing: enrollment, spend-based tiers, eligibility, earning and redeeming, tier benefits, notifications, and the admin experience. <mark class="confirm">Pick the one change that taught you the most and say why it happened.</mark></p>
         </div>
       </section>
 
       <section class="cs-section">
         <h2>Looking back</h2>
         <div class="content">
-          <p><mark class="confirm">Two or three sentences in your own words: what you'd do differently, or what this project taught you about designing for a marketplace with three groups to satisfy.</mark></p>
+          <p><mark class="confirm">Two or three sentences in your own words: what you'd do differently, or what this taught you about designing a program three groups have to believe in.</mark></p>
         </div>
       </section>
 
