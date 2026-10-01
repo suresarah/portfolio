@@ -39,6 +39,8 @@
   function openFromHash() {
     const i = tenets.findIndex(t => '#' + t.id === location.hash);
     if (i >= 0 || !location.hash) open(i >= 0 ? i : 0, { updateHash: false });
+    // A panel hash shouldn't scroll the page: the accordion already fills the view.
+    if (i >= 0) window.scrollTo(0, 0);
   }
   window.addEventListener('hashchange', openFromHash);
   openFromHash();

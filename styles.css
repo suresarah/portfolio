@@ -18,6 +18,7 @@
   --measure: 38rem;
   --gutter: clamp(1rem, 4vw, 3rem);
   --ease: cubic-bezier(.65, 0, .35, 1);
+  --header-h: 3.75rem;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -62,8 +63,9 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* ---------- Site header ---------- */
 .site-header {
-  display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: .5rem 1.5rem;
-  padding: 1.25rem var(--gutter);
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem 1.5rem;
+  min-height: var(--header-h);
+  padding: .5rem var(--gutter);
   font-size: .9rem;
 }
 .site-header .name { font-weight: 600; text-decoration: none; letter-spacing: -.01em; }
@@ -72,17 +74,20 @@ a:hover { text-decoration-thickness: 2px; }
 .site-header nav a:hover { color: var(--ink); text-decoration: underline; }
 
 /* ---------- Tenets accordion (homepage) ---------- */
+/* Full-bleed: fills the viewport below the header, edge to edge. */
 .tenets {
+  --spine: clamp(3.25rem, 4.5vw, 5rem);
   display: flex;
-  margin: 0 var(--gutter) 3rem;
-  height: min(78vh, 46rem);
-  min-height: 34rem;
-  border: 1px solid var(--ink);
+  margin: 0;
+  height: calc(100vh - var(--header-h));
+  height: calc(100svh - var(--header-h));
+  min-height: 32rem;
+  border-top: 1px solid rgba(0,0,0,.18);
 }
 
 .tenet {
   display: flex;
-  flex: 0 0 3.25rem;
+  flex: 0 0 var(--spine);
   min-width: 0;
   background: var(--tone);
   border-left: 1px solid rgba(0,0,0,.18);
@@ -95,9 +100,9 @@ a:hover { text-decoration-thickness: 2px; }
 .tenet-tab {
   all: unset;
   box-sizing: border-box;
-  flex: 0 0 3.25rem;
+  flex: 0 0 var(--spine);
   display: flex; align-items: flex-end; justify-content: center;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
   cursor: pointer;
 }
 .tenet-tab:focus-visible { outline: 2px solid var(--ink); outline-offset: -4px; }
@@ -115,7 +120,7 @@ a:hover { text-decoration-thickness: 2px; }
 .tenet-panel {
   flex: 1 1 auto;
   min-width: 0;
-  padding: clamp(1.25rem, 3vw, 2.5rem) clamp(1.25rem, 3vw, 2.5rem) clamp(1.25rem, 3vw, 2.5rem) .25rem;
+  padding: clamp(1.5rem, 5vh, 4rem) clamp(1.5rem, 5vw, 6rem) clamp(1.5rem, 5vh, 4rem) clamp(.25rem, 1vw, 1rem);
   display: flex; flex-direction: column;
   overflow-y: auto;
   opacity: 0;
@@ -129,7 +134,7 @@ a:hover { text-decoration-thickness: 2px; }
   margin: 0 0 1rem;
 }
 .tenet-panel h2 {
-  font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+  font-size: clamp(1.6rem, 3.4vw, 3.4rem);
   line-height: 1.12;
   letter-spacing: -.025em;
   font-weight: 500;
@@ -154,7 +159,7 @@ a:hover { text-decoration-thickness: 2px; }
 
 .tenet-panel .mark { width: min(16rem, 60%); margin: 0 0 1.5rem auto; opacity: .9; }
 .tenet--intro .tenet-panel h1 {
-  font-size: clamp(2rem, 4.6vw, 3.6rem);
+  font-size: clamp(2rem, 4.6vw, 4.75rem);
   line-height: 1.05;
   letter-spacing: -.035em;
   font-weight: 500;
@@ -165,6 +170,7 @@ a:hover { text-decoration-thickness: 2px; }
 /* Phone / narrow: stack vertically */
 @media (max-width: 760px) {
   .tenets { flex-direction: column; height: auto; min-height: 0; }
+  .site-header { min-height: 0; padding-block: 1rem; }
   .tenet { flex: 0 0 auto; flex-direction: column; border-left: 0; border-top: 1px solid rgba(0,0,0,.18); }
   .tenet:first-child { border-top: 0; }
   .tenet.is-open { flex: 0 0 auto; }
