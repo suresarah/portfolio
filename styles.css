@@ -19,6 +19,8 @@
   --gutter: clamp(1rem, 4vw, 3rem);
   --ease: cubic-bezier(.65, 0, .35, 1);
   --header-h: 3.75rem;
+  --spine: clamp(3.25rem, 4.5vw, 5rem);
+  --panel-inset: clamp(.25rem, 1vw, 1rem);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -76,7 +78,6 @@ a:hover { text-decoration-thickness: 2px; }
 /* ---------- Tenets accordion (homepage) ---------- */
 /* Full-bleed: fills the viewport below the header, edge to edge. */
 .tenets {
-  --spine: clamp(3.25rem, 4.5vw, 5rem);
   display: flex;
   margin: 0;
   height: calc(100vh - var(--header-h));
@@ -120,7 +121,7 @@ a:hover { text-decoration-thickness: 2px; }
 .tenet-panel {
   flex: 1 1 auto;
   min-width: 0;
-  padding: clamp(1.5rem, 5vh, 4rem) clamp(1.5rem, 5vw, 6rem) clamp(1.5rem, 5vh, 4rem) clamp(.25rem, 1vw, 1rem);
+  padding: clamp(1.5rem, 5vh, 4rem) clamp(1.5rem, 5vw, 6rem) clamp(1.5rem, 5vh, 4rem) var(--panel-inset);
   display: flex; flex-direction: column;
   overflow-y: auto;
   opacity: 0;
@@ -414,11 +415,13 @@ figcaption { font-size: .88rem; color: var(--ink-soft); margin-top: .6rem; }
   font-family: var(--serif); font-weight: 400; font-size: 1.35rem; letter-spacing: -.01em;
 }
 .site-header nav { gap: 0; align-items: stretch; }
+/* On the homepage the name sits on the same left edge as the panel copy */
+body:has(.tenets) .site-header .name { padding-left: calc(var(--spine) + var(--panel-inset)); }
 .site-header nav a {
   display: flex; align-items: center;
   padding: 0 1.4rem;
   border-left: 1px solid var(--ink);
-  font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+  font-size: .75rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
   color: var(--ink);
 }
 .site-header nav a:hover { background: rgba(0,0,0,.04); text-decoration: none; }
@@ -430,7 +433,13 @@ figcaption { font-size: .88rem; color: var(--ink-soft); margin-top: .6rem; }
   background: var(--lime);
 }
 .site-header nav a.cta:hover { background: var(--ink); color: var(--lime); }
+/* Tab dividers use the same ink rule as the header, so it reads as one grid */
+.tenets { border-top: 0; }
+.tenet { border-left-color: var(--ink); }
+.tenets.is-compact .tenet { border-left-color: var(--ink); }
 @media (max-width: 760px) {
+  .tenet { border-top-color: var(--ink); }
+  body:has(.tenets) .site-header .name { padding-left: 1.25rem; }
   .site-header { flex-direction: column; }
   .site-header .name { padding: .9rem var(--gutter); border-bottom: 1px solid var(--ink); }
   .site-header nav { flex-wrap: wrap; }
@@ -505,3 +514,34 @@ figcaption { font-size: .88rem; color: var(--ink-soft); margin-top: .6rem; }
 /* Footer echoes the header rules */
 .site-footer { border-top: 1px solid var(--ink); color: var(--ink-soft); }
 .site-footer > span { font-family: var(--serif); font-size: 1.5rem; color: var(--ink); }
+
+/* ---------- More imagery ---------- */
+figure.pair {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: start;
+}
+figure.pair figcaption { grid-column: 1 / -1; }
+figure.pair.phones { grid-template-columns: repeat(2, minmax(0, 14rem)); justify-content: center; }
+@media (max-width: 760px) { figure.pair { grid-template-columns: 1fr; } }
+
+.tile .tile-img {
+  width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: top;
+  border-bottom: 1px solid var(--ink);
+  background: #fff;
+}
+
+/* Project image inside each homepage panel (decorative; the panel text says what it is) */
+.tenet-panel { position: relative; }
+.tenet-panel .panel-media {
+  position: absolute; right: clamp(1.5rem, 4vw, 4rem); top: clamp(1.5rem, 6vh, 4rem);
+  width: min(34%, 28rem); max-height: 62%;
+  object-fit: cover; object-position: top;
+  border: 1px solid var(--ink); border-radius: 14px;
+  box-shadow: 0 18px 40px rgba(43, 29, 22, .18);
+  transform: rotate(2deg);
+}
+.tenet.is-open .panel-media { animation: lift .6s var(--ease) .25s both; }
+@keyframes lift { from { opacity: 0; transform: translateY(16px) rotate(4deg); } to { opacity: 1; transform: rotate(2deg); } }
+.tenet-panel h2 { max-width: 15ch; }
+.tenet-panel .lede, .tenet-panel dl { max-width: min(34ch, 52%); }
+@media (max-width: 1000px) { .tenet-panel .panel-media { display: none; } .tenet-panel .lede, .tenet-panel dl { max-width: 34ch; } }
+@media (prefers-reduced-motion: reduce) { .tenet.is-open .panel-media { animation: none; } }
