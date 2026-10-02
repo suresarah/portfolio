@@ -1329,3 +1329,17 @@ body { background: var(--paper); color: var(--ink); }
 .phones-strip img { width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--ink); }
 .phones-strip figcaption { grid-column: 1 / -1; margin: 0; }
 @media (max-width: 900px) { .phones-strip { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* ---- Balance: every project snapshot is the same size and sits
+        centred on the right of its panel ---- */
+.tenet-panel .panel-media:not(.art) {
+  top: 0; bottom: 0; margin-block: auto;
+  width: min(42%, 34rem); height: auto; max-height: none;
+  aspect-ratio: 4 / 3;
+  object-fit: cover; object-position: top center;
+  background: var(--card);
+}
+.tenet-panel .panel-media.diagram-card { object-fit: contain; padding: 1.25rem; }
+/* Illustration panel art sits centred too */
+.tenet[data-id="illustration"] .panel-media.art { top: 0; bottom: 0; margin-block: auto; height: min(50%, 24rem); width: auto; max-height: none; }
+@media (max-width: 1000px) { .tenet-panel .panel-media { display: none; } }
