@@ -1069,3 +1069,19 @@ body { background: var(--paper); color: var(--ink); }
   .art-card--feature { grid-row: span 2; }
 }
 @media (prefers-reduced-motion: reduce) { .art-card img { transition: none; } }
+
+/* ---- Intro: the "clear enough" statement lives in the hero ---- */
+.intro-foot { margin-top: auto; max-width: min(36rem, 58%); }
+.intro-quote {
+  margin: 0 0 1.25rem;
+  font-family: var(--caps); font-weight: 700; text-transform: uppercase;
+  font-size: clamp(1.15rem, 1.9vw, 1.7rem); line-height: 1.08; letter-spacing: -.005em;
+}
+.intro-quote span {
+  display: block; margin-bottom: .45rem;
+  font-family: var(--serif); font-weight: 300; font-style: italic; text-transform: none;
+  font-size: .8em; letter-spacing: 0; color: var(--ink-soft);
+}
+.intro-quote mark { background: var(--lime); color: inherit; padding: 0 .15em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.intro-hint { margin: 0; font: var(--label); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); }
+@media (max-width: 1000px) { .intro-foot { max-width: 36rem; } }
