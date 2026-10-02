@@ -1085,3 +1085,6 @@ body { background: var(--paper); color: var(--ink); }
 .intro-quote mark { background: var(--lime); color: inherit; padding: 0 .15em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
 .intro-hint { margin: 0; font: var(--label); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); }
 @media (max-width: 1000px) { .intro-foot { max-width: 36rem; } }
+
+/* Earlier history: one quiet line under the timeline */
+.tl-foot { margin: -1rem 0 2rem; max-width: 60ch; font-size: .9rem; line-height: 1.5; color: var(--ink-soft); }
