@@ -1239,3 +1239,9 @@ body { background: var(--paper); color: var(--ink); }
   .spread-cover .cover-art { display: none; }
   .spread-cover .facts { max-width: none; }
 }
+/* Wide line drawings on covers sit a little larger */
+.spread-cover .cover-art[src*="office"] { width: min(32%, 26rem); }
+.spread-cover .cover-art[src*="portrait"] { width: min(18%, 13rem); }
+.spread-cover .cover-art[src*="office"] { top: clamp(6rem, 14vh, 9rem); bottom: auto; width: min(30%, 24rem); }
+/* Statement cards sit in the stack like another page */
+.spreads .cs-slide { border: 0; border-radius: 4px; box-shadow: 0 1px 0 rgba(43,29,22,.08), 0 12px 30px rgba(43,29,22,.08); }
