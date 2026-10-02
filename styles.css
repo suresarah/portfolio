@@ -1320,3 +1320,12 @@ body { background: var(--paper); color: var(--ink); }
 .sheet .spread[style*="--span:4"] .big,
 .sheet .spread[style*="--span:5"] .big { font-size: clamp(1.15rem, 1.5vw, 1.4rem); }
 .sheet .diagram svg { max-width: 54rem; }
+
+/* Phone strip (six mobile screens in a row) */
+.phones-strip {
+  display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: .75rem;
+  padding: clamp(1rem, 2vw, 1.5rem); background: var(--card); border: 1px solid var(--rule); border-radius: 16px;
+}
+.phones-strip img { width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--ink); }
+.phones-strip figcaption { grid-column: 1 / -1; margin: 0; }
+@media (max-width: 900px) { .phones-strip { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
