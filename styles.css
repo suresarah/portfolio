@@ -1088,3 +1088,60 @@ body { background: var(--paper); color: var(--ink); }
 
 /* Earlier history: one quiet line under the timeline */
 .tl-foot { margin: -1rem 0 2rem; max-width: 60ch; font-size: .9rem; line-height: 1.5; color: var(--ink-soft); }
+
+/* Intro: the computer-desk illustration as a tilted card, bottom right */
+.tenet--intro .tenet-panel .panel-media.intro-card {
+  top: auto; bottom: clamp(1.5rem, 6vh, 4rem);
+  width: auto; height: min(52%, 26rem); max-height: none;
+  aspect-ratio: 2 / 3; object-fit: cover;
+  transform: rotate(-3deg);
+}
+.tenet--intro.is-open .panel-media.intro-card { animation: lift-l .6s var(--ease) .25s both; }
+@keyframes lift-l { from { opacity: 0; transform: translateY(16px) rotate(-5deg); } to { opacity: 1; transform: rotate(-3deg); } }
+
+/* Designing in code: the workflow diagram as a card */
+.tenet-panel .panel-media.diagram-card {
+  object-fit: contain; background: var(--card);
+  width: min(42%, 34rem); max-height: none; height: auto;
+}
+@media (prefers-reduced-motion: reduce) { .tenet--intro.is-open .panel-media.intro-card { animation: none; } }
+
+/* ---- Statement sections match the homepage quote:
+        cream card, italic serif lead, ink caps, lime highlight ---- */
+.cs-slide,
+.cs-slide--rust,
+.cs-slide--blue {
+  --slide-bg: var(--card); --slide-fg: var(--ink); --slide-accent: var(--ink);
+  margin: clamp(2.5rem, 6vw, 4.5rem) 0;
+  padding: clamp(2rem, 5vw, 3.5rem) clamp(1.5rem, 5vw, 4rem);
+  border: 1px solid var(--ink);
+  border-radius: var(--radius);
+  background: var(--card);
+  color: var(--ink);
+  text-align: left;
+}
+.cs-slide p { margin: 0; }
+.cs-slide .slide-serif {
+  margin-bottom: .75rem;
+  font-style: italic; color: var(--ink-soft);
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+}
+.cs-slide .slide-caps {
+  max-width: 26ch;
+  color: var(--ink);
+  font-size: clamp(1.6rem, 3.6vw, 3rem); line-height: 1.05;
+}
+.cs-slide .slide-caps em {
+  font-style: normal; color: var(--ink);
+  background: var(--lime); padding: 0 .12em;
+  box-decoration-break: clone; -webkit-box-decoration-break: clone;
+}
+
+/* Intro: Sarah's office line drawing, bottom right, no frame */
+.tenet--intro .tenet-panel .panel-media.office {
+  top: auto; bottom: clamp(1.5rem, 6vh, 4rem);
+  width: min(44%, 36rem); height: auto; max-height: 58%;
+  object-fit: contain; object-position: bottom right;
+}
+.tenet--intro .tenet-panel .panel-media.office { width: min(34%, 30rem); max-height: 50%; }
+.tenet--intro .intro-foot { max-width: min(36rem, 52%); }
