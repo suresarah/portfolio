@@ -1245,3 +1245,78 @@ body { background: var(--paper); color: var(--ink); }
 .spread-cover .cover-art[src*="office"] { top: clamp(6rem, 14vh, 9rem); bottom: auto; width: min(30%, 24rem); }
 /* Statement cards sit in the stack like another page */
 .spreads .cs-slide { border: 0; border-radius: 4px; box-shadow: 0 1px 0 rgba(43,29,22,.08), 0 12px 30px rgba(43,29,22,.08); }
+
+/* =====================================================================
+   SHEET: one board of rounded panels (after the brand guideline sheet).
+   Short sections sit side by side; visual sections run full width.
+   Spans come from --span on each panel (out of 12).
+   ===================================================================== */
+.sheet {
+  display: grid; grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(.75rem, 1.4vw, 1.25rem);
+  align-items: stretch;
+  background: var(--paper);
+  padding-block: clamp(1.5rem, 3vw, 2.5rem) clamp(2.5rem, 5vw, 4rem);
+}
+.sheet > * { grid-column: span var(--span, 12); margin: 0 !important; min-width: 0; }
+
+/* Panels */
+.sheet > .spread, .sheet > .cs-slide, .sheet > .collage {
+  display: flex; flex-direction: column;
+  padding: clamp(1.25rem, 2.4vw, 2rem);
+  background: var(--card);
+  border: 1px solid var(--rule); border-radius: 16px;
+  box-shadow: none;
+}
+.sheet > .spread > .content { padding: 0; max-width: none; }
+.sheet > .spread > .content > p, .sheet > .spread > .content > ul,
+.sheet > .spread > .content > .callout { max-width: 46rem; }
+
+/* Panel label: small bold caps with the hand-drawn loop */
+.sheet .spread > h2 {
+  margin: 0 0 1.25rem; align-self: flex-start;
+  font-family: var(--caps); font-weight: 700; text-transform: uppercase;
+  font-size: clamp(.95rem, 1.2vw, 1.1rem); letter-spacing: .06em; line-height: 1.1;
+  padding: .35em .7em;
+}
+.sheet .spread > h2::after { inset: -.25em -.35em; }
+
+/* Type scaled for panels */
+.sheet .cs-section .big { font-size: clamp(1.3rem, 2vw, 1.75rem); }
+.sheet .cs-section h3 { font-size: clamp(1.35rem, 1.8vw, 1.6rem); margin-top: 1.75rem; }
+.sheet .decision { margin-top: 1.75rem; padding-top: 1.25rem; }
+.sheet .decision:first-child { margin-top: 0; border-top: 0; padding-top: 0; }
+
+/* Stats row and the hero image sit in the sheet too */
+.sheet > .stats { margin: 0; }
+.sheet > figure.wide img { max-width: none; width: 100%; border-radius: 16px; }
+.sheet > figure.wide figcaption { max-width: none; }
+
+/* Statement panels */
+.sheet > .cs-slide { justify-content: center; text-align: left; background: var(--lime); border-color: var(--ink); }
+.sheet > .cs-slide .slide-caps { font-size: clamp(1.4rem, 2.6vw, 2.4rem); max-width: 24ch; }
+.sheet > .cs-slide .slide-caps em { background: var(--paper); }
+
+/* Closing collage */
+.collage {
+  display: grid !important; gap: .75rem;
+  grid-template-columns: 2fr 1.4fr .8fr;
+  grid-template-rows: 15rem 15rem auto;
+  grid-template-areas: "a b c" "a d c" "cap cap cap";
+}
+.collage img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; border: 1px solid var(--ink); }
+.collage .c-a { grid-area: a; } .collage .c-b { grid-area: b; } .collage .c-c { grid-area: c; object-position: top; background: #000; }
+.collage .c-d { grid-area: d; object-position: top; } .collage figcaption { grid-area: cap; margin: 0; }
+
+@media (max-width: 900px) {
+  .sheet > * { grid-column: 1 / -1; }
+  .collage { grid-template-columns: 1fr 1fr; grid-template-rows: 12rem 12rem 12rem auto; grid-template-areas: "a a" "b c" "d c" "cap cap"; }
+}
+/* Keep images in proportion to the sheet */
+.sheet > figure.wide img { max-height: min(70vh, 40rem); object-fit: cover; object-position: top; }
+.sheet figure.pair:not(.phones) img { max-height: 30rem; object-fit: cover; object-position: top; width: 100%; }
+.sheet .spread figure img { max-height: 34rem; }
+/* Narrow panels: smaller pull quotes */
+.sheet .spread[style*="--span:4"] .big,
+.sheet .spread[style*="--span:5"] .big { font-size: clamp(1.15rem, 1.5vw, 1.4rem); }
+.sheet .diagram svg { max-width: 54rem; }
