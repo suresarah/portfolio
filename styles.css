@@ -1343,3 +1343,6 @@ body { background: var(--paper); color: var(--ink); }
 /* Illustration panel art sits centred too */
 .tenet[data-id="illustration"] .panel-media.art { top: 0; bottom: 0; margin-block: auto; height: min(50%, 24rem); width: auto; max-height: none; }
 @media (max-width: 1000px) { .tenet-panel .panel-media { display: none; } }
+.tenet-panel .panel-media:not(.art) { width: min(40%, 32rem); aspect-ratio: 16 / 10; }
+.tenet-panel h2 { max-width: min(15ch, 52%); }
+.tenet-panel .lede, .tenet-panel dl { max-width: min(34ch, 50%); }
