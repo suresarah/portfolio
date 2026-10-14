@@ -3983,3 +3983,172 @@ html:not([data-theme="light"]) .ic-head h1 mark { -webkit-text-fill-color: var(-
 .vt-list { margin: .5rem 0 2rem; padding-left: 1.4rem; display: grid; gap: 1.6rem; }
 .vt-list li { color: var(--ink-soft); line-height: 1.5; }
 .vt-list b { display: block; color: var(--ink); font-size: clamp(1.15rem, 1.6vw, 1.4rem); line-height: 1.25; margin-bottom: .35rem; }
+
+/* =====================================================================
+   DAY PALETTE (Sarah's ten): Warm Ivory paper, Forest Black ink and
+   buttons, Vibrant Coral accent. Each category owns one colour and uses
+   it everywhere it appears: home tab, hero wash, eyebrow, section labels.
+     Intro + Principles  Vibrant Coral    Voyager       Electric Blue
+     Designing in code   Emerald          Homebot       Soft Pink
+     Other work          Tangerine        Illustration  Lavender
+     About               Golden Yellow    Links/hover   Deep Blue
+   Overrides the earlier day palettes by redefining their names.
+   ===================================================================== */
+html[data-theme="light"] {
+  --ivory: #f8f4eb;
+  --soft-pink: #f5a6bc;
+  --coral: #f34f43;
+  --deep-blue: #1559ab;
+  --forest-black: #10271f;
+  --golden: #fbc12d;
+  --tangerine: #ff8a30;
+  --lavender-2: #c49bdf;
+  --electric-blue: #2879e2;
+  --emerald: #087a59;
+
+  /* earlier day names, remapped */
+  --marigold: var(--coral);
+  --stone: #efe6d3;
+  --hydrangea: var(--soft-pink);
+  --cobalt: var(--electric-blue);
+  --waffle: var(--deep-blue);
+  --willow: var(--forest-black);
+  --wasabi: var(--emerald);
+  --ember: var(--coral);
+  --ember-soft: #f9b8b2;
+  --lavender: var(--lavender-2);
+
+  --paper: var(--ivory);
+  --card: #fffdf8;
+  --card-2: #efe9dc;
+  --ink: var(--forest-black);
+  --ink-soft: #44524b;
+  --ink-faint: #7a847e;
+  --rule: rgba(16, 39, 31, .1);
+  --edge: rgba(16, 39, 31, .12);
+  --edge-strong: rgba(16, 39, 31, .22);
+  --lime: var(--coral);
+  --lime-deep: #d63a2f;
+  --lime-ink: #c7362b;
+  --on-lime: #ffffff;
+  --soft-shadow: 0 1px 2px rgba(16, 39, 31, .05), 0 14px 36px rgba(16, 39, 31, .08);
+
+  --c-intro: var(--coral);
+  --c-voyager: var(--electric-blue);
+  --c-agentic: var(--emerald);
+  --c-homebot: var(--soft-pink);
+  --c-archive: var(--tangerine);
+  --c-illus: var(--lavender-2);
+  --c-about: var(--golden);
+}
+
+/* Page tone: case-study pages pick up their category for labels */
+html[data-theme="light"] body { --page-tone: var(--coral); --page-on: #fff; }
+html[data-theme="light"] body:has(.cs-hero[style*="--c-voyager"]) { --page-tone: var(--electric-blue); --page-on: #fff; }
+html[data-theme="light"] body:has(.cs-hero[style*="--c-agentic"]) { --page-tone: var(--emerald); --page-on: #fff; }
+html[data-theme="light"] body:has(.cs-hero[style*="--c-homebot"]) { --page-tone: var(--soft-pink); --page-on: var(--forest-black); }
+html[data-theme="light"] body:has(.cs-hero[style*="--c-archive"]) { --page-tone: var(--tangerine); --page-on: var(--forest-black); }
+html[data-theme="light"] body:has(.cs-hero[style*="--c-illus"]) { --page-tone: var(--lavender-2); --page-on: var(--forest-black); }
+
+html[data-theme="light"] body {
+  background:
+    radial-gradient(38% 46% at -4% 72%, color-mix(in srgb, var(--page-tone) 18%, transparent) 0%, transparent 72%),
+    radial-gradient(36% 44% at 104% 48%, rgba(251, 193, 45, .16) 0%, transparent 72%),
+    var(--paper);
+  background-attachment: fixed;
+}
+html[data-theme="light"] .cs-section > h2, html[data-theme="light"] .side-h,
+html[data-theme="light"] .sheet .spread > h2, html[data-theme="light"] .spreads .spread > h2,
+html[data-theme="light"] .cs-section:nth-of-type(3n+2) > h2,
+html[data-theme="light"] .sheet .spread:nth-of-type(3n+2) > h2 {
+  background: var(--page-tone) !important; color: var(--page-on) !important; -webkit-text-fill-color: var(--page-on);
+}
+html[data-theme="light"] .cs-hero:not([style*="--c-intro"]) {
+  background:
+    radial-gradient(45% 85% at 102% 8%, color-mix(in srgb, var(--tone) 38%, transparent) 0%, transparent 68%),
+    radial-gradient(40% 75% at -2% 100%, color-mix(in srgb, var(--tone) 14%, transparent) 0%, transparent 65%),
+    linear-gradient(180deg, var(--card) 0%, var(--paper) 100%) !important;
+}
+
+/* Home: each closed tab carries its category colour */
+html[data-theme="light"] .tenet { background: color-mix(in srgb, var(--tone) 26%, var(--card-2)); }
+html[data-theme="light"] .tenet.is-open { background: var(--card); }
+html[data-theme="light"] .tenet--intro::before,
+html[data-theme="light"] .tenet--intro.is-open::before {
+  background:
+    radial-gradient(48% 62% at 104% 88%, rgba(243, 79, 67, .28) 0%, rgba(243, 79, 67, .08) 42%, transparent 70%),
+    radial-gradient(46% 58% at 30% 115%, rgba(251, 193, 45, .32) 0%, rgba(251, 193, 45, .1) 42%, transparent 70%) !important;
+}
+
+/* Type, header, buttons, links */
+html[data-theme="light"] .tenet--intro .tenet-panel h1,
+html[data-theme="light"] .tenet-panel h2,
+html[data-theme="light"] .cs-hero h1 {
+  background: linear-gradient(180deg, var(--forest-black) 0%, var(--forest-black) 60%, #1f4a3b 100%);
+  -webkit-background-clip: text; background-clip: text;
+}
+html[data-theme="light"] .site-header,
+html[data-theme="light"] .detail-bar { background: rgba(248, 244, 235, .88) !important; }
+html[data-theme="light"] .tenets.is-compact { background: rgba(248, 244, 235, .92); }
+html[data-theme="light"] .site-header nav a.cta,
+html[data-theme="light"] .tenet-panel .read,
+html[data-theme="light"] .cs-section a.read {
+  background: var(--forest-black) !important; color: #fff !important;
+  box-shadow: 0 1px 2px rgba(16, 39, 31, .25), 0 8px 20px rgba(16, 39, 31, .18) !important;
+}
+html[data-theme="light"] .site-header nav a.cta:hover,
+html[data-theme="light"] .tenet-panel .read:hover,
+html[data-theme="light"] .cs-section a.read:hover { background: var(--deep-blue) !important; }
+html[data-theme="light"] main a:not([class]):hover { color: var(--deep-blue); }
+html[data-theme="light"] ::selection { background: var(--coral); color: #fff; }
+
+/* Looking back: Stone with a glow in the page's colour */
+html[data-theme="light"] .lookback, html[data-theme="light"] .sheet > .spread.lookback {
+  background:
+    radial-gradient(80% 140% at 100% 0%, color-mix(in srgb, var(--page-tone) 34%, transparent), transparent 60%),
+    radial-gradient(60% 120% at 0% 100%, rgba(251, 193, 45, .24), transparent 60%),
+    var(--stone) !important;
+}
+
+/* Workflow card + flow diagram (Designing in code): Emerald */
+html[data-theme="light"] .tenet-panel .panel-media.flow-card {
+  --fc-accent: var(--emerald); --fc-glow: rgba(8, 122, 89, .3);
+  box-shadow: 0 0 0 1px rgba(16, 39, 31, .08), 0 20px 44px rgba(16, 39, 31, .10), 0 0 60px rgba(8, 122, 89, .14) !important;
+}
+html[data-theme="light"] .fc-step.is-active .fc-node,
+html[data-theme="light"] .flow-step.is-key .flow-node { background: radial-gradient(circle at 50% 35%, #e1f2ec, #ffffff 72%); }
+html[data-theme="light"] .flow-step.is-key .flow-node {
+  box-shadow: inset 0 0 0 1px var(--emerald), 0 0 0 6px rgba(8, 122, 89, .12), 0 0 28px rgba(8, 122, 89, .26);
+}
+html[data-theme="light"] .cs-body figure.stage img[src$=".png"] { box-shadow: 0 18px 40px rgba(16, 39, 31, .16) !important; }
+
+/* Principles posters: the same ten colours in day mode */
+html[data-theme="light"] {
+  --pg-paper: var(--tangerine); --pg-blue: var(--deep-blue); --pg-orange: var(--coral);
+  --pg-beige: var(--lavender-2); --pg-green: var(--emerald); --pg-salmon: var(--soft-pink);
+  --pg-yellow: var(--golden);
+}
+html[data-theme="light"] .pg-1 { --c: var(--forest-black); }
+html[data-theme="light"] .pg-3 { --c: var(--ivory); }
+html[data-theme="light"] .pg-4 { --c: var(--forest-black); }
+html[data-theme="light"] .pg-5 { --c: var(--ivory); }
+html[data-theme="light"] .pg-5 p { color: var(--ivory); -webkit-text-fill-color: var(--ivory); }
+html[data-theme="light"] .pg-6, html[data-theme="light"] .pg-7 { --c: var(--forest-black); }
+
+/* Voyager diagram in day mode: highlights follow the page colour */
+html[data-theme="light"] .diagram svg rect:nth-of-type(2) { fill: var(--page-tone); stroke: none; }
+html[data-theme="light"] .diagram svg text:nth-of-type(4) { fill: var(--page-on); }
+html[data-theme="light"] .diagram svg text:nth-of-type(3),
+html[data-theme="light"] .diagram svg text:nth-of-type(10) { fill: var(--ink-soft); }
+html[data-theme="light"] .diagram svg rect:nth-of-type(5) { fill: color-mix(in srgb, var(--page-tone) 14%, var(--card)); stroke: var(--page-tone); }
+html[data-theme="light"] .diagram svg text:nth-of-type(9) { fill: var(--page-ink); }
+
+/* Big numbers and coloured text: the page's colour where it reads on
+   Ivory; Forest Black on the light-toned pages */
+html[data-theme="light"] body { --page-ink: var(--lime-ink); }
+html[data-theme="light"] body:has(.cs-hero[style*="--c-voyager"]) { --page-ink: var(--deep-blue); --lime-ink: var(--deep-blue); }
+html[data-theme="light"] body:has(.cs-hero[style*="--c-agentic"]) { --page-ink: var(--emerald); --lime-ink: var(--emerald); }
+html[data-theme="light"] body:has(.cs-hero[style*="--c-homebot"]),
+html[data-theme="light"] body:has(.cs-hero[style*="--c-archive"]),
+html[data-theme="light"] body:has(.cs-hero[style*="--c-illus"]) { --page-ink: var(--forest-black); --lime-ink: var(--forest-black); }
+html[data-theme="light"] .s-ink { --bg: var(--forest-black); --num: var(--page-tone); }
