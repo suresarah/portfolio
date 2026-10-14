@@ -6,6 +6,15 @@
   const root = document.querySelector('.tenets');
   if (!root) return;
 
+  // The header is sticky and its height changes (links wrap on phones), so
+  // measure it; the compact tab bar and case-study bar stick just below it.
+  const header = document.querySelector('.site-header');
+  if (header && 'ResizeObserver' in window) {
+    new ResizeObserver(() => {
+      document.documentElement.style.setProperty('--header-live', header.offsetHeight + 'px');
+    }).observe(header);
+  }
+
   const tenets = Array.from(root.querySelectorAll('.tenet'));
   const tabs = tenets.map(t => t.querySelector('.tenet-tab'));
 
@@ -15,6 +24,15 @@
   const detailClose = document.getElementById('detail-close');
   const cache = new Map();
   let shownId = null;
+
+  // While a case study is open, its tab in the compact bar carries a close
+  // button (it replaces the separate title bar). One button, moved to
+  // whichever tab is open; a sibling of .tenet-tab so buttons don't nest.
+  const tabClose = document.createElement('button');
+  tabClose.type = 'button';
+  tabClose.className = 'tab-close';
+  tabClose.innerHTML = '<span aria-hidden="true">✕</span>';
+  tabClose.addEventListener('click', () => hideDetail());
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const scrollBehavior = reduceMotion ? 'auto' : 'smooth';
@@ -46,7 +64,7 @@
   // rewritten so images and links still resolve from the homepage.
   async function loadPage(url) {
     if (cache.has(url)) return cache.get(url).cloneNode(true);
-    const res = await fetch(url);
+    const res = await fetch(url, { cache: 'no-cache' });
     if (!res.ok) throw new Error(res.status);
     const doc = new DOMParser().parseFromString(await res.text(), 'text/html');
     const main = doc.querySelector('main');
@@ -71,6 +89,8 @@
     root.classList.add('is-compact');
     detail.style.setProperty('--tone', tenet.style.getPropertyValue('--tone'));
     detailTitle.textContent = tenet.querySelector('.tenet-tab span').textContent;
+    tabClose.setAttribute('aria-label', 'Close ' + detailTitle.textContent + ' case study');
+    tenet.appendChild(tabClose);
     detail.classList.add('is-loading');
     try {
       const content = await loadPage(link.getAttribute('href'));
@@ -79,6 +99,7 @@
     } catch (e) {
       // If loading fails (e.g. opened from a file), fall back to the page itself.
       root.classList.remove('is-compact');
+      tabClose.remove();
       location.href = link.href;
       return;
     } finally {
@@ -96,6 +117,7 @@
     shownId = null;
     detail.hidden = true;
     detailBody.replaceChildren();
+    tabClose.remove();
     root.classList.remove('is-compact');
     setHash(wasId || '');
     window.scrollTo({ top: 0, behavior: scrollBehavior });

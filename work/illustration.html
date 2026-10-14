@@ -3,13 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Illustration — Sarah Leach</title>
-  <meta name="description" content="Illustration, lettering, and merch Sarah Leach makes outside product work.">
+  <title>Illustration and branding — Sarah Leach</title>
+  <meta name="description" content="Illustration, lettering, logos, and team swag Sarah Leach makes outside product work.">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Illustration and branding — Sarah Leach">
+  <meta property="og:description" content="Illustration, lettering, logos, and team swag Sarah Leach makes outside product work.">
+  <meta property="og:url" content="https://suresarah.github.io/portfolio/work/illustration.html">
+  <meta property="og:image" content="https://suresarah.github.io/portfolio/assets/share.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="robots" content="noindex">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=League+Spartan:wght@700&family=Newsreader:opsz,wght@6..72,300;6..72,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=20261002">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css?v=hf91">
+  <script src="../theme.js?v=2"></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -18,64 +28,134 @@
     <nav aria-label="Primary">
       <a href="../#work">Work</a>
       <a href="../#about">About</a>
+      <a href="principles.html">Principles</a>
+      <a href="https://www.linkedin.com/in/saleach/">LinkedIn</a>
       <a class="cta" href="mailto:saraha.leach@gmail.com">Email me</a>
     </nav>
   </header>
 
   <main id="main">
-    <section class="cs-hero" style="--tone: var(--c-illus)">
-      <p class="eyebrow">Side projects</p>
-      <h1>Illustration</h1>
-      <p class="lede">Posters, lettering, stickers, team swag, and a lot of dogs.</p>
+    <section class="cs-hero ill-canvas" id="ill-canvas" style="--tone: var(--c-illus)">
+      <div class="ic-head">
+        <p class="eyebrow">Side projects</p>
+        <h1>Illustration <mark>and branding.</mark></h1>
+        <p class="ic-sub">Posters &middot; lettering &middot; logos &middot; team swag &middot; a lot of dogs</p>
+      </div>
+
+      <a class="ic-stack" href="#posters" style="--x: 9%; --y: 7%; --w: 17%; --r: -4deg">
+        <span class="ic-card"><img src="../assets/ill-union-station-hd.jpg" alt="" loading="lazy"></span>
+        <span class="ic-label">Posters</span>
+        <span class="ic-tags"><i>Travel</i><i>Editorial</i><i>Games</i></span>
+      </a>
+      <a class="ic-stack" href="#treehouse" style="--x: 76%; --y: 34%; --w: 17%; --r: 3deg">
+        <span class="ic-card"><img src="../assets/brand-treehouse-sign.jpg" alt="" loading="lazy"></span>
+        <span class="ic-label">Logos and branding</span>
+        <span class="ic-tags"><i>Logos</i><i>Lettering</i><i>Identity</i></span>
+      </a>
+      <a class="ic-stack" href="#pax8" style="--x: 57%; --y: 58%; --w: 15%; --r: -2deg">
+        <span class="ic-card"><img src="../assets/brand-pax8-stickers.jpg" alt="" loading="lazy"></span>
+        <span class="ic-label">Team swag</span>
+        <span class="ic-tags"><i>Stickers</i><i>Badges</i></span>
+      </a>
+      <a class="ic-stack" href="#lajit" style="--x: 2%; --y: 50%; --w: 14%; --r: 2deg">
+        <span class="ic-card ic-card--dark"><img src="../assets/brand/lajit-03.png" alt="" loading="lazy"></span>
+        <span class="ic-label">Packaging</span>
+        <span class="ic-tags"><i>Dielines</i><i>Labels</i></span>
+      </a>
+
+      <img class="ic-sticker" src="../assets/ill-hot-tub-club-cut.png" alt="" aria-hidden="true" style="--x: 50%; --y: 4%; --w: 9.5%; --r: 6deg">
+      <img class="ic-sticker" src="../assets/ill-sock-monkey-cut.png" alt="" aria-hidden="true" style="--x: 70%; --y: 6%; --w: 8%; --r: -8deg">
+      <img class="ic-sticker" src="../assets/ill-queso-guy.png" alt="" aria-hidden="true" style="--x: 21%; --y: 50%; --w: 10%; --r: -6deg">
+      <img class="ic-sticker ic-sticker--card" src="../assets/ill-barkopoly-cut.png" alt="" aria-hidden="true" style="--x: 32%; --y: 64%; --w: 17%; --r: 3deg">
+      <img class="ic-sticker" src="../assets/ill-beagle-rug-cut.png" alt="" aria-hidden="true" style="--x: 87%; --y: 70%; --w: 9%; --r: 8deg">
+
+      <div class="ic-dock">
+        <a href="archive.html">&larr; Other work</a>
+        <a href="https://www.linkedin.com/in/saleach/">LinkedIn</a>
+        <a href="mailto:saraha.leach@gmail.com">Email me</a>
+      </div>
     </section>
-    <div class="art-grid">
-      <figure class="art-card art-card--feature" style="--art-bg: var(--art-mustard)">
-        <img src="../assets/ill-union-station-hd.jpg" alt="Union Station travel poster with the station facade framed by orange flowers" loading="lazy">
-        <figcaption><span class="art-kind">Poster</span>Union Station</figcaption>
-      </figure>
-      <figure class="art-card art-card--feature" style="--art-bg: var(--art-blue)">
-        <img src="../assets/ill-orange-wine.png" alt="Detailed isometric illustration of an orange wine winery with vineyards, barrels, and bottles" loading="lazy">
-        <figcaption><span class="art-kind">Poster</span>Orange wine</figcaption>
-      </figure>
-      <figure class="art-card" style="--art-bg: var(--art-blush)">
-        <img src="../assets/ill-hot-tub-club.png" alt="Round coaster reading Looney Zuni Hot Tub, with a rainbow and mountains" loading="lazy">
-        <figcaption><span class="art-kind">Coaster</span>Hot tub club</figcaption>
-      </figure>
-      <figure class="art-card" style="--art-bg: var(--art-lime)">
-        <img src="../assets/ill-chill-chip.png" alt="A tortilla chip character relaxing in a bowl of queso" loading="lazy">
-        <figcaption><span class="art-kind">Sticker</span>Chill chip in a queso bath</figcaption>
-      </figure>
-      <figure class="art-card" style="--art-bg: var(--art-rust)">
-        <img src="../assets/ill-looney-zuni-logo.png" alt="Looney Zuni Cocktail Lounge logo in red script, with a cocktail glass and the line Home of wild and crazy kids" loading="lazy">
-        <figcaption><span class="art-kind">Logo</span>Looney Zuni lounge</figcaption>
-      </figure>
-      <figure class="art-card art-card--wide" style="--art-bg: var(--art-green)">
-        <img src="../assets/ill-barkopoly.png" alt="Barkopoly, a dog-themed parody of a property trading board game" loading="lazy">
-        <figcaption><span class="art-kind">Board game parody</span>Barkopoly</figcaption>
-      </figure>
-      <figure class="art-card" style="--art-bg: var(--art-mustard)">
-        <img src="../assets/ill-beagle-rug.png" alt="A beagle sitting on a round blue rug" loading="lazy">
-        <figcaption><span class="art-kind">Dogs</span>Beagle rug</figcaption>
-      </figure>
-      <figure class="art-card art-card--wide" style="--art-bg: var(--art-blush)">
-        <img src="../assets/ill-portrait-couple.png" alt="Line-drawn portrait of a smiling couple in glasses and caps, hugging their husky between them" loading="lazy">
-        <figcaption><span class="art-kind">Portrait</span>A couple and their husky</figcaption>
-      </figure>
-      <figure class="art-card" style="--art-bg: var(--art-lilac)">
-        <img src="../assets/ill-sock-monkey.png" alt="A sock monkey face in a red knit hat" loading="lazy">
-        <figcaption><span class="art-kind">Character</span>Sock monkey</figcaption>
-      </figure>
-      <figure class="art-card art-card--wide" style="--art-bg: var(--art-lime)">
-        <img src="../assets/ill-swag-badges.png" alt="A grid of badge and stamp designs" loading="lazy">
-        <figcaption><span class="art-kind">Pax8 Product &amp; Engineering department</span>Swag badges</figcaption>
-      </figure>
-      <figure class="art-card" style="--art-bg: var(--art-blue)">
-        <img src="../assets/ill-pax8-product-engineering.png" alt="Script lettering reading Product & Engineering" loading="lazy">
-        <figcaption><span class="art-kind">Lettering · Pax8</span>Product &amp; Engineering</figcaption>
-      </figure>
+    <div class="cs-body sheet">
+      <section class="cs-section spread ill-proj" id="posters" style="--span:12">
+        <h2>Posters</h2>
+        <div class="content">
+          <p class="big">Travel posters, a winery, and a board game for dogs.</p>
+          <div class="ill-row"><div class="photo"><img src="../assets/ill-union-station-hd.jpg" alt="Union Station travel poster with the station facade framed by orange flowers" loading="lazy"></div><div class="photo"><img src="../assets/ill-orange-wine.png" alt="Detailed isometric illustration of an orange wine winery with vineyards, barrels, and bottles" loading="lazy" style="object-position: center 30%"></div><div class="panel" style="--bg: var(--sky)"><img src="../assets/ill-barkopoly-cut.png" alt="Barkopoly, a dog-themed parody of a property trading board game" loading="lazy"></div></div>
+        </div>
+      </section>
+      <section class="cs-section spread ill-proj" id="pax8" style="--span:12">
+        <h2>Pax8 · Product &amp; Engineering</h2>
+        <div class="content">
+          <p class="big">Lettering, badges, and swag for a product and engineering department.</p>
+          <div class="ill-row ill-row--one"><div class="panel" style="--bg: #1e2019"><img src="../assets/brand-pax8-stickers.jpg" alt="A sheet of colourful Product &amp; Engineering stickers and badges" loading="lazy"></div></div><div class="ill-row"><div class="photo"><img src="../assets/brand-pax8-poster.jpg" alt="Product &amp; Engineering poster with Pax8 laptop, iced coffee, donuts, and a blimp under a blue sky" loading="lazy"></div><div class="panel" style="--bg: #70cef1"><img src="../assets/ill-pax8-product-engineering.png" alt="Script lettering reading Product &amp; Engineering" loading="lazy"></div><div class="panel" style="--bg: #ebe3c7"><img src="../assets/ill-swag-badges.png" alt="A grid of badge and stamp designs" loading="lazy"></div></div>
+        </div>
+      </section>
+      <section class="cs-section spread ill-proj" id="treehouse" style="--span:12">
+        <h2>Treehouse Therapy</h2>
+        <div class="content">
+          <p class="big">A friendly treehouse mark for an ABA therapy practice.</p>
+          <div class="ill-row ill-row--lead"><div class="panel" style="--bg: #f8edeb"><div class="set" style="--cols: 3"><img src="../assets/brand/treehouse-01.png" alt="Treehouse Therapy logo exploration" loading="lazy"><img src="../assets/brand/treehouse-03.png" alt="Treehouse Therapy logo exploration" loading="lazy"><img src="../assets/brand/treehouse-05.png" alt="Treehouse Therapy logo exploration" loading="lazy"><img src="../assets/brand/treehouse-07.png" alt="Treehouse Therapy logo exploration" loading="lazy"><img src="../assets/brand/treehouse-09.png" alt="Treehouse Therapy logo exploration" loading="lazy"><img src="../assets/brand/treehouse-11.png" alt="Treehouse Therapy logo exploration" loading="lazy"></div></div><div class="photo"><img src="../assets/brand-treehouse-sign.jpg" alt="Illuminated round shop sign with the Treehouse Therapy treehouse logo" loading="lazy"></div><div class="panel" style="--bg: #f8edeb"><img src="../assets/brand/treehouse-13.png" alt="Treehouse ABA Therapy logo with hand-lettered name" loading="lazy"></div></div>
+        </div>
+      </section>
+      <section class="cs-section spread ill-proj" id="tonic-timber" style="--span:12">
+        <h2>Tonic &amp; Timber</h2>
+        <div class="content">
+          <p class="big">Wordmarks and a badge for a bar in a converted trailer.</p>
+          <div class="ill-row ill-row--lead"><div class="panel" style="--bg: #000"><div class="set" style="--cols: 2"><img src="../assets/brand/tonic-05.png" alt="Tonic &amp; Timber wordmark exploration" loading="lazy"><img src="../assets/brand/tonic-07.png" alt="Tonic &amp; Timber wordmark exploration" loading="lazy"><img src="../assets/brand/tonic-09.png" alt="Tonic &amp; Timber wordmark exploration" loading="lazy"><img src="../assets/brand/tonic-10.png" alt="Tonic &amp; Timber wordmark exploration" loading="lazy"><img src="../assets/brand/tonic-14.png" alt="Tonic &amp; Timber wordmark exploration" loading="lazy"><img src="../assets/brand/tonic-15.png" alt="Tonic &amp; Timber wordmark exploration" loading="lazy"></div></div><div class="photo"><img src="../assets/brand-tonic-timber-trailer.jpg" alt="A converted trailer bar with the Tonic &amp; Timber logo on its side" loading="lazy"></div><div class="panel" style="--bg: #000"><img src="../assets/brand/tonic-08.png" alt="Tonic &amp; Timber script logo in a black circle" loading="lazy"></div></div>
+        </div>
+      </section>
+      <section class="cs-section spread ill-proj" id="books-for-baby" style="--span:12">
+        <h2>Books for Baby</h2>
+        <div class="content">
+          <p class="big">A cast of storybook animals and a print to go with them.</p>
+          <div class="ill-row ill-row--split"><div class="panel" style="--bg: #ebe3c7"><div class="set" style="--cols: 4"><img src="../assets/brand/books-02.png" alt="Storybook animal character" loading="lazy"><img src="../assets/brand/books-06.png" alt="Storybook animal character" loading="lazy"><img src="../assets/brand/books-08.png" alt="Storybook animal character" loading="lazy"><img src="../assets/brand/books-10.png" alt="Storybook animal character" loading="lazy"><img src="../assets/brand/books-12.png" alt="Storybook animal character" loading="lazy"><img src="../assets/brand/books-16.png" alt="Storybook animal character" loading="lazy"><img src="../assets/brand/books-22.png" alt="Storybook animal character" loading="lazy"><img src="../assets/brand/books-24.png" alt="Storybook animal character" loading="lazy"><img src="../assets/brand/books-26.png" alt="Storybook animal character" loading="lazy"><img src="../assets/brand/books-28.png" alt="Storybook animal character" loading="lazy"><img src="../assets/brand/books-32.png" alt="Storybook animal character" loading="lazy"><img src="../assets/brand/books-34.png" alt="Storybook animal character" loading="lazy"></div></div><div class="photo"><img src="../assets/brand-books-for-baby-print.jpg" alt="Framed Books for Baby print on a nursery shelf" loading="lazy"></div></div>
+        </div>
+      </section>
+      <section class="cs-section spread ill-proj" id="copper-fox" style="--span:12">
+        <h2>Copper Fox / Pine &amp; Peak</h2>
+        <div class="content">
+          <p class="big">Two names for one brand, explored side by side.</p>
+          <div class="ill-row ill-row--split"><div class="panel" style="--bg: #fffff1"><img src="../assets/brand-copper-fox-pine-peak.png" alt="Logo sheet exploring two names, Copper Fox and Pine &amp; Peak, in blue" loading="lazy"></div><div class="photo"><img src="../assets/brand-pine-peak-bags.jpg" alt="Two people holding Pine &amp; Peak paper bags, with a beagle at their feet" loading="lazy" style="object-position: center 35%"></div></div>
+        </div>
+      </section>
+      <section class="cs-section spread ill-proj" id="looney-zuni" style="--span:6">
+        <h2>Looney Zuni</h2>
+        <div class="content">
+          <p class="big">A logo and coaster for a home cocktail lounge.</p>
+          <div class="ill-row"><div class="panel" style="--bg: #f6d9cf"><img src="../assets/ill-looney-zuni-logo.png" alt="Looney Zuni Cocktail Lounge logo in red script, with a cocktail glass and the line Home of wild and crazy kids" loading="lazy"></div><div class="panel" style="--bg: var(--lilac)"><img src="../assets/ill-hot-tub-club-cut.png" alt="Round coaster reading Looney Zuni Hot Tub, with a rainbow and mountains" loading="lazy"></div></div>
+        </div>
+      </section>
+      <section class="cs-section spread ill-proj" id="lajit" style="--span:6">
+        <h2>Lajit</h2>
+        <div class="content">
+          <p class="big">Packaging for Lajit Gold honey sticks.</p>
+          <div class="ill-row ill-row--one"><div class="panel" style="--bg: #1e1618"><img src="../assets/brand/lajit-03.png" alt="Flat dieline for a black and copper Lajit Gold honey sticks box" loading="lazy"></div></div>
+        </div>
+      </section>
+      <section class="cs-section spread ill-proj" id="period-exchange" style="--span:6">
+        <h2>Period Exchange</h2>
+        <div class="content">
+          <p class="big">Lettering and two small mascots.</p>
+          <div class="ill-row ill-row--one"><div class="panel" style="--bg: #fff8ef"><img src="../assets/brand-period-exchange.png" alt="Sheet of Period Exchange script logos in red and pink, with two smiling droplet mascots" loading="lazy"></div></div>
+        </div>
+      </section>
+      <section class="cs-section spread ill-proj" id="my-girlfriends-hungry" style="--span:6">
+        <h2>My Girlfriend’s Hungry</h2>
+        <div class="content">
+          <p class="big">Wordmark explorations.</p>
+          <div class="ill-row ill-row--one"><div class="panel" style="--bg: #1e2019"><div class="set" style="--cols: 2"><img src="../assets/brand/mgh-00.png" alt="My Girlfriend&#x27;s Hungry wordmark exploration" loading="lazy"><img src="../assets/brand/mgh-01.png" alt="My Girlfriend&#x27;s Hungry wordmark exploration" loading="lazy"><img src="../assets/brand/mgh-02.png" alt="My Girlfriend&#x27;s Hungry wordmark exploration" loading="lazy"><img src="../assets/brand/mgh-03.png" alt="My Girlfriend&#x27;s Hungry wordmark exploration" loading="lazy"><img src="../assets/brand/mgh-04.png" alt="My Girlfriend&#x27;s Hungry wordmark exploration" loading="lazy"><img src="../assets/brand/mgh-05.png" alt="My Girlfriend&#x27;s Hungry wordmark exploration" loading="lazy"></div></div></div>
+        </div>
+      </section>
+      <section class="cs-section spread ill-proj" id="characters" style="--span:12">
+        <h2>Characters and portraits</h2>
+        <div class="content">
+          <p class="big">Stickers, a sock monkey, and a lot of dogs.</p>
+          <div class="ill-row"><div class="panel" style="--bg: var(--lime)"><img src="../assets/ill-chill-chip-cut.png" alt="A tortilla chip character relaxing in a bowl of queso" loading="lazy"></div><div class="panel" style="--bg: var(--pink)"><img src="../assets/ill-sock-monkey-cut.png" alt="A sock monkey face in a red knit hat" loading="lazy"></div><div class="panel" style="--bg: var(--teal)"><img src="../assets/ill-beagle-rug-cut.png" alt="A beagle sitting on a round blue rug" loading="lazy"></div><div class="panel" style="--bg: var(--card)"><img src="../assets/ill-portrait-couple.png" alt="Line-drawn portrait of a smiling couple in glasses and caps, hugging their husky between them" loading="lazy"></div></div>
+        </div>
+      </section>
     </div>
     <nav class="next" aria-label="Next project">
-      <a href="archive.html">← Earlier work</a>
+      <a href="archive.html">← Other work</a>
       <a href="../">All work →</a>
     </nav>
   </main>

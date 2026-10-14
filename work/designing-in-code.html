@@ -5,11 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Designing in Code — Sarah Leach</title>
   <meta name="description" content="Designing and building an AI agent console in working code at Pax8, and what that changed about how the team worked.">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Designing in Code — Sarah Leach">
+  <meta property="og:description" content="Designing and building an AI agent console in working code at Pax8, and what that changed about how the team worked.">
+  <meta property="og:url" content="https://suresarah.github.io/portfolio/work/designing-in-code.html">
+  <meta property="og:image" content="https://suresarah.github.io/portfolio/assets/share.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="robots" content="noindex">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=League+Spartan:wght@700&family=Newsreader:opsz,wght@6..72,300;6..72,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=20261002">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css?v=hf91">
+  <script src="../theme.js?v=2"></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -18,6 +28,8 @@
     <nav aria-label="Primary">
       <a href="../#work">Work</a>
       <a href="../#about">About</a>
+      <a href="principles.html">Principles</a>
+      <a href="https://www.linkedin.com/in/saleach/">LinkedIn</a>
       <a class="cta" href="mailto:saraha.leach@gmail.com">Email me</a>
     </nav>
   </header>
@@ -31,46 +43,101 @@
         <div><dt>My role</dt><dd>Senior Product Designer</dd></div>
         <div><dt>Status</dt><dd>Launching at Beyond Copenhagen</dd></div>
         <div><dt>How I worked</dt><dd>Designed in Figma, built with Claude, pushed to GitHub for engineering review</dd></div>
-        <div><dt>Team practice</dt><dd>Paired with designers and wrote a guide; a few adopted the workflow</dd></div>
+        <div><dt>Team practice</dt><dd>Paired with designers, ran demos, and wrote a guide; a few started using parts of the workflow</dd></div>
       </dl>
       <ul class="cover-meta"><li><span>Pax8</span><span>2026</span></li><li><span>Case study</span><span>AI agent platform</span></li><li><span>Status</span><span>Launching at Beyond Copenhagen</span></li></ul>
     </section>
     <!-- PUBLIC REPO: do not add screens, videos, or unreleased details to this file.
-         The full case study lives in a password-protected location (see README). -->
+         The full case study is work/horizon.html, which is ENCRYPTED. Its readable
+         source lives outside the repo in ~/portfolio-private (see README there). -->
     <div class="cs-body spreads sheet">
+      <section class="cs-section spread" id="s-gap" style="--span:5">
+        <h2>The gap</h2>
+        <div class="content">
+          <p class="big">Static designs showed what the console looked like, not how it behaved.</p>
+          <p>Design reached engineering as Figma files and walkthroughs, and engineers translated them into working interfaces. Interactions, responsive behavior, and multi-step workflows didn't come through fully, so there was back-and-forth during implementation, and some decisions had to be revisited once building started.</p>
+        </div>
+      </section>
+
+      <section class="cs-section spread decision-panel" id="s-switch" style="--span:7">
+        <h2>The switch</h2>
+        <div class="content">
+          <div class="decision">
+            <h3>Make code part of the design process, not the step after it</h3>
+            <div class="options">
+              <div><strong>Before</strong>Design ends at a Figma handoff. Engineering translates static specs into an interface.</div>
+              <div class="chosen"><strong>What I did</strong>Built the Horizon console beta as working code with Claude, and pushed it to GitHub for engineering to review.</div>
+            </div>
+            <p>Horizon is a complex console with interconnected workflows. Working in code meant I could make decisions while using the actual interface, find problems earlier, and iterate without recreating every state in Figma.</p>
+          </div>
+        </div>
+      </section>
+
       <section class="cs-section spread" id="s-how-the-work-moved" style="--span:12">
         <h2>How the work moved</h2>
         <div class="content">
           <p class="big">Design used to end at a Figma handoff. Here it ended in working code that engineering could review.</p>
-          <div class="diagram" role="img" aria-label="Workflow diagram. Design in Figma, then build a working prototype with Claude CLI, then push to GitHub, then engineering review, then production. Alongside, a Miro board of screenshots where PMs, content designers, and designers comment and divide ownership.">
-            <svg viewBox="0 0 760 250" font-family="Inter, system-ui, sans-serif" font-size="13">
-              <defs><marker id="w" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0l10 5-10 5z" fill="#2b1d16"/></marker></defs>
-              <g stroke="#2b1d16" fill="#fff">
-                <rect x="0" y="40" width="120" height="54" rx="27"/>
-                <rect x="160" y="40" width="130" height="54" rx="27" fill="#e6f26a"/>
-                <rect x="330" y="40" width="110" height="54" rx="27"/>
-                <rect x="480" y="40" width="130" height="54" rx="27"/>
-                <rect x="650" y="40" width="110" height="54" rx="27" fill="#a9d79b"/>
-                <rect x="160" y="160" width="450" height="60" rx="14" fill="#dcc3ea"/>
-              </g>
-              <g fill="#2b1d16" text-anchor="middle">
-                <text x="60" y="64">Design</text><text x="60" y="81" font-size="11">Figma</text>
-                <text x="225" y="64">Build</text><text x="225" y="81" font-size="11">Claude CLI</text>
-                <text x="385" y="64">Push</text><text x="385" y="81" font-size="11">GitHub</text>
-                <text x="545" y="64">Review</text><text x="545" y="81" font-size="11">Engineering</text>
-                <text x="705" y="64">Production</text><text x="705" y="81" font-size="11">some of it</text>
-                <text x="385" y="186">Shared review: Miro board of screenshots</text>
-                <text x="385" y="204" font-size="11">PMs, content designers, and designers comment and divide ownership</text>
-              </g>
-              <g stroke="#2b1d16" stroke-width="1.5" marker-end="url(#w)">
-                <line x1="120" y1="67" x2="157" y2="67"/><line x1="290" y1="67" x2="327" y2="67"/>
-                <line x1="440" y1="67" x2="477" y2="67"/><line x1="610" y1="67" x2="647" y2="67"/>
-              </g>
-              <line x1="225" y1="96" x2="225" y2="158" stroke="#2b1d16" stroke-width="1.5" stroke-dasharray="4 3"/>
-              <text x="236" y="132" font-size="11" fill="#5b4a40">screenshots of the working prototype</text>
-            </svg>
+          <div class="flow" role="img" aria-label="Workflow diagram. Design in Figma, then build a working prototype with Claude CLI, then push to GitHub, then engineering review, then production. Alongside, a Miro board of screenshots where PMs, content designers, and designers comment and divide ownership.">
+            <ol class="flow-track" aria-hidden="true">
+              <li class="flow-step">
+                <span class="flow-node"><svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.6 7.6"/><circle cx="11" cy="11" r="2"/></svg></span>
+                <b>Design</b><small>Figma</small>
+              </li>
+              <li class="flow-step is-key">
+                <span class="flow-node"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9L4.9 19.1"/></svg></span>
+                <b>Build</b><small>Claude CLI, working prototype</small>
+              </li>
+              <li class="flow-step">
+                <span class="flow-node"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="8" r="2.5"/><path d="M6 8.5v7M18 10.5c0 4-6 3-10.5 6"/></svg></span>
+                <b>Push</b><small>GitHub</small>
+              </li>
+              <li class="flow-step">
+                <span class="flow-node"><svg viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>
+                <b>Review</b><small>Engineering</small>
+              </li>
+              <li class="flow-step is-end">
+                <span class="flow-node"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>
+                <b>Production</b><small>Deployment and agent flows</small>
+              </li>
+            </ol>
+            <div class="flow-side" aria-hidden="true">
+              <span class="flow-tag">Screenshots of the working prototype</span>
+              <div class="flow-card">
+                <span class="flow-node flow-node--sm"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>
+                <div><b>Shared review: Miro board of screenshots</b><small>PMs, content designers, and designers comment and divide ownership</small></div>
+              </div>
+            </div>
           </div>
-          <p>The working prototype became the source of truth for how the product behaved. The Miro board was the source of truth for decisions, because not everyone reviewing the work reads code.</p>
+        </div>
+      </section>
+
+      <section class="cs-section spread" id="s-what-shipped" style="--span:5">
+        <h2>What shipped</h2>
+        <div class="content">
+          <p class="big">Some of my code became the starting point for production.</p>
+          <p>Engineers reviewed what I pushed and brought parts of it into the production codebase, including work on the deployment and agent experiences, which the team later merged into one workflow.</p>
+          <p>Because I was working in code, I took on the detailed design refinement myself: layout, interactions, visual consistency, the small things that usually take rounds of back-and-forth. That left engineering to focus on integration and production readiness.</p>
+        </div>
+      </section>
+
+      <section class="cs-section spread" id="s-source-of-truth" style="--span:7">
+        <h2>When everyone could prototype</h2>
+        <div class="content">
+          <p class="big">Speed created a new problem: several working prototypes, and no clear way to tell which one was the current direction.</p>
+          <p>Different people were exploring different versions in parallel. It got hard to tell which decisions had been made, which ideas were still exploratory, and what we were actually building.</p>
+          <p>With the team, I set up one working prototype as the source of truth for how the product behaved, and a Miro board of screenshots as the source of truth for decisions, because not everyone reviewing the work reads code. PMs, content designers, and designers commented there and divided up ownership.</p>
+          <p>The goal wasn't to slow experimentation down. It was to make fast experimentation possible to coordinate, so nobody duplicated work or built on conflicting assumptions.</p>
+        </div>
+      </section>
+
+      <section class="cs-section spread" id="s-sharing" style="--span:12">
+        <h2>Sharing the workflow</h2>
+        <div class="content">
+          <div class="split">
+            <div><p class="big">I wasn't anyone's manager, so I couldn't make this the process. I made it easy to try.</p></div>
+            <div><p>I paired with other designers, ran demos, and wrote a guide in Confluence showing how I used Claude to build and refine working prototypes. Every designer had their own way of experimenting with AI, and adopting any of it was their call. A few designers started using parts of the workflow in their own work.</p>
+            <p>The bigger shift was in how people saw code: as another way to explore and communicate a design, not only something that happens after design is done.</p></div>
+          </div>
         </div>
       </section>
 
@@ -81,9 +148,10 @@
       <section class="cs-section spread" id="s-walkthrough" style="--span:6">
         <h2>Walkthrough</h2>
         <div class="content">
-          <p class="big">This one isn't public yet.</p>
-      <p>The work is unreleased, so I share it in a live walkthrough. It covers how designing in working code changed the hand-off with engineering, how we kept one source of truth when everyone could prototype, how running the product exposed a model that needed simplifying, and the trust questions behind the end-user assistant.</p>
-      <p><a href="mailto:saraha.leach@gmail.com?subject=Agentic%20Platform%20walkthrough">Email me for a walkthrough →</a></p>
+          <p class="big">The full case study is password-protected until launch.</p>
+          <p>Horizon is unreleased, so the screens, research, and design system live in a private case study. It covers how the brief changed, designing for an agent that works without a screen, keeping code and Figma in step, and checking the Beta against the real build.</p>
+          <p><a class="read" href="horizon.html">Open the case study <span aria-hidden="true">→</span></a></p>
+          <p><a href="mailto:saraha.leach@gmail.com?subject=Horizon%20case%20study%20password">Email me for the password</a>, or for a live walkthrough.</p>
         </div>
       </section>
     </div>

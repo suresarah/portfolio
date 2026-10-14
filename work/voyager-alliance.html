@@ -5,11 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Voyager Alliance — Sarah Leach</title>
   <meta name="description" content="Designing how partners understand, join, and move through Pax8's tiered rewards program.">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Voyager Alliance — Sarah Leach">
+  <meta property="og:description" content="Designing how partners understand, join, and move through Pax8's tiered rewards program.">
+  <meta property="og:url" content="https://suresarah.github.io/portfolio/work/voyager-alliance.html">
+  <meta property="og:image" content="https://suresarah.github.io/portfolio/assets/share.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="robots" content="noindex">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=League+Spartan:wght@700&family=Newsreader:opsz,wght@6..72,300;6..72,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=20261002">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css?v=hf91">
+  <script src="../theme.js?v=2"></script>
+  <script src="../tier-track.js?v=1" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -18,6 +29,8 @@
     <nav aria-label="Primary">
       <a href="../#work">Work</a>
       <a href="../#about">About</a>
+      <a href="principles.html">Principles</a>
+      <a href="https://www.linkedin.com/in/saleach/">LinkedIn</a>
       <a class="cta" href="mailto:saraha.leach@gmail.com">Email me</a>
     </nav>
   </header>
@@ -26,8 +39,8 @@
     <!-- 30-second version: everything a skimmer needs is in this block. -->
     <section class="cs-hero spread-cover" style="--tone: var(--c-voyager)">
       <p class="eyebrow">Pax8 · Voyager Alliance · 2025</p>
-      <h1>Pax8's last rewards program died because Pax8 paid for all of it.</h1>
-      <p class="lede">The replacement is a tiered program that vendors help fund. The business rules were complicated, so my job was making them understandable: where a partner stands, what to do next, and what they unlock.</p>
+      <h1>Partners don't need the whole rulebook. They need their next step.</h1>
+      <p class="lede">Voyager Alliance replaced a rewards program Pax8 paid for alone with a tiered one that vendors help fund. My job was making complicated rules feel simple.</p>
       <dl class="facts">
         <div><dt>My role</dt><dd>Senior Product Designer. Led research and the design of the partner, admin, and vendor experiences.</dd></div>
         <div><dt>Worked with</dt><dd>Product, Finance, Vendor Ops, Engineering, Marketing</dd></div>
@@ -47,87 +60,103 @@
         <li class="stat s-ink"><p class="stat-k">Survey</p><p class="stat-n">72</p><p class="stat-l">people at MSPs surveyed, including partners who don't use Pax8</p></li>
         <li class="stat s-lime"><p class="stat-k">Usability test</p><p class="stat-n">100<small>%</small></p><p class="stat-l">found Voyager Alliance from the left navigation</p></li>
         <li class="stat s-blush"><p class="stat-k">Naming</p><p class="stat-n">55<small>%</small></p><p class="stat-l">preferred keeping the Voyager Alliance Rewards name</p></li>
-        <li class="stat s-green"><p class="stat-k">Program</p><p class="stat-n">4</p><p class="stat-l">spend tiers, from Ignite to Galactic</p></li>
+        <li class="stat s-green"><p class="stat-k">Program</p><p class="stat-n">5</p><p class="stat-l">spend tiers, from Alliance Member to Galactic. Rewards start at Ignite.</p></li>
         <li class="stat s-blue"><p class="stat-k">Entry point</p><p class="stat-n"><small>$</small>500</p><p class="stat-l">a month in eligible spend to start earning</p></li>
         <li class="stat s-rust"><p class="stat-k">Users</p><p class="stat-n">3</p><p class="stat-l">groups to design for: partners, Pax8 admins, vendors</p></li>
       </ul>
 
-      <figure class="wide" style="margin-top:3rem">
-        <img src="../assets/voyager-dashboard.jpg" alt="Voyager Alliance Rewards dashboard. An Ignite Partner badge sits next to the points balance, above a track showing progress toward the next tiers, a row of vendor rebate rewards, and recent activity: opt-in, a bonus point drop, and a redemption." loading="eager" width="1546" height="1800">
-        <figcaption>Partner dashboard: current tier, points, the path to the next tier, rewards to spend on, and a record of every point in and out.</figcaption>
+      <figure class="wide trk-figure" style="margin-top:3rem">
+        <div class="trk" data-tier-track style="--at:1; --trk-tone:#3d7bff">
+          <div class="trk-head">
+            <p class="trk-k">Tier track · try it</p>
+            <div class="trk-readout" aria-live="polite">
+              <b class="trk-name">Ignite</b>
+              <span class="trk-spend">$500–$2,499 a month</span>
+              <span class="trk-perk">+500 bonus points a month</span>
+            </div>
+          </div>
+          <div class="trk-rail">
+            <div class="trk-line" aria-hidden="true"><div class="trk-fill"></div></div>
+            <button type="button" class="trk-rocket" aria-label="Fly to the next tier"><svg viewBox="0 0 48 48" aria-hidden="true"><path class="trk-flame" d="M10 24c-4-2.2-7-2.6-9 0 2 2.6 5 2.2 9 0z"/><path class="trk-body" d="M12 24c0-5 6-11 18-12 6-.5 11 3 14 12-3 9-8 12.5-14 12-12-1-18-7-18-12z"/><circle class="trk-window" cx="31" cy="24" r="4.2"/><path class="trk-fin" d="M17 15.5 11 9.5c4-.6 8 .6 11 3.6zM17 32.5l-6 6c4 .6 8-.6 11-3.6z"/></svg></button>
+            <ol class="trk-stops" aria-label="Tiers">
+            <li><button type="button" class="trk-stop is-passed" style="--tone:#8a8f98" aria-pressed="false" data-name="Alliance Member" data-spend="Under $500 a month in eligible spend" data-perk="Rewards start at Ignite." data-tone="#8a8f98"><i aria-hidden="true"></i><span>Alliance Member</span></button></li>
+            <li><button type="button" class="trk-stop" style="--tone:#3d7bff" aria-pressed="true" data-name="Ignite" data-spend="$500–$2,499 a month" data-perk="+500 bonus points a month" data-tone="#3d7bff"><i aria-hidden="true"></i><span>Ignite</span></button></li>
+            <li><button type="button" class="trk-stop" style="--tone:#e8343f" aria-pressed="false" data-name="Velocity" data-spend="$2,500–$9,999 a month" data-perk="1.5x point multiplier, +1,000 bonus points a month" data-tone="#e8343f"><i aria-hidden="true"></i><span>Velocity</span></button></li>
+            <li><button type="button" class="trk-stop" style="--tone:#a259d9" aria-pressed="false" data-name="Titan" data-spend="$10,000–$99,999 a month" data-perk="2x point multiplier, +1,500 bonus points a month" data-tone="#a259d9"><i aria-hidden="true"></i><span>Titan</span></button></li>
+            <li><button type="button" class="trk-stop" style="--tone:#e8b320" aria-pressed="false" data-name="Galactic" data-spend="$100,000+ a month" data-perk="2.5x point multiplier, +2,000 bonus points a month" data-tone="#e8b320"><i aria-hidden="true"></i><span>Galactic</span></button></li>
+            </ol>
+          </div>
+          <p class="trk-hint">Click the rocket to fly to the next tier, or pick a tier.</p>
+        </div>
+        <figcaption>The dashboard&rsquo;s tier track, rebuilt to try. Bonus values are from this design; the live program&rsquo;s amounts differ.</figcaption>
       </figure>
 
       <section class="cs-section spread" id="s-context" style="--span:5">
         <h2>Context</h2>
         <div class="content">
-          <p>Pax8 is a cloud marketplace that sits between two groups. Managed service providers (MSPs) buy, sell, and manage cloud software through it, and software vendors rely on it to reach those MSPs. Pax8 only grows if both sides do.</p>
-          <p>Competitors were launching loyalty programs, and Pax8 had tried one before.</p>
+          <p>Pax8 is a cloud marketplace between managed service providers (MSPs) and software vendors, and it only grows if both sides do. Competitors were launching loyalty programs, and Pax8 had tried one before.</p>
         </div>
       </section>
 
       <section class="cs-section spread" id="s-why-the-last-one-failed" style="--span:7">
         <h2>Why the last one failed</h2>
         <div class="content">
-          <p class="big">The previous program was one-sided. Only partners earned points, and Pax8 funded every reward.</p>
-          <p>That meant little to earn, little worth redeeming, and low engagement. Nothing set it apart from competitors, and without vendor funding it couldn't scale. It was discontinued.</p>
+          <p class="big">The last program was one-sided: only partners earned, and Pax8 funded every reward.</p>
+          <p>Little to earn, little worth redeeming, and no way to scale. It was discontinued.</p>
           <div class="diagram" role="img" aria-label="Diagram. Before: Pax8 funds rewards and partners earn them, a one-way line. After: vendors fund rewards into a shared marketplace, partners earn and redeem there, and Pax8 runs the program.">
-            <svg viewBox="0 0 760 260" font-family="Inter, system-ui, sans-serif" font-size="14">
+            <svg viewBox="0 0 760 260" font-family="Poppins, system-ui, sans-serif" font-size="14">
               <text x="0" y="20" font-weight="600" letter-spacing=".08em" font-size="12">BEFORE</text>
-              <rect x="0" y="50" width="130" height="50" fill="#fff" stroke="#2b1d16"/>
+              <rect x="0" y="50" width="130" height="50" fill="#fff" stroke="#1f1f1f"/>
               <text x="65" y="80" text-anchor="middle">Pax8</text>
-              <line x1="130" y1="75" x2="230" y2="75" stroke="#2b1d16" stroke-width="1.5" marker-end="url(#a)"/>
-              <text x="180" y="65" text-anchor="middle" font-size="12" fill="#5b4a40">pays for all</text>
-              <rect x="235" y="50" width="130" height="50" fill="#fff" stroke="#2b1d16"/>
+              <line x1="130" y1="75" x2="230" y2="75" stroke="#1f1f1f" stroke-width="1.5" marker-end="url(#a)"/>
+              <text x="180" y="65" text-anchor="middle" font-size="12" fill="#4a4744">pays for all</text>
+              <rect x="235" y="50" width="130" height="50" fill="#fff" stroke="#1f1f1f"/>
               <text x="300" y="80" text-anchor="middle">Partners</text>
-              <text x="0" y="140" font-size="12" fill="#5b4a40">One-way. Pax8 carries the full cost.</text>
+              <text x="0" y="140" font-size="12" fill="#4a4744">One-way. Pax8 carries the full cost.</text>
 
               <text x="430" y="20" font-weight="600" letter-spacing=".08em" font-size="12">AFTER</text>
-              <rect x="430" y="50" width="120" height="44" fill="#fff" stroke="#2b1d16"/>
+              <rect x="430" y="50" width="120" height="44" fill="#fff" stroke="#1f1f1f"/>
               <text x="490" y="77" text-anchor="middle">Vendors</text>
-              <rect x="620" y="50" width="130" height="44" fill="#fff" stroke="#2b1d16"/>
+              <rect x="620" y="50" width="130" height="44" fill="#fff" stroke="#1f1f1f"/>
               <text x="685" y="77" text-anchor="middle">Partners</text>
-              <rect x="520" y="170" width="140" height="44" fill="#dcc3ea" stroke="#2b1d16"/>
+              <rect x="490" y="170" width="200" height="44" fill="#3fb6b2" stroke="#1f1f1f"/>
               <text x="590" y="197" text-anchor="middle">Rewards marketplace</text>
-              <line x1="500" y1="94" x2="555" y2="168" stroke="#2b1d16" stroke-width="1.5" marker-end="url(#a)"/>
-              <text x="470" y="140" font-size="12" fill="#5b4a40">fund rewards</text>
-              <line x1="670" y1="94" x2="625" y2="168" stroke="#2b1d16" stroke-width="1.5" marker-end="url(#a)"/>
-              <line x1="640" y1="168" x2="690" y2="96" stroke="#2b1d16" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#a)"/>
-              <text x="712" y="140" text-anchor="middle" font-size="12" fill="#5b4a40">earn · redeem</text>
-              <line x1="550" y1="72" x2="618" y2="72" stroke="#2b1d16" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#a)"/>
-              <text x="584" y="64" text-anchor="middle" font-size="12" fill="#5b4a40">reach</text>
-              <text x="430" y="245" font-size="12" fill="#5b4a40">Pax8 runs the program: tiers, accruals, admin, reporting.</text>
-              <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0l10 5-10 5z" fill="#2b1d16"/></marker></defs>
+              <line x1="500" y1="94" x2="555" y2="168" stroke="#1f1f1f" stroke-width="1.5" marker-end="url(#a)"/>
+              <text x="470" y="140" font-size="12" fill="#4a4744">fund rewards</text>
+              <line x1="670" y1="94" x2="625" y2="168" stroke="#1f1f1f" stroke-width="1.5" marker-end="url(#a)"/>
+              <line x1="640" y1="168" x2="690" y2="96" stroke="#1f1f1f" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#a)"/>
+              <text x="712" y="140" text-anchor="middle" font-size="12" fill="#4a4744">earn · redeem</text>
+              <line x1="550" y1="72" x2="618" y2="72" stroke="#1f1f1f" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#a)"/>
+              <text x="584" y="64" text-anchor="middle" font-size="12" fill="#4a4744">reach</text>
+              <text x="430" y="245" font-size="12" fill="#4a4744">Pax8 runs the program: tiers, accruals, admin, reporting.</text>
+              <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0l10 5-10 5z" fill="#1f1f1f"/></marker></defs>
             </svg>
           </div>
         </div>
       </section>
 
-      <section class="cs-section spread" id="s-what-was-mine" style="--span:12">
+      <section class="cs-section spread" id="s-what-was-mine" style="--span:5">
         <h2>What was mine</h2>
         <div class="content">
-          <p>The business set the direction: a new loyalty program, funded in part by vendors, with tiers based on monthly spend. The tier thresholds came from the program model, not from me.</p>
-          <p class="big">My part was everything a partner sees and does: how they understand their tier, what qualifies them for the next one, what changes when they move up or down, and what happens when they become eligible or drop out.</p>
-          <p>I also led the research behind it and designed the admin tools Pax8 uses to run the program.</p>
+          <p>The business set the model and the tier thresholds.</p>
+          <p class="big">I owned everything a partner sees and does: their tier, what gets them to the next one, and what changes when they move up, down, in, or out.</p>
+          <p>Plus the research behind it, and the admin tools Pax8 uses to run it.</p>
         </div>
       </section>
 
-      <section class="cs-section spread" id="s-research" style="--span:12">
+      <section class="cs-section spread" id="s-research" style="--span:7">
         <h2>Research</h2>
         <div class="content">
-          <p>I ran a 72-person survey of people at MSPs, including partners who don't use Pax8. All of them knew programs like TD Synnex Hyve, Ingram Micro Xvantage, Microsoft's partner incentives, or Amex business cards. I also audited those programs and Dell's.</p>
-          <p class="big">Partners liked programs that were easy to earn from and easy to spend. They tuned out narrow, vendor-specific perks.</p>
-          <p>The highest-rated programs combined quick, frequent wins with rewards that help the business grow, like training, enablement, and support services. Partners also run in "organized chaos," juggling anywhere from 4 to 20 tools a day. Pax8 is one of many, so if the program took effort to understand, it would get ignored.</p>
-<figure>
-            <img src="../assets/voyager-persona.jpg" alt="Pax8 partner user persona: busy, technically expert partner admins whose top goals are growing revenue and creating process, and who need a simple UI, to feel supported, and help growing their business." loading="lazy" width="1800" height="941">
-            <figcaption>Pax8's partner persona. The need that shaped Voyager most: a simple UI for people juggling many tools.</figcaption>
-          </figure>
-          <div class="range" role="img" aria-label="Partners use between 4 and 20 tools a day.">
-            <p class="viz-h">4 to 20 tools a day</p>
-            <div class="range-cells" data-tip="Partners juggle anywhere from 4 to 20 tools a day. Pax8 is one of them."><span></span><span></span><span></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div>
-            <div class="range-axis" aria-hidden="true"><span>1</span><span></span><span></span><span>4</span><span></span><span></span><span></span><span></span><span></span><span>10</span><span></span><span></span><span></span><span></span><span>15</span><span></span><span></span><span></span><span></span><span>20</span></div>
-            <p class="viz-note">Each square is one tool. The shaded run is the range partners described.</p>
-          </div>
-          <p>In December usability testing, every participant found Voyager Alliance from the left navigation, and 55% preferred keeping the "Voyager Alliance Rewards Program" name.</p>
+          <p>We surveyed 72 people at MSPs, including partners who don&rsquo;t use Pax8, and audited programs like TD Synnex Hyve, Ingram Micro Xvantage, Dell, and Microsoft&rsquo;s partner incentives.</p>
+          <p class="big">Partners liked programs that were easy to earn from, easy to spend, and paid out in things that grow the business. They tuned out narrow vendor perks.</p>
+        </div>
+      </section>
+
+
+      <section class="cs-section spread" id="s-usability" style="--span:5">
+        <h2>Usability test</h2>
+        <div class="content">
+          <p>Two questions: could partners find it, and did the name work?</p>
           <figure class="hang" style="--n:2" aria-label="December usability test results">
             <p class="viz-h">December usability test</p>
             <div class="hang-head" aria-hidden="true"><span>Found it from the left nav</span><span>Kept the name</span></div>
@@ -136,126 +165,68 @@
               <div class="hang-col"><div class="hang-bar" style="--v:55" tabindex="0" data-tip="55% preferred keeping the Voyager Alliance Rewards Program name."><p class="stat-n">55<small>%</small></p><p>preferred the current name</p></div></div>
             </div>
           </figure>
-          <p style="font-size:.9rem;color:var(--ink-soft)">A caveat I kept in the work: the partner research panel is about 2% of Pax8 partner users, and people who opt into research tend to be alike. We treated findings as direction, not certainty.</p>
+          <p style="font-size:.9rem;color:var(--ink-soft)">Caveat: the research panel is about 2% of partner users, so we treated findings as direction, not certainty.</p>
         </div>
       </section>
 
-      <section style="--span:12" class="cs-slide cs-slide--rust" aria-label="Key idea">
-        <p class="slide-serif">Partners don't need the whole rulebook.</p>
-        <p class="slide-caps">They need their <em>next step.</em></p>
-      </section>
-
-      <section class="cs-section spread" id="s-key-decisions" style="--span:12">
-        <h2>Key decisions</h2>
+      <section class="cs-section spread" id="s-decisions" style="--span:12">
+        <h2>Three decisions</h2>
         <div class="content">
-
-          <div class="decision" style="margin-top:0">
-            <h3>1. Turn the tier rules into "spend → qualify → earn"</h3>
-            <div class="options">
-              <div><strong>The rules</strong>Four spend tiers, each with its own bonuses, multipliers, and eligibility conditions.</div>
-              <div class="chosen"><strong>What partners see</strong>Where they are now, what to do next, and what they unlock when they get there.</div>
-            </div>
-            <p>Partners don't need the whole rulebook. They need their next step. Ignite became the threshold that matters in the experience, because $500 a month in eligible spend is where a partner starts earning points and rewards.</p>
-            <figure class="steps" role="img" aria-label="Monthly spend needed for each tier: Ignite 500 dollars, Velocity 2,500, Titan 10,000, Galactic 100,000 or more.">
-              <p class="viz-h">Monthly spend to reach each tier</p>
-              <div class="steps-plot"><div class="step" style="--log:2.699;--tier:#0b46c4" tabindex="0" data-tip="Ignite: $500–$2,499 a month in eligible spend">$500</div><div class="step" style="--log:3.398;--tier:#d4101e" tabindex="0" data-tip="Velocity: $2,500–$9,999 a month in eligible spend">$2.5K</div><div class="step" style="--log:4.0;--tier:#6a1a8a" tabindex="0" data-tip="Titan: $10,000–$99,999 a month in eligible spend">$10K</div><div class="step" style="--log:5.0;--tier:#d9a00f" tabindex="0" data-tip="Galactic: $100,000+ a month in eligible spend">$100K</div></div>
-              <div class="steps-x" aria-hidden="true"><span>Ignite</span><span>Velocity</span><span>Titan</span><span>Galactic</span></div>
-              <p class="viz-note">Log scale: each tier asks for several times the spend of the one before it, and Galactic is 200 times Ignite. That gap is why the experience leads with the next step, not the whole ladder.</p>
-            </figure>
-            <figure>
-              <img src="../assets/voyager-tier-progress.jpg" alt="Tier progress track. A filled blue line ends at the partner's current position, and markers ahead show each tier's bonus: plus 500 points a month, then 1.5x, 2x, and 2.5x point multipliers with larger monthly bonuses." loading="lazy" width="1800" height="233">
-              <figcaption>The track answers "what's next?" without asking partners to read tier rules.</figcaption>
-            </figure>
-          </div>
-
-          <div class="decision">
-            <h3>2. Design for every state, not just the happy path</h3>
-            <div class="options">
-              <div><strong>Simple version</strong>One tier dashboard for partners who qualify.</div>
-              <div class="chosen"><strong>What I designed</strong>Separate states for the three-month welcome period, eligible, approaching eligibility, downgraded, and below Ignite.</div>
-            </div>
-            <p>The hardest one was a partner dropping below Ignite. Earning new points pauses, but points they've already earned can't look like they've disappeared. In a program built on trust, a balance that seems to vanish is the fastest way to lose a partner.</p>
-            <div class="shot"><span><strong>Export from Figma: the below-Ignite or downgraded state, ideally beside the eligible state.</strong> Proves edge-case thinking. This is the screen that best shows judgment.</span></div>
-          </div>
-
-          <div class="decision">
-            <h3>3. Make the value clear before asking anyone to join</h3>
-            <div class="options">
-              <div><strong>Typical approach</strong>A marketing page with a "Join" button.</div>
-              <div class="chosen"><strong>What I designed</strong>A pre-opt-in experience where partners compare tiers, see requirements and benefits, read FAQs and legal terms, and preview the rewards catalog.</div>
-            </div>
-            <p>The goal was informed enrollment, not the most clicks. A partner who joins without understanding the program becomes a confused partner later, and a support ticket.</p>
-            <figure>
-              <img src="../assets/voyager-pre-opt-in.jpg" alt="Pre-opt-in page titled Voyager Alliance Rewards. Three steps (enroll, earn, redeem), four tier cards from Ignite to Galactic with spend ranges and point bonuses, and three ways to redeem: vendor offers, professional services, and Academy courses." loading="lazy" width="1127" height="1800">
-              <figcaption>Before opting in, partners can see every tier, what it takes to reach it, and what they can spend points on.</figcaption>
-            </figure>
-            <figure class="pair">
-              <img src="../assets/voyager-enroll-confirm.jpg" alt="Rewards enrollment confirmation dialog with terms and conditions, a note that it's free and can be cancelled anytime, and two buttons: I don't want to join, and Accept and continue." loading="lazy" width="1200" height="912">
-              <img src="../assets/voyager-enroll-done.jpg" alt="Rewards enrollment completed dialog: Congratulations, you are now enrolled and ready to start earning points, with a Done button." loading="lazy" width="1200" height="823">
-              <figcaption>Opting in: terms up front, an equally visible way to say no, and a clear confirmation.</figcaption>
-            </figure>
-          </div>
+          <ol class="vt-list">
+            <li><b>Turn the tier rules into &ldquo;spend → qualify → earn.&rdquo;</b> Partners see where they are, what to do next, and what they unlock, not the whole rulebook.</li>
+            <li><b>Design for every state, not just the happy path.</b> Welcome period, eligible, approaching, downgraded, and below Ignite, where earning pauses but points can&rsquo;t look like they&rsquo;ve vanished.</li>
+            <li><b>Make the value clear before asking anyone to join.</b> A pre-opt-in experience to compare tiers, read the terms, and preview rewards. A partner who joins confused becomes a support ticket.</li>
+          </ol>
+          <p>The full case study covers these with the screens, plus keeping point balances accurate when points are money, the admin tools Pax8 runs it with, mobile, and the next iteration.</p>
         </div>
       </section>
 
-      <section class="cs-section spread" id="s-running-the-program" style="--span:12">
-        <h2>Running the program</h2>
-        <div class="content">
-          <p>Voyager has three groups of users. Partners track progress, browse rewards, and redeem. Pax8 admins approve or opt out partners, adjust points (individually or in bulk), and set up rewards. Vendors fund rewards and offer them.</p>
-          <p>Points are money, so edge cases on the order side mattered too: cancellations, returns, and partial redemptions all had to keep balances accurate.</p>
-          <figure>
-            <img src="../assets/voyager-redeem.jpg" alt="Redemption dialog over the dashboard for a SentinelOne rebate marked as a 24-hour deal, with a seat quantity selector, points price of 5,000, and a Redeem for 5,000 points button. Below, an expanded activity row shows the details of a past redemption." loading="lazy" width="1546" height="1800">
-            <figcaption>Redemption: the cost in points is on the button, and every past redemption can be expanded to see what was bought.</figcaption>
-          </figure>
-          <figure class="pair">
-            <img src="../assets/voyager-all-activity.jpg" alt="All activity dialog listing every point change with dates: invoice payments earning points, a bonus point drop, a redemption, and point expirations shown as negative amounts." loading="lazy" width="896" height="1200">
-            <img src="../assets/voyager-admin-bulk.jpg" alt="Admin bulk rewards management dialog: choose an action such as add points, upload a CSV, and enter a reason for the adjustment." loading="lazy" width="1200" height="916">
-            <figcaption>Left: every point in and out, including expirations, so a balance never changes without a reason. Right: admins adjusting points in bulk, with a required reason so every change can be audited.</figcaption>
-          </figure>
-          <figure class="pair phones">
-            <img src="../assets/voyager-mobile-intro.jpg" alt="Mobile announcement: Introducing Voyager Alliance Rewards, with Not now and Join rewards buttons." loading="lazy" width="396" height="1200">
-            <img src="../assets/voyager-mobile-dashboard.jpg" alt="Mobile rewards dashboard: points balance, tier progress, a rewards card, and recent activity." loading="lazy" width="275" height="1200">
-            <figcaption>The partner experience on mobile: the same announcement, tier, and activity, reflowed for a phone.</figcaption>
-          </figure>
-          <figure>
-            <img src="../assets/voyager-admin-edit-reward.jpg" alt="Admin Edit Reward form: reward type, vendor, product, name, description, terms, image, start and expiration dates, active status, and a pricing section with points per seat, value per point, purchase limits, total seats available, and redemption limit per partner." loading="lazy" width="1074" height="1600">
-            <figcaption>Admin reward setup. The pricing section is where points meet real money: value per point, seat limits, and caps per partner.</figcaption>
-          </figure>
-        </div>
-      </section>
 
-      <section class="cs-section spread" id="s-launch-after" style="--span:8">
-        <h2>Launch &amp; after</h2>
+
+
+
+
+      <section class="cs-section spread" id="s-launch" style="--span:12">
+        <h2>Launch</h2>
         <div class="content">
-          <blockquote class="callout">"Partners were checking their reward points during the keynote! Lots of excitement about this feature on the ground here in Amsterdam."<br><span style="font-family:var(--font);font-size:.85rem;color:var(--ink-soft)">A teammate, sharing from the launch floor at Beyond 2025. An anecdote, not a measure of engagement.</span></blockquote>
-          <p>The MVP launched alongside Beyond 2025. We set two success criteria for the pilot: <strong>70% of eligible partners opting in</strong> and <strong>10% redeeming a reward</strong>.</p>
+          <p class="big">Opt-in hit its target in 72 hours. Redemption lagged far behind.</p>
+          <p>Launched alongside Beyond 2025. Pilot targets: <strong>70% of eligible partners opting in</strong>, <strong>10% redeeming a reward</strong>.</p>
           <div class="targets" aria-label="Pilot targets compared with launch results">
             <div class="target target--hit"><svg viewBox="0 0 42 42" aria-hidden="true"><circle class="track" cx="21" cy="21" r="15.9"/><circle class="goal" cx="21" cy="21" r="15.9" pathLength="100" style="--v:70"/></svg><div><span class="tag">Target 70% · Hit</span><p class="stat-n">595</p><p>opt-ins in the first 72 hours, roughly 70% of eligible partners</p></div></div>
             <div class="target target--miss"><svg viewBox="0 0 42 42" aria-hidden="true"><circle class="track" cx="21" cy="21" r="15.9"/><circle class="goal" cx="21" cy="21" r="15.9" pathLength="100" style="--v:10"/></svg><div><span class="tag">Target 10% · Not yet</span><p class="stat-n">2</p><p>reward redemptions as of October 10, 2025</p></div></div>
           </div>
-          <p class="big">Opt-in hit its target within 72 hours. Early redemption was far behind. Getting people into the program wasn't the same as creating an engaging loyalty program.</p>
-          <p>Over the following year the program kept changing: enrollment, spend-based tiers, eligibility, earning and redeeming, tier benefits, notifications, and the admin experience. After launch we looked closely at the whole progression, from opt in to earning points to reaching the next tier to redeeming something valuable. That pushed the work past enrollment and toward making progress, eligibility, and rewards much clearer.</p>
-          <ul class="stats" aria-label="Later usability research">
-            <li class="stat s-lime stat--wide"><p class="stat-k">Later usability research</p><p class="stat-n">93<small>%</small></p><p class="stat-l">of participants successfully redeemed a rebate in a test session. A usability result, not launch data.</p></li>
-            <li class="stat s-blush stat--wide"><p class="stat-k">Still confusing</p><p class="stat-l" style="font-size:1.15rem">Eligibility, the progress tracker, and opt-in activity. That became the focus of the next iteration: making the loyalty mechanics easier to understand.</p></li>
-          </ul>
+          <blockquote class="callout">"Partners were checking their reward points during the keynote! Lots of excitement about this feature on the ground here in Amsterdam."<br><span style="font-family:var(--font);font-size:.85rem;color:var(--ink-soft)">A teammate at Beyond 2025. An anecdote, not a metric.</span></blockquote>
         </div>
       </section>
 
-      <section class="cs-section spread" id="s-looking-back" style="--span:4">
+
+
+
+      <section class="cs-section spread" id="s-full" style="--span:12">
+        <h2>Full case study</h2>
+        <div class="content">
+          <p class="big">The screens are password-protected.</p>
+          <p>Voyager Alliance lives inside Pax8&rsquo;s partner portal, which isn&rsquo;t public, so the designs are in a private case study: enrollment, tier progress, every eligibility state, redemption, admin tools, and what&rsquo;s live today.</p>
+          <p><a class="read" href="voyager-case-study.html">Open the full case study <span aria-hidden="true">→</span></a></p>
+          <p><a href="mailto:saraha.leach@gmail.com?subject=Voyager%20case%20study%20password">Email me for the password</a>, or for a live walkthrough.</p>
+        </div>
+      </section>
+
+      <section class="cs-section spread lookback" id="s-looking-back" style="--span:12">
         <h2>Looking back</h2>
         <div class="content">
-          <p class="big">We got people into the program quickly. Looking back, I'd have focused earlier on what happens after enrollment.</p>
-          <p>Adoption is only the first step in a loyalty product. The harder problem is creating an experience where people understand their progress, see value in continuing to participate, and have a clear reason to come back.</p>
+          <div class="split">
+            <div><p class="big">We got people into the program quickly. Looking back, I'd have focused earlier on what happens after enrollment.</p></div>
+            <div><p>Adoption is only the first step. The harder problem is giving people a reason to come back.</p></div>
+          </div>
         </div>
       </section>
-
-      <figure class="collage" style="--span:12" aria-label="Voyager Alliance at Beyond 2025">
+      <figure class="collage" style="--span:12" aria-label="Voyager Alliance at Pax8's Beyond events">
         <img class="c-a" src="../assets/voyager-keynote.jpg" alt="A presenter on the Beyond 2025 main stage beside a large screen showing the Voyager Alliance Rewards dashboard." loading="lazy">
         <img class="c-b" src="../assets/voyager-booth.jpg" alt="Two people talking at the Voyager Alliance booth at Beyond 2025, in front of a large Voyager Alliance sign." loading="lazy">
-        <img class="c-c" src="../assets/voyager-mobile-dashboard.jpg" alt="Mobile rewards dashboard with points balance, tier progress, and recent activity." loading="lazy">
-        <img class="c-d" src="../assets/voyager-redeem.jpg" alt="Redemption dialog for a SentinelOne rebate." loading="lazy">
-        <figcaption>Voyager Alliance Rewards on the main stage and the event floor at Beyond 2025.</figcaption>
+        <img class="c-c" src="../assets/voyager-booth-2026.jpg" alt="A tall Voyager Alliance sign at a booth, with a printed table of tier benefits in the foreground." loading="lazy">
+        <img class="c-d" src="../assets/beyond-galactic-lounge.jpg" alt="A lounge at a Beyond event branded Galactic Partner in neon, with the Galactic tier symbol above a table of sneakers." loading="lazy">
+        <figcaption>Off the screen: the Beyond 2025 keynote and booth, a Voyager Alliance booth with the tier benefits table, and a Galactic Partner lounge. <mark class="confirm">Which event the last two photos are from</mark></figcaption>
       </figure>
     </div>
 

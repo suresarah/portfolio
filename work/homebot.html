@@ -5,11 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Homebot — Sarah Leach</title>
   <meta name="description" content="Mentorship and research practices at Homebot.">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Homebot — Sarah Leach">
+  <meta property="og:description" content="Mentorship and research practices at Homebot.">
+  <meta property="og:url" content="https://suresarah.github.io/portfolio/work/homebot.html">
+  <meta property="og:image" content="https://suresarah.github.io/portfolio/assets/share.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="robots" content="noindex">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=League+Spartan:wght@700&family=Newsreader:opsz,wght@6..72,300;6..72,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=20261002">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css?v=hf91">
+  <script src="../theme.js?v=2"></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -18,6 +28,8 @@
     <nav aria-label="Primary">
       <a href="../#work">Work</a>
       <a href="../#about">About</a>
+      <a href="principles.html">Principles</a>
+      <a href="https://www.linkedin.com/in/saleach/">LinkedIn</a>
       <a class="cta" href="mailto:saraha.leach@gmail.com">Email me</a>
     </nav>
   </header>
@@ -73,14 +85,37 @@
       <section class="cs-section spread" id="s-personas" style="--span:12">
         <h2>Design for Felicia</h2>
         <div class="content">
-          <p class="big">We had four personas, and designed for the least confident one first.</p>
+          <div class="split">
+            <div><p class="big">We had four personas, and designed for the least confident one first.</p>
           <p>Passive Pete needs nudges. Powerhouse Paul is a top producer who wants ROI fast. Motivated Miranda is growth-minded and already uses the tools. Flustered Felicia has been in the industry less than three years, is overwhelmed, and is slow to adopt new tech.</p>
-          <p>The principle: if we can build for Felicia, Paul and Miranda will still adopt, Pete will stay engaged, and Felicia won't churn. Designing for the least confident user made the product easier for everyone.</p>
-          <figure class="pair">
+          <p>The principle: if we can build for Felicia, Paul and Miranda will still adopt, Pete will stay engaged, and Felicia won't churn. Designing for the least confident user made the product easier for everyone.</p></div>
+            <div><figure>
             <img src="../assets/homebot-felicia.jpg" alt="Flustered Felicia persona: a loan officer for less than three years, unsure about her career change, overwhelmed and not an early adopter of tech. Quote: I want to feel confident in this career change." loading="lazy" width="1600" height="900">
-            <img src="../assets/homebot-personas.jpg" alt="Persona comparison grid for Powerhouse Paul, Motivated Miranda, Passive Pete, and Flustered Felicia across tenure, motivation, and tech adoption." loading="lazy" width="1600" height="687">
-            <figcaption>Left: Flustered Felicia, the persona we designed for first. Right: how the four personas compare.</figcaption>
-          </figure>
+            <figcaption>Flustered Felicia, the persona we designed for first.</figcaption>
+          </figure></div>
+          </div>
+          <div class="persona-wrap">
+          <table class="persona-table">
+            <caption>How the four personas compare</caption>
+            <colgroup><col class="label-col"><col><col><col><col></colgroup>
+            <thead>
+              <tr>
+                <td></td>
+                <th scope="col"><img src="../assets/persona-paul.jpg" alt="" width="100" height="100"><span>Powerhouse <b>Paul</b></span></th>
+                <th scope="col"><img src="../assets/persona-miranda.jpg" alt="" width="100" height="100"><span>Motivated <b>Miranda</b></span></th>
+                <th scope="col"><img src="../assets/persona-pete.jpg" alt="" width="100" height="100"><span>Passive <b>Pete</b></span></th>
+                <th scope="col" class="is-focus"><img src="../assets/persona-felicia.jpg" alt="" width="100" height="100"><span>Flustered <b>Felicia</b></span><em>Designed for first</em></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row"><mark class="confirm">Time in industry</mark></th><td>Long</td><td>Short / medium</td><td>Long</td><td class="is-focus">Short</td></tr>
+              <tr><th scope="row"><mark class="confirm">Motivation</mark></th><td>Passive</td><td>Motivated</td><td>Passive</td><td class="is-focus">Motivated</td></tr>
+              <tr><th scope="row"><mark class="confirm">Goal</mark></th><td>Go big + retire</td><td>Become top performer</td><td>Coast + retire</td><td class="is-focus">Learn the ropes</td></tr>
+              <tr><th scope="row"><mark class="confirm">Need for support</mark></th><td>Low</td><td>High</td><td>Low</td><td class="is-focus">High</td></tr>
+              <tr><th scope="row"><mark class="confirm">Business feels</mark></th><td>Too much to manage</td><td>Growing</td><td>Change</td><td class="is-focus">Overwhelmed</td></tr>
+            </tbody>
+          </table>
+          </div>
         </div>
       </section>
 
@@ -113,37 +148,91 @@
       <section class="cs-section spread" id="s-research-council" style="--span:12">
         <h2>Research Council</h2>
         <div class="content">
-          <p class="big">Research kept happening inside one project and then vanishing. So I started a weekly meeting where it couldn't.</p>
-          <p>I created and ran a weekly Research Council, attended mostly by product managers and designers. It gave teams a standing place to share what they were hearing from customers, talk through research in progress, and compare insights across problem areas, so one team's findings could inform another team's work.</p>
-          <figure>
+          <div class="split">
+            <div><p class="big">Research kept happening inside one project and then vanishing. So I started a weekly meeting where it couldn't.</p>
+          <p>I created and ran it every week, mostly for product managers and designers, so one team's findings could inform another team's work.</p>
+          <ol class="hb-agenda" aria-label="What happened each week">
+            <li><b>Share</b><span>what teams were hearing from customers</span></li>
+            <li><b>Talk through</b><span>research in progress</span></li>
+            <li><b>Compare</b><span>insights across problem areas</span></li>
+          </ol></div>
+            <div><figure class="stage" style="--st: var(--c-homebot)">
             <img src="../assets/homebot-research-board.jpg" alt="A shared board of sticky notes grouping what customers asked about and the biggest pain points they mentioned." loading="lazy" width="1800" height="1146">
-            <figcaption>A shared board from one of the research syncs: what customers asked about most, and where they felt the most pain.</figcaption>
-          </figure>
+            <figcaption>A board from one session: what customers asked about most, and where it hurt.</figcaption>
+          </figure></div>
+          </div>
         </div>
       </section>
 
       <section class="cs-section spread" id="s-kickoff-frameworks" style="--span:12">
         <h2>Kickoff frameworks</h2>
         <div class="content">
-          <p class="big">The frameworks had one job: help teams agree on the problem before jumping into solutions.</p>
-          <p>I created a research kickoff template and an approach called "Right-Sizing Your Problem" to give discovery more structure. Both asked the same questions up front: what we were trying to learn, how big the problem actually was, and how much research it warranted. They were built for product managers and designers working together at the start of a project.</p>
-          <p>An evolved version became the <a href="https://quesoyouregreat.gumroad.com/l/designtemplate">Design Kick-off Doc</a> I publish for other designers.</p>
-          <figure class="pair">
-            <img src="../assets/homebot-kickoff-template.jpg" alt="Research kickoff template with sections for opportunity, question, background, scope, users, objectives and strategy, current knowledge and constraints, success, research topics, and timeline." loading="lazy" width="943" height="1800">
-            <img src="../assets/homebot-right-sizing.jpg" alt="Right-Sizing Your Problem worksheet: checks for whether the problem contains a solution, addresses a specific need, and has a clear audience, then space to rewrite the problem." loading="lazy" width="1800" height="1027">
-            <figcaption>Left: the research kickoff template. Right: "Right-Sizing Your Problem," which checks whether a problem statement is secretly a solution before anyone starts designing.</figcaption>
-          </figure>
+          <p class="big">Two tools with one job: agree on the problem before jumping into solutions.</p>
+          <p>Both asked up front what we were trying to learn, how big the problem was, and how much research it warranted. An evolved version became the <a href="https://quesoyouregreat.gumroad.com/l/designtemplate">Design Kick-off Doc</a> I publish for other designers.</p>
+          <div class="hb-fw">
+            <figure class="hb-fw-card" aria-label="Research kickoff template">
+              <p class="hb-k">Research kickoff template</p>
+              <p class="hb-title">Nine questions before any research starts</p>
+              <ol class="hb-steps">
+                <li><b>Opportunity</b><span>Why should we care? Tell us a story.</span></li>
+                <li><b>Question</b><span>The how-might-we this study answers.</span></li>
+                <li><b>Background</b><span>Why this work exists, and who the stakeholders are.</span></li>
+                <li><b>Users</b><span>Who matters most, and what we assume about them.</span></li>
+                <li><b>Objectives</b><span>The larger strategy it serves.</span></li>
+                <li><b>Constraints</b><span>What's known, what's in bounds, what must not change.</span></li>
+                <li><b>Success</b><span>The decisions or artifacts it should produce.</span></li>
+                <li><b>Methods</b><span>What we don't know, and the best way to find out.</span></li>
+                <li><b>Timeline</b><span>When it runs, and when outcomes land.</span></li>
+              </ol>
+              <p class="hb-tip">Tip from the template: limit yourself to 3&ndash;4 core assumptions or questions per study.</p>
+            </figure>
+            <figure class="hb-fw-card" aria-label="Right-Sizing Your Problem worksheet, with a worked example">
+              <p class="hb-k">Right-Sizing Your Problem</p>
+              <p class="hb-title">Is the problem secretly a solution?</p>
+              <p class="hb-start"><span>Starting point</span>&ldquo;Maximize customer&rsquo;s time in Customer Admin&rdquo;</p>
+              <ul class="hb-checks">
+                <li class="is-ok"><b>Contains a solution?</b><span>No. Good: it names the opportunity, not the fix.</span></li>
+                <li><b>A specific unmet need?</b><span>No. Ask &ldquo;What?&rdquo; to narrow the scope.</span></li>
+                <li><b>A clear audience?</b><span>No. Ask &ldquo;For whom?&rdquo; and why it&rsquo;s their problem.</span></li>
+              </ul>
+              <p class="hb-reframe"><span>One of nine reframes</span>&ldquo;How might we transform onboarding for customers, because KPIs and CSS tell us many struggle to get set up?&rdquo;</p>
+            </figure>
+          </div>
         </div>
       </section>
 
       <section class="cs-section spread" id="s-mentorship-program" style="--span:12">
         <h2>Mentorship program</h2>
         <div class="content">
-          <p>I started the Homebot Mentorship Program to give people across the company a light, structured way to learn from each other and work toward their professional goals.</p>
+          <div class="board-intro">
+            <div><p>I started the Homebot Mentorship Program to give people across the company a light, structured way to learn from each other and work toward their professional goals.</p>
           <p>I designed how it worked: matching mentors and mentees, setting goals, agreeing on expectations, and giving each pair enough guidance to make the relationship useful without turning it into bureaucracy. About 12 people took part, and it ran quarter after quarter.</p>
-          <p>I can't point to promotions or retention numbers, and I won't claim them. What I can say is that I took it from an idea to a program people kept signing up for.</p>
-          <figure>
-            <img src="../assets/homebot-mentorship-challenges.jpg" alt="Mentorship board with how-it-works instructions and weekly design challenges: sign up form, credit card checkout, landing page, calculator, app icon, user profile, settings, and Homebot DMs." loading="lazy" width="1800" height="714">
+          <p>I can't point to promotions or retention numbers, and I won't claim them. What I can say is that I took it from an idea to a program people kept signing up for.</p></div>
+          </div>
+          <figure class="board" aria-label="The mentorship board">
+            <div class="board-how">
+              <p class="board-k">How it works</p>
+              <p class="board-lede">Every week, design a user interface element for mobile or web. A fun way to build skills and get feedback from the team.</p>
+              <ol class="board-steps">
+                <li>A Slack reminder every Monday morning points to the week's challenge.</li>
+                <li>Challenges are intentionally high-level, so how to interpret them is up to you: mobile or web, a full page or one component.</li>
+                <li>Everyone has a page in the workspace, so we can hold each other accountable and track progress.</li>
+                <li>We discuss the previous week's challenge at Design Coffee on Wednesday mornings, about a week and a half after it's set.</li>
+                <li>Designs don't have to stay inside the Homebot Design System. Animation, illustration, 3D, or a bare-bones wireframe are all fine.</li>
+              </ol>
+              <p class="board-k">Goals</p>
+              <ul class="board-goals"><li>Learn and support each other</li><li>Be inspired</li><li>Think outside the box</li><li>Keep on creating</li><li>Become better designers</li></ul>
+            </div>
+            <ol class="board-grid" aria-label="Weekly design challenges">
+              <li class="board-card"><b>Sign up</b><p>Create a sign-up page, modal, form, or app screen for signing up for something: a volunteer event, a contest, a giveaway, anything you can imagine.</p></li>
+              <li class="board-card"><b>Credit card checkout</b><p>Design a checkout form or page. Don't forget the important elements: the numbers, dates, security codes.</p></li>
+              <li class="board-card"><b>Landing page</b><p>What's the main focus? A book, an album, a mobile app, a product? Consider the important elements: calls to action, clarity.</p></li>
+              <li class="board-card"><b>Calculator</b><p>Standard, scientific, or a specialty calculator for something like a mortgage. For a phone, a tablet, a web app?</p></li>
+              <li class="board-card"><b>App icon</b><p>What best represents the brand or product? Does it look great at a distance and stand out on a home screen next to other apps?</p></li>
+              <li class="board-card"><b>User profile</b><p>Be mindful of the most important data, names, imagery, and placement. A serious profile? A social one? It's up to you.</p></li>
+              <li class="board-card"><b>Settings</b><p>Design settings for something. Security or privacy settings? Game settings? What is it, and what's important?</p></li>
+              <li class="board-card is-home"><b>Homebot DMs</b><p>Design four iterations of our DM panel. How might it be more accessible, and make it clear how to use the input field and CTA?</p></li>
+            </ol>
             <figcaption>The mentorship board: how the program worked, and the weekly design challenges.</figcaption>
           </figure>
         </div>
@@ -168,7 +257,7 @@
     </div>
     <nav class="next" aria-label="Next project">
       <a href="designing-in-code.html">← Designing in code</a>
-      <a href="archive.html">Next: Earlier work →</a>
+      <a href="archive.html">Next: Other work →</a>
     </nav>
   </main>
 

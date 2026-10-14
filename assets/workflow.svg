@@ -1,26 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-30 -30 820 310" font-family="Inter, Helvetica, Arial, sans-serif" font-size="13">
-              <rect x="-30" y="-30" width="820" height="310" fill="#fffdf8"/><defs><marker id="w" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0l10 5-10 5z" fill="#2b1d16"/></marker></defs>
-              <g stroke="#2b1d16" fill="#fff">
-                <rect x="0" y="40" width="120" height="54" rx="27"/>
-                <rect x="160" y="40" width="130" height="54" rx="27" fill="#e6f26a"/>
-                <rect x="330" y="40" width="110" height="54" rx="27"/>
-                <rect x="480" y="40" width="130" height="54" rx="27"/>
-                <rect x="650" y="40" width="110" height="54" rx="27" fill="#a9d79b"/>
-                <rect x="160" y="160" width="450" height="60" rx="14" fill="#dcc3ea"/>
-              </g>
-              <g fill="#2b1d16" text-anchor="middle">
-                <text x="60" y="64">Design</text><text x="60" y="81" font-size="11">Figma</text>
-                <text x="225" y="64">Build</text><text x="225" y="81" font-size="11">Claude CLI</text>
-                <text x="385" y="64">Push</text><text x="385" y="81" font-size="11">GitHub</text>
-                <text x="545" y="64">Review</text><text x="545" y="81" font-size="11">Engineering</text>
-                <text x="705" y="64">Production</text><text x="705" y="81" font-size="11">some of it</text>
-                <text x="385" y="186">Shared review: Miro board of screenshots</text>
-                <text x="385" y="204" font-size="11">PMs, content designers, and designers comment and divide ownership</text>
-              </g>
-              <g stroke="#2b1d16" stroke-width="1.5" marker-end="url(#w)">
-                <line x1="120" y1="67" x2="157" y2="67"/><line x1="290" y1="67" x2="327" y2="67"/>
-                <line x1="440" y1="67" x2="477" y2="67"/><line x1="610" y1="67" x2="647" y2="67"/>
-              </g>
-              <line x1="225" y1="96" x2="225" y2="158" stroke="#2b1d16" stroke-width="1.5" stroke-dasharray="4 3"/>
-              <text x="236" y="132" font-size="11" fill="#5b4a40">screenshots of the working prototype</text>
-            </svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 30 820 175" font-family="Space Grotesk, Inter, Helvetica, Arial, sans-serif">
+<defs><radialGradient id="n" cx="50%" cy="30%" r="70%"><stop offset="0" stop-color="#23262a"/><stop offset="1" stop-color="#121416"/></radialGradient>
+<radialGradient id="k" cx="50%" cy="35%" r="72%"><stop offset="0" stop-color="#2a2f1a"/><stop offset="1" stop-color="#121416"/></radialGradient>
+<linearGradient id="s" x1="0" x2="1"><stop offset="0" stop-color="#d1fe17" stop-opacity="0"/><stop offset=".6" stop-color="#d1fe17"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<filter id="g" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter></defs>
+<rect width="820" height="250" fill="#1c1e20"/>
+<line x1="90" y1="85" x2="730" y2="85" stroke="#ffffff" stroke-opacity=".22"/>
+<rect x="458" y="84" width="110" height="2" rx="1" fill="url(#s)"/>
+<circle cx="90" cy="85" r="38" fill="url(#n)" stroke="#ffffff" stroke-opacity="0.16"/>
+<g transform="translate(75 70) scale(1.25)" fill="none" stroke="#f7f7f8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.6 7.6"/><circle cx="11" cy="11" r="2"/></g>
+<text x="90" y="161" text-anchor="middle" font-size="22" font-weight="600" fill="#f7f7f8" letter-spacing="-.4">Design</text>
+<text x="90" y="185" text-anchor="middle" font-size="14" fill="#7d8085" font-family="Inter, Helvetica, Arial, sans-serif">Figma</text>
+<circle cx="250" cy="85" r="42" fill="#d1fe17" opacity=".35" filter="url(#g)"/>
+<circle cx="250" cy="85" r="38" fill="url(#k)" stroke="#d1fe17" stroke-opacity="0.6"/>
+<g transform="translate(235 70) scale(1.25)" fill="none" stroke="#d1fe17" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9L4.9 19.1"/></g>
+<text x="250" y="161" text-anchor="middle" font-size="22" font-weight="600" fill="#f7f7f8" letter-spacing="-.4">Build</text>
+<text x="250" y="185" text-anchor="middle" font-size="14" fill="#7d8085" font-family="Inter, Helvetica, Arial, sans-serif">Claude CLI</text>
+<circle cx="410" cy="85" r="38" fill="url(#n)" stroke="#ffffff" stroke-opacity="0.16"/>
+<g transform="translate(395 70) scale(1.25)" fill="none" stroke="#f7f7f8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="8" r="2.5"/><path d="M6 8.5v7M18 10.5c0 4-6 3-10.5 6"/></g>
+<text x="410" y="161" text-anchor="middle" font-size="22" font-weight="600" fill="#f7f7f8" letter-spacing="-.4">Push</text>
+<text x="410" y="185" text-anchor="middle" font-size="14" fill="#7d8085" font-family="Inter, Helvetica, Arial, sans-serif">GitHub</text>
+<circle cx="570" cy="85" r="38" fill="url(#n)" stroke="#ffffff" stroke-opacity="0.16"/>
+<g transform="translate(555 70) scale(1.25)" fill="none" stroke="#f7f7f8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></g>
+<text x="570" y="161" text-anchor="middle" font-size="22" font-weight="600" fill="#f7f7f8" letter-spacing="-.4">Review</text>
+<text x="570" y="185" text-anchor="middle" font-size="14" fill="#7d8085" font-family="Inter, Helvetica, Arial, sans-serif">Engineering</text>
+<circle cx="730" cy="85" r="38" fill="url(#n)" stroke="#ffffff" stroke-opacity="0.16"/>
+<g transform="translate(715 70) scale(1.25)" fill="none" stroke="#d1fe17" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></g>
+<text x="730" y="161" text-anchor="middle" font-size="22" font-weight="600" fill="#f7f7f8" letter-spacing="-.4">Production</text>
+<text x="730" y="185" text-anchor="middle" font-size="14" fill="#7d8085" font-family="Inter, Helvetica, Arial, sans-serif">Deployment, agent flows</text>
+</svg>
