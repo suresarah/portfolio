@@ -4152,3 +4152,19 @@ html[data-theme="light"] body:has(.cs-hero[style*="--c-homebot"]),
 html[data-theme="light"] body:has(.cs-hero[style*="--c-archive"]),
 html[data-theme="light"] body:has(.cs-hero[style*="--c-illus"]) { --page-ink: var(--forest-black); --lime-ink: var(--forest-black); }
 html[data-theme="light"] .s-ink { --bg: var(--forest-black); --num: var(--page-tone); }
+
+/* Travelers Haven tile: the screenshots now have the modal scrim removed
+   (travelers-*-clean.jpg), so day mode shows them at true brightness on
+   Ivory with a wash in the section's colour. Night keeps its dimmed look. */
+.tile-stage--th .th-window img, .th-lease { filter: brightness(.72) contrast(1.06); }
+html[data-theme="light"] .tile-stage--th .th-window img,
+html[data-theme="light"] .th-lease { filter: none; }
+html[data-theme="light"] .tile-stage--th .th-window { background: #f4f4f4; }
+html[data-theme="light"] .tile-stage--th {
+  background:
+    radial-gradient(60% 70% at 62% 62%, color-mix(in srgb, var(--tone, var(--page-tone)) 26%, transparent) 0%, transparent 72%),
+    radial-gradient(45% 50% at 12% 10%, rgba(251, 193, 45, .14) 0%, transparent 70%),
+    linear-gradient(180deg, var(--card) 0%, var(--card-2) 100%);
+}
+html[data-theme="light"] .tile-stage--th .th-window { box-shadow: 0 0 0 1px rgba(16, 39, 31, .1), 0 20px 40px rgba(16, 39, 31, .16); }
+html[data-theme="light"] .th-lease { box-shadow: 0 0 0 1px rgba(16, 39, 31, .1), 0 24px 48px rgba(16, 39, 31, .2), 0 0 40px rgba(40, 121, 226, .2); }
