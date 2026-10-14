@@ -3980,6 +3980,6 @@ html:not([data-theme="light"]) .ic-head h1 mark { -webkit-text-fill-color: var(-
 #ill-canvas { min-height: clamp(42rem, 64vw, 58rem); }
 
 /* Voyager teaser: numbered decisions list */
-.vt-list { margin: 0 0 1.5rem; padding-left: 1.4rem; display: grid; gap: 1rem; }
+.vt-list { margin: .5rem 0 2rem; padding-left: 1.4rem; display: grid; gap: 1.6rem; }
 .vt-list li { color: var(--ink-soft); line-height: 1.5; }
-.vt-list b { display: block; color: var(--ink); font-size: 1.1rem; margin-bottom: .2rem; }
+.vt-list b { display: block; color: var(--ink); font-size: clamp(1.15rem, 1.6vw, 1.4rem); line-height: 1.25; margin-bottom: .35rem; }
