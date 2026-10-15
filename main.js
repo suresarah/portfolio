@@ -50,11 +50,18 @@
     });
     if (focus) tabs[index].focus();
 
+    // Header: About lights up while the About panel is open, Work otherwise.
+    const onAbout = tenets[index].dataset.id === 'about';
+    document.querySelectorAll('.site-header nav a[href="#intro"], .site-header nav a[href="#about"]').forEach(a => {
+      const current = (a.getAttribute('href') === '#about') === onAbout;
+      if (current) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+    });
+
     // If a case study is showing, keep it in step with the open panel.
     const tenet = tenets[index];
     const link = tenet.querySelector('.read');
     if (shownId && shownId !== tenet.dataset.id) {
-      if (link) showDetail(tenet, { scroll: false });
+      if (link) showDetail(tenet, { jump: true }); // open the new case study at its top
       else hideDetail({ focusLink: false }); // Intro / About: back to the full accordion
     }
     if (updateHash) setHash(index === 0 ? '' : tenet.dataset.id + (shownId === tenet.dataset.id ? '/read' : ''));
@@ -81,7 +88,7 @@
     return frag;
   }
 
-  async function showDetail(tenet, { scroll = true } = {}) {
+  async function showDetail(tenet, { scroll = true, jump = false } = {}) {
     const link = tenet.querySelector('.read');
     if (!link) return;
     shownId = tenet.dataset.id;
@@ -107,7 +114,7 @@
     }
     setHash(tenet.dataset.id + '/read');
     if (scroll) {
-      detail.scrollIntoView({ behavior: scrollBehavior, block: 'start' });
+      detail.scrollIntoView({ behavior: jump ? 'auto' : scrollBehavior, block: 'start' });
       detailBody.focus({ preventScroll: true });
     }
   }

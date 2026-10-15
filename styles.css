@@ -4255,3 +4255,83 @@ html[data-theme="light"] .lookback, html[data-theme="light"] .sheet > .spread.lo
     box-shadow: none;
   }
 }
+
+/* Day heroes melt into the page: no rule, no glow pinned to the bottom
+   edge, and the last stretch fades to Ivory so there is no seam */
+html[data-theme="light"] .cs-hero { border-bottom: 0 !important; }
+html[data-theme="light"] .cs-hero[style*="--c-intro"] {
+  background:
+    radial-gradient(55% 70% at 100% 0%, color-mix(in srgb, var(--tone) 22%, transparent) 0%, transparent 70%),
+    radial-gradient(45% 55% at 0% 0%, rgba(246, 197, 58, .10) 0%, transparent 70%),
+    linear-gradient(180deg, transparent 0%, transparent 100%) !important;
+}
+html[data-theme="light"] .cs-hero:not([style*="--c-intro"]) {
+  background:
+    linear-gradient(180deg, transparent 0%, transparent 45%, var(--paper) 82%),
+    linear-gradient(90deg, var(--paper) 0%, var(--paper) 40%, transparent 100%),
+    linear-gradient(180deg, color-mix(in srgb, var(--tone) 14%, var(--paper)) 0%, color-mix(in srgb, var(--tone) 34%, var(--paper)) 100%) !important;
+}
+/* Let the page show through below the hero so the two never meet on a
+   painted seam (a hairline appeared at fractional zoom levels) */
+html[data-theme="light"] .cs-body.sheet { background: transparent !important; }
+/* Home: Work and About take turns being the current link */
+.site-header nav a:first-child[aria-current="page"] { color: var(--lime); }
+html[data-theme="light"] .site-header nav a:first-child[aria-current="page"] { color: var(--ink); }
+/* Compact tab bar (while reading a case study): opaque, so the page never
+   shows through; each tab keeps a light wash of its colour */
+html[data-theme="light"] .tenets.is-compact { background: var(--paper) !important; }
+html[data-theme="light"] .tenets.is-compact .tenet:not(.is-open) {
+  background: linear-gradient(180deg, var(--paper) 0%, color-mix(in srgb, var(--tone) 16%, var(--paper)) 100%) !important;
+  box-shadow: none;
+}
+html[data-theme="light"] .tenets.is-compact .tenet.is-open { background: var(--card) !important; }
+
+/* =====================================================================
+   ILLUSTRATION: project artwork as small framed cards, the same size and
+   feel as the collage at the top of the page (white frame, soft shadow,
+   a slight tilt) instead of full-width panels.
+   ===================================================================== */
+.ill-proj .ill-row {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 1.75rem 1.5rem;
+  margin-top: 1.75rem; padding: 7px;
+}
+.ill-proj .ill-row:last-child { flex: none; }
+.ill-proj .ill-row .panel, .ill-proj .ill-row .photo {
+  flex: 0 0 auto; min-height: 0; height: 11rem;
+  border: 7px solid #fff; border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .12), 0 14px 28px rgba(0, 0, 0, .16);
+  transform: rotate(var(--tilt, -1.5deg));
+  transition: transform .3s var(--ease);
+}
+.ill-proj .ill-row > :nth-child(even) { --tilt: 1.5deg; }
+.ill-proj .ill-row > :nth-child(3n) { --tilt: -.75deg; }
+.ill-proj .ill-row .panel:hover, .ill-proj .ill-row .photo:hover { transform: rotate(0deg) translateY(-4px); }
+.ill-proj .ill-row .photo { width: 14.5rem; }
+.ill-proj .ill-row .panel { padding: .9rem; max-width: 22rem; }
+.ill-proj .ill-row .panel > img { max-height: 100%; max-width: 100%; }
+.ill-proj .ill-row .panel:has(.set) { height: auto; min-height: 11rem; width: 22rem; }
+.ill-proj .ill-row .set { gap: .6rem; }
+.ill-proj .ill-row .set img { max-height: 3.25rem; }
+html[data-theme="light"] .ill-proj .ill-row .panel,
+html[data-theme="light"] .ill-proj .ill-row .photo { box-shadow: 0 1px 2px rgba(16, 39, 31, .1), 0 14px 28px rgba(16, 39, 31, .12); }
+@media (max-width: 760px) {
+  .ill-proj .ill-row { justify-content: center; }
+}
+/* A project's rows flow side by side instead of stacking */
+.sheet > .ill-proj > .content { display: block; }
+.ill-proj .ill-row { display: inline-flex; vertical-align: middle; margin-right: 1.5rem; }
+.ill-proj .ill-row + .ill-row { margin-top: 1.75rem; }
+.ill-proj .ill-row .panel > img { height: 100%; width: auto; max-width: 20rem; object-fit: contain; }
+.ill-proj .ill-row .panel:not(:has(.set)) { min-width: 8rem; }
+/* All of a project's cards flow together in one wrapping row */
+.sheet > .ill-proj > .content { display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 1.6rem 1.4rem; align-content: flex-start; }
+.sheet > .ill-proj > .content > :not(.ill-row) { flex: 0 0 100%; margin-bottom: 0; }
+.ill-proj .ill-row, .ill-proj .ill-row + .ill-row { display: contents; }
+.sheet > .ill-proj > .content > .ill-row:first-of-type > :first-child { margin-left: 7px; }
+/* The gradient stops short of the hero's edge; the last stretch is plain
+   Ivory, so there is no hairline where the hero meets the page */
+html[data-theme="light"] .cs-hero.cs-hero:is([style*="--c-intro"], :not([style*="--c-intro"])) {
+  background-color: var(--paper) !important;
+  background-size: 100% 82% !important;
+  background-repeat: no-repeat !important;
+}
