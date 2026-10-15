@@ -4577,3 +4577,4 @@ html[data-theme="light"] .tenet:not(.is-open) .tenet-tab span::after { backgroun
   html[data-theme="light"] .tenets:not(.is-compact) .tenet:not(.is-open) { background: var(--card) !important; border-top: 1px solid var(--rule) !important; }
 }
 .tl-foot + .about-pg { margin-top: clamp(2rem, 4vw, 3rem); }
+.about-pg-list { margin-bottom: 0; }
