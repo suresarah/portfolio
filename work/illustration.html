@@ -18,8 +18,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=hf112">
+  <link rel="stylesheet" href="../styles.css?v=hf114">
   <script src="../theme.js?v=2"></script>
+  <script>
+    // Each project is a small stack: click it to flip to the next piece.
+    document.addEventListener('click', e => {
+      const card = e.target.closest('.deck-card');
+      if (!card) return;
+      const imgs = [...card.querySelectorAll('img')];
+      const i = imgs.findIndex(im => !im.hidden);
+      const next = (i + 1) % imgs.length;
+      imgs[i].hidden = true; imgs[next].hidden = false;
+      const count = card.closest('.deck').querySelector('.deck-count');
+      if (count) count.textContent = (next + 1) + ' / ' + imgs.length;
+    });
+  </script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -75,71 +88,135 @@
         <a href="mailto:saraha.leach@gmail.com">Email me</a>
       </div>
     </section>
-    <div class="cs-body sheet">
-      <section class="cs-section spread ill-proj" id="posters" style="--span:6">
-        <h2>Posters</h2>
-        <div class="content">
-          <p class="big">Travel posters, a winery, and a board game for dogs.</p>
-          <div class="ill-row"><div class="photo"><img src="../assets/ill-union-station-hd.jpg" alt="Union Station travel poster with the station facade framed by orange flowers" loading="lazy"></div><div class="photo"><img src="../assets/ill-orange-wine.png" alt="Detailed isometric illustration of an orange wine winery with vineyards, barrels, and bottles" loading="lazy" style="object-position: center 30%"></div><div class="panel" style="--bg: var(--sky)"><img src="../assets/ill-barkopoly-cut.png" alt="Barkopoly, a dog-themed parody of a property trading board game" loading="lazy"></div></div>
-        </div>
-      </section>
-      <section class="cs-section spread ill-proj" id="pax8" style="--span:6">
-        <h2>Pax8 · Product &amp; Engineering</h2>
-        <div class="content">
-          <p class="big">Lettering, badges, and swag for a product and engineering department.</p>
-          <div class="ill-row ill-row--one"><div class="panel" style="--bg: #1e2019"><img src="../assets/brand-pax8-stickers.jpg" alt="A sheet of colourful Product &amp; Engineering stickers and badges" loading="lazy"></div></div><div class="ill-row"><div class="photo"><img src="../assets/brand-pax8-poster.jpg" alt="Product &amp; Engineering poster with Pax8 laptop, iced coffee, donuts, and a blimp under a blue sky" loading="lazy"></div><div class="panel" style="--bg: #70cef1"><img src="../assets/ill-pax8-product-engineering.png" alt="Script lettering reading Product &amp; Engineering" loading="lazy"></div><div class="panel" style="--bg: #ebe3c7"><img src="../assets/ill-swag-badges.png" alt="A grid of badge and stamp designs" loading="lazy"></div></div>
-        </div>
-      </section>
-      <section class="cs-section spread ill-proj" id="treehouse" style="--span:6">
-        <h2>Treehouse Therapy</h2>
-        <div class="content">
-          <p class="big">A friendly treehouse mark for an ABA therapy practice.</p>
-          <div class="ill-row ill-row--lead"><div class="panel" style="--bg: #f8edeb"><div class="set" style="--cols: 3"><img src="../assets/brand/treehouse-01.png" alt="Treehouse Therapy logo exploration" loading="lazy"><img src="../assets/brand/treehouse-03.png" alt="Treehouse Therapy logo exploration" loading="lazy"><img src="../assets/brand/treehouse-05.png" alt="Treehouse Therapy logo exploration" loading="lazy"><img src="../assets/brand/treehouse-07.png" alt="Treehouse Therapy logo exploration" loading="lazy"><img src="../assets/brand/treehouse-09.png" alt="Treehouse Therapy logo exploration" loading="lazy"><img src="../assets/brand/treehouse-11.png" alt="Treehouse Therapy logo exploration" loading="lazy"></div></div><div class="photo"><img src="../assets/brand-treehouse-sign.jpg" alt="Illuminated round shop sign with the Treehouse Therapy treehouse logo" loading="lazy"></div><div class="panel" style="--bg: #f8edeb"><img src="../assets/brand/treehouse-13.png" alt="Treehouse ABA Therapy logo with hand-lettered name" loading="lazy"></div></div>
-        </div>
-      </section>
-      <section class="cs-section spread ill-proj" id="tonic-timber" style="--span:6">
-        <h2>Tonic &amp; Timber</h2>
-        <div class="content">
-          <p class="big">Wordmarks and a badge for a bar in a converted trailer.</p>
-          <div class="ill-row ill-row--lead"><div class="panel" style="--bg: #000"><div class="set" style="--cols: 2"><img src="../assets/brand/tonic-05.png" alt="Tonic &amp; Timber wordmark exploration" loading="lazy"><img src="../assets/brand/tonic-07.png" alt="Tonic &amp; Timber wordmark exploration" loading="lazy"><img src="../assets/brand/tonic-09.png" alt="Tonic &amp; Timber wordmark exploration" loading="lazy"><img src="../assets/brand/tonic-10.png" alt="Tonic &amp; Timber wordmark exploration" loading="lazy"><img src="../assets/brand/tonic-14.png" alt="Tonic &amp; Timber wordmark exploration" loading="lazy"><img src="../assets/brand/tonic-15.png" alt="Tonic &amp; Timber wordmark exploration" loading="lazy"></div></div><div class="photo"><img src="../assets/brand-tonic-timber-trailer.jpg" alt="A converted trailer bar with the Tonic &amp; Timber logo on its side" loading="lazy"></div><div class="panel" style="--bg: #000"><img src="../assets/brand/tonic-08.png" alt="Tonic &amp; Timber script logo in a black circle" loading="lazy"></div></div>
-        </div>
-      </section>
-      <section class="cs-section spread ill-proj" id="books-for-baby" style="--span:6">
-        <h2>Books for Baby</h2>
-        <div class="content">
-          <p class="big">A cast of storybook animals and a print to go with them.</p>
-          <div class="ill-row ill-row--split"><div class="panel" style="--bg: #ebe3c7"><div class="set" style="--cols: 4"><img src="../assets/brand/books-02.png" alt="Storybook animal character" loading="lazy"><img src="../assets/brand/books-06.png" alt="Storybook animal character" loading="lazy"><img src="../assets/brand/books-08.png" alt="Storybook animal character" loading="lazy"><img src="../assets/brand/books-10.png" alt="Storybook animal character" loading="lazy"><img src="../assets/brand/books-12.png" alt="Storybook animal character" loading="lazy"><img src="../assets/brand/books-16.png" alt="Storybook animal character" loading="lazy"><img src="../assets/brand/books-22.png" alt="Storybook animal character" loading="lazy"><img src="../assets/brand/books-24.png" alt="Storybook animal character" loading="lazy"><img src="../assets/brand/books-26.png" alt="Storybook animal character" loading="lazy"><img src="../assets/brand/books-28.png" alt="Storybook animal character" loading="lazy"><img src="../assets/brand/books-32.png" alt="Storybook animal character" loading="lazy"><img src="../assets/brand/books-34.png" alt="Storybook animal character" loading="lazy"></div></div><div class="photo"><img src="../assets/brand-books-for-baby-print.jpg" alt="Framed Books for Baby print on a nursery shelf" loading="lazy"></div></div>
-        </div>
-      </section>
-      <section class="cs-section spread ill-proj" id="copper-fox" style="--span:6">
-        <h2>Copper Fox / Pine &amp; Peak</h2>
-        <div class="content">
-          <p class="big">Two names for one brand, explored side by side.</p>
-          <div class="ill-row ill-row--split"><div class="panel" style="--bg: #fffff1"><img src="../assets/brand-copper-fox-pine-peak.png" alt="Logo sheet exploring two names, Copper Fox and Pine &amp; Peak, in blue" loading="lazy"></div><div class="photo"><img src="../assets/brand-pine-peak-bags.jpg" alt="Two people holding Pine &amp; Peak paper bags, with a beagle at their feet" loading="lazy" style="object-position: center 35%"></div></div>
-        </div>
-      </section>
-      <section class="cs-section spread ill-proj" id="lajit" style="--span:6">
-        <h2>Lajit</h2>
-        <div class="content">
-          <p class="big">Packaging for Lajit Gold honey sticks.</p>
-          <div class="ill-row ill-row--one"><div class="panel" style="--bg: #1e1618"><img src="../assets/brand/lajit-03.png" alt="Flat dieline for a black and copper Lajit Gold honey sticks box" loading="lazy"></div></div>
-        </div>
-      </section>
-      <section class="cs-section spread ill-proj" id="period-exchange" style="--span:6">
-        <h2>Period Exchange</h2>
-        <div class="content">
-          <p class="big">Lettering and two small mascots.</p>
-          <div class="ill-row ill-row--one"><div class="panel" style="--bg: #fff8ef"><img src="../assets/brand-period-exchange.png" alt="Sheet of Period Exchange script logos in red and pink, with two smiling droplet mascots" loading="lazy"></div></div>
-        </div>
-      </section>
-      <section class="cs-section spread ill-proj" id="my-girlfriends-hungry" style="--span:6">
-        <h2>My Girlfriend’s Hungry</h2>
-        <div class="content">
-          <p class="big">Wordmark explorations.</p>
-          <div class="ill-row ill-row--one"><div class="panel" style="--bg: #1e2019"><div class="set" style="--cols: 2"><img src="../assets/brand/mgh-00.png" alt="My Girlfriend&#x27;s Hungry wordmark exploration" loading="lazy"><img src="../assets/brand/mgh-01.png" alt="My Girlfriend&#x27;s Hungry wordmark exploration" loading="lazy"><img src="../assets/brand/mgh-02.png" alt="My Girlfriend&#x27;s Hungry wordmark exploration" loading="lazy"><img src="../assets/brand/mgh-03.png" alt="My Girlfriend&#x27;s Hungry wordmark exploration" loading="lazy"><img src="../assets/brand/mgh-04.png" alt="My Girlfriend&#x27;s Hungry wordmark exploration" loading="lazy"><img src="../assets/brand/mgh-05.png" alt="My Girlfriend&#x27;s Hungry wordmark exploration" loading="lazy"></div></div></div>
-        </div>
-      </section>
-    </div>
+    <section class="ill-decks" aria-label="Projects">
+      <figure class="deck" id="posters" style="--r: -3deg">
+        <button type="button" class="ic-card deck-card" aria-label="Posters: show next of 3">
+          <img class="fit-cover" src="../assets/ill-union-station-hd.jpg" alt="Union Station travel poster with the station facade framed by orange flowers" loading="lazy">
+          <img class="fit-cover" src="../assets/ill-orange-wine.png" alt="Detailed isometric illustration of an orange wine winery with vineyards, barrels, and bottles" loading="lazy" hidden>
+          <img class="fit-contain" style="--bg: var(--sky)" src="../assets/ill-barkopoly-cut.png" alt="Barkopoly, a dog-themed parody of a property trading board game" loading="lazy" hidden>
+        </button>
+        <figcaption>
+          <span class="ic-label">Posters</span>
+          <span class="deck-note">Travel posters, a winery, and a board game for dogs.</span>
+          <span class="deck-count" aria-live="polite">1 / 3</span>
+        </figcaption>
+      </figure>
+      <figure class="deck" id="pax8" style="--r: 2deg">
+        <button type="button" class="ic-card deck-card" aria-label="Pax8 · Product &amp; Engineering: show next of 4">
+          <img class="fit-contain" style="--bg: #1e2019" src="../assets/brand-pax8-stickers.jpg" alt="A sheet of colourful Product &amp; Engineering stickers and badges" loading="lazy">
+          <img class="fit-cover" src="../assets/brand-pax8-poster.jpg" alt="Product &amp; Engineering poster with Pax8 laptop, iced coffee, donuts, and a blimp under a blue sky" loading="lazy" hidden>
+          <img class="fit-contain" style="--bg: #70cef1" src="../assets/ill-pax8-product-engineering.png" alt="Script lettering reading Product &amp; Engineering" loading="lazy" hidden>
+          <img class="fit-contain" style="--bg: #ebe3c7" src="../assets/ill-swag-badges.png" alt="A grid of badge and stamp designs" loading="lazy" hidden>
+        </button>
+        <figcaption>
+          <span class="ic-label">Pax8 · Product &amp; Engineering</span>
+          <span class="deck-note">Lettering, badges, and swag for a product and engineering department.</span>
+          <span class="deck-count" aria-live="polite">1 / 4</span>
+        </figcaption>
+      </figure>
+      <figure class="deck" id="treehouse" style="--r: -1.5deg">
+        <button type="button" class="ic-card deck-card" aria-label="Treehouse Therapy: show next of 8">
+          <img class="fit-contain" style="--bg: #f8edeb" src="../assets/brand/treehouse-01.png" alt="Treehouse Therapy logo exploration" loading="lazy">
+          <img class="fit-contain" style="--bg: #f8edeb" src="../assets/brand/treehouse-03.png" alt="Treehouse Therapy logo exploration" loading="lazy" hidden>
+          <img class="fit-contain" style="--bg: #f8edeb" src="../assets/brand/treehouse-05.png" alt="Treehouse Therapy logo exploration" loading="lazy" hidden>
+          <img class="fit-contain" style="--bg: #f8edeb" src="../assets/brand/treehouse-07.png" alt="Treehouse Therapy logo exploration" loading="lazy" hidden>
+          <img class="fit-contain" style="--bg: #f8edeb" src="../assets/brand/treehouse-09.png" alt="Treehouse Therapy logo exploration" loading="lazy" hidden>
+          <img class="fit-contain" style="--bg: #f8edeb" src="../assets/brand/treehouse-11.png" alt="Treehouse Therapy logo exploration" loading="lazy" hidden>
+          <img class="fit-cover" src="../assets/brand-treehouse-sign.jpg" alt="Illuminated round shop sign with the Treehouse Therapy treehouse logo" loading="lazy" hidden>
+          <img class="fit-contain" style="--bg: #f8edeb" src="../assets/brand/treehouse-13.png" alt="Treehouse ABA Therapy logo with hand-lettered name" loading="lazy" hidden>
+        </button>
+        <figcaption>
+          <span class="ic-label">Treehouse Therapy</span>
+          <span class="deck-note">A friendly treehouse mark for an ABA therapy practice.</span>
+          <span class="deck-count" aria-live="polite">1 / 8</span>
+        </figcaption>
+      </figure>
+      <figure class="deck" id="tonic-timber" style="--r: 3deg">
+        <button type="button" class="ic-card deck-card" aria-label="Tonic &amp; Timber: show next of 8">
+          <img class="fit-contain" style="--bg: #000" src="../assets/brand/tonic-05.png" alt="Tonic &amp; Timber wordmark exploration" loading="lazy">
+          <img class="fit-contain" style="--bg: #000" src="../assets/brand/tonic-07.png" alt="Tonic &amp; Timber wordmark exploration" loading="lazy" hidden>
+          <img class="fit-contain" style="--bg: #000" src="../assets/brand/tonic-09.png" alt="Tonic &amp; Timber wordmark exploration" loading="lazy" hidden>
+          <img class="fit-contain" style="--bg: #000" src="../assets/brand/tonic-10.png" alt="Tonic &amp; Timber wordmark exploration" loading="lazy" hidden>
+          <img class="fit-contain" style="--bg: #000" src="../assets/brand/tonic-14.png" alt="Tonic &amp; Timber wordmark exploration" loading="lazy" hidden>
+          <img class="fit-contain" style="--bg: #000" src="../assets/brand/tonic-15.png" alt="Tonic &amp; Timber wordmark exploration" loading="lazy" hidden>
+          <img class="fit-cover" src="../assets/brand-tonic-timber-trailer.jpg" alt="A converted trailer bar with the Tonic &amp; Timber logo on its side" loading="lazy" hidden>
+          <img class="fit-contain" style="--bg: #000" src="../assets/brand/tonic-08.png" alt="Tonic &amp; Timber script logo in a black circle" loading="lazy" hidden>
+        </button>
+        <figcaption>
+          <span class="ic-label">Tonic &amp; Timber</span>
+          <span class="deck-note">Wordmarks and a badge for a bar in a converted trailer.</span>
+          <span class="deck-count" aria-live="polite">1 / 8</span>
+        </figcaption>
+      </figure>
+      <figure class="deck" id="books-for-baby" style="--r: -2.5deg">
+        <button type="button" class="ic-card deck-card" aria-label="Books for Baby: show next of 13">
+          <img class="fit-contain" style="--bg: #ebe3c7" src="../assets/brand/books-02.png" alt="Storybook animal character" loading="lazy">
+          <img class="fit-contain" style="--bg: #ebe3c7" src="../assets/brand/books-06.png" alt="Storybook animal character" loading="lazy" hidden>
+          <img class="fit-contain" style="--bg: #ebe3c7" src="../assets/brand/books-08.png" alt="Storybook animal character" loading="lazy" hidden>
+          <img class="fit-contain" style="--bg: #ebe3c7" src="../assets/brand/books-10.png" alt="Storybook animal character" loading="lazy" hidden>
+          <img class="fit-contain" style="--bg: #ebe3c7" src="../assets/brand/books-12.png" alt="Storybook animal character" loading="lazy" hidden>
+          <img class="fit-contain" style="--bg: #ebe3c7" src="../assets/brand/books-16.png" alt="Storybook animal character" loading="lazy" hidden>
+          <img class="fit-contain" style="--bg: #ebe3c7" src="../assets/brand/books-22.png" alt="Storybook animal character" loading="lazy" hidden>
+          <img class="fit-contain" style="--bg: #ebe3c7" src="../assets/brand/books-24.png" alt="Storybook animal character" loading="lazy" hidden>
+          <img class="fit-contain" style="--bg: #ebe3c7" src="../assets/brand/books-26.png" alt="Storybook animal character" loading="lazy" hidden>
+          <img class="fit-contain" style="--bg: #ebe3c7" src="../assets/brand/books-28.png" alt="Storybook animal character" loading="lazy" hidden>
+          <img class="fit-contain" style="--bg: #ebe3c7" src="../assets/brand/books-32.png" alt="Storybook animal character" loading="lazy" hidden>
+          <img class="fit-contain" style="--bg: #ebe3c7" src="../assets/brand/books-34.png" alt="Storybook animal character" loading="lazy" hidden>
+          <img class="fit-cover" src="../assets/brand-books-for-baby-print.jpg" alt="Framed Books for Baby print on a nursery shelf" loading="lazy" hidden>
+        </button>
+        <figcaption>
+          <span class="ic-label">Books for Baby</span>
+          <span class="deck-note">A cast of storybook animals and a print to go with them.</span>
+          <span class="deck-count" aria-live="polite">1 / 13</span>
+        </figcaption>
+      </figure>
+      <figure class="deck" id="copper-fox" style="--r: 1.5deg">
+        <button type="button" class="ic-card deck-card" aria-label="Copper Fox / Pine &amp; Peak: show next of 2">
+          <img class="fit-contain" style="--bg: #fffff1" src="../assets/brand-copper-fox-pine-peak.png" alt="Logo sheet exploring two names, Copper Fox and Pine &amp; Peak, in blue" loading="lazy">
+          <img class="fit-cover" src="../assets/brand-pine-peak-bags.jpg" alt="Two people holding Pine &amp; Peak paper bags, with a beagle at their feet" loading="lazy" hidden>
+        </button>
+        <figcaption>
+          <span class="ic-label">Copper Fox / Pine &amp; Peak</span>
+          <span class="deck-note">Two names for one brand, explored side by side.</span>
+          <span class="deck-count" aria-live="polite">1 / 2</span>
+        </figcaption>
+      </figure>
+      <figure class="deck" id="lajit" style="--r: -2deg">
+        <button type="button" class="ic-card deck-card" aria-label="Lajit: show next of 1" disabled>
+          <img class="fit-contain" style="--bg: #1e1618" src="../assets/brand/lajit-03.png" alt="Flat dieline for a black and copper Lajit Gold honey sticks box" loading="lazy">
+        </button>
+        <figcaption>
+          <span class="ic-label">Lajit</span>
+          <span class="deck-note">Packaging for Lajit Gold honey sticks.</span>
+          
+        </figcaption>
+      </figure>
+      <figure class="deck" id="period-exchange" style="--r: 2.5deg">
+        <button type="button" class="ic-card deck-card" aria-label="Period Exchange: show next of 1" disabled>
+          <img class="fit-contain" style="--bg: #fff8ef" src="../assets/brand-period-exchange.png" alt="Sheet of Period Exchange script logos in red and pink, with two smiling droplet mascots" loading="lazy">
+        </button>
+        <figcaption>
+          <span class="ic-label">Period Exchange</span>
+          <span class="deck-note">Lettering and two small mascots.</span>
+          
+        </figcaption>
+      </figure>
+      <figure class="deck" id="my-girlfriends-hungry" style="--r: -1deg">
+        <button type="button" class="ic-card deck-card" aria-label="My Girlfriend’s Hungry: show next of 6">
+          <img class="fit-contain" style="--bg: #1e2019" src="../assets/brand/mgh-00.png" alt="My Girlfriend&#x27;s Hungry wordmark exploration" loading="lazy">
+          <img class="fit-contain" style="--bg: #1e2019" src="../assets/brand/mgh-01.png" alt="My Girlfriend&#x27;s Hungry wordmark exploration" loading="lazy" hidden>
+          <img class="fit-contain" style="--bg: #1e2019" src="../assets/brand/mgh-02.png" alt="My Girlfriend&#x27;s Hungry wordmark exploration" loading="lazy" hidden>
+          <img class="fit-contain" style="--bg: #1e2019" src="../assets/brand/mgh-03.png" alt="My Girlfriend&#x27;s Hungry wordmark exploration" loading="lazy" hidden>
+          <img class="fit-contain" style="--bg: #1e2019" src="../assets/brand/mgh-04.png" alt="My Girlfriend&#x27;s Hungry wordmark exploration" loading="lazy" hidden>
+          <img class="fit-contain" style="--bg: #1e2019" src="../assets/brand/mgh-05.png" alt="My Girlfriend&#x27;s Hungry wordmark exploration" loading="lazy" hidden>
+        </button>
+        <figcaption>
+          <span class="ic-label">My Girlfriend’s Hungry</span>
+          <span class="deck-note">Wordmark explorations.</span>
+          <span class="deck-count" aria-live="polite">1 / 6</span>
+        </figcaption>
+      </figure>
+    </section>
     <nav class="next" aria-label="Next project">
       <a href="archive.html">← Other work</a>
       <a href="../">All work →</a>
