@@ -4494,3 +4494,65 @@ html:not([data-theme="light"]) .ft-social a:hover { background: rgba(255, 255, 2
   .ill-decks > .deck:hover { transform: rotate(0deg) translateY(-6px); z-index: 3; }
   .ill-decks > .deck:hover .deck-card { transform: none; }
 }
+
+/* =====================================================================
+   DAY BOLD (Sarah, 2026-10-15): flat, solid blocks of the ten colours,
+   like the Pocket Guide posters. No washes or gradients in day mode.
+   --on is the text colour that reads on each block.
+   ===================================================================== */
+html[data-theme="light"] { --cream: #fbf7ee; }
+html[data-theme="light"] body { background: var(--paper) !important; }
+html[data-theme="light"] body { --page-on: var(--cream); }
+html[data-theme="light"] body:has(.cs-hero[style*="--c-homebot"]),
+html[data-theme="light"] body:has(.cs-hero[style*="--c-archive"]),
+html[data-theme="light"] body:has(.cs-hero[style*="--c-illus"]),
+html[data-theme="light"] body:has(.cs-hero[style*="--c-about"]) { --page-on: var(--forest-black); }
+
+/* Home: closed tabs are solid blocks; labels in the colour that reads */
+html[data-theme="light"] .tenet[data-id="voyager"], html[data-theme="light"] .tenet[data-id="code"],
+html[data-theme="light"] .tenet[data-id="intro"] { --on: var(--cream); }
+html[data-theme="light"] .tenet { --on: var(--forest-black); }
+html[data-theme="light"] .tenet[data-id="voyager"], html[data-theme="light"] .tenet[data-id="code"],
+html[data-theme="light"] .tenet--intro { --on: var(--cream); }
+html[data-theme="light"] .tenet:not(.is-open),
+html[data-theme="light"] .tenet:not(.is-open):hover {
+  background: var(--tone) !important; box-shadow: none !important; filter: none !important;
+  border-left-color: var(--paper) !important; border-left-width: 6px !important;
+}
+html[data-theme="light"] .tenet:not(.is-open):hover { background: color-mix(in srgb, var(--tone) 88%, #000) !important; }
+html[data-theme="light"] .tenet:not(.is-open) .tenet-tab span { color: var(--on) !important; text-shadow: none !important; }
+html[data-theme="light"] .tenet:not(.is-open) .tenet-tab span::after { background: var(--on); box-shadow: none !important; }
+html[data-theme="light"] .tenet.is-open::before, html[data-theme="light"] .tenet--intro.is-open::before { background: none !important; }
+@media (max-width: 760px) {
+  html[data-theme="light"] .tenets:not(.is-compact) .tenet:not(.is-open) { background: var(--tone) !important; border-left-width: 0 !important; border-top: 4px solid var(--paper) !important; }
+}
+/* Compact bar while reading: solid blocks too, open tab stays paper */
+html[data-theme="light"] .tenets.is-compact .tenet:not(.is-open) { background: var(--tone) !important; }
+html[data-theme="light"] .tenets.is-compact .tenet.is-open { background: var(--card) !important; }
+html[data-theme="light"] .tenets.is-compact .tenet.is-open .tenet-tab span { color: var(--ink) !important; }
+
+/* Case-study heroes: one solid block of the page colour */
+html[data-theme="light"] .cs-hero:not(.ill-canvas).cs-hero {
+  background: var(--tone) !important; background-size: auto !important;
+  --rule: color-mix(in srgb, var(--page-on) 35%, transparent);
+}
+html[data-theme="light"] .cs-hero:not(.ill-canvas) :is(h1, h2, h3, p, li, span, dt, dd, b, strong, a, .eyebrow, mark) {
+  color: var(--page-on) !important; -webkit-text-fill-color: var(--page-on) !important; background: none !important;
+  text-decoration-color: var(--page-on);
+}
+html[data-theme="light"] .cs-hero:not(.ill-canvas) :is(.facts, .cover-meta, hr) { border-color: color-mix(in srgb, var(--page-on) 35%, transparent) !important; }
+html[data-theme="light"] .pg-north { border-left-color: var(--page-on) !important; }
+
+/* Looking back and the dark stat card: solid page colour */
+html[data-theme="light"] .lookback, html[data-theme="light"] .sheet > .spread.lookback { background: var(--page-tone) !important; }
+html[data-theme="light"] .lookback :is(h2, h3, p, li, span, b, strong, em, a) { color: var(--page-on) !important; -webkit-text-fill-color: var(--page-on) !important; }
+html[data-theme="light"] .lookback > h2 { background: var(--page-on) !important; color: var(--page-tone) !important; -webkit-text-fill-color: var(--page-tone) !important; }
+html[data-theme="light"] .s-ink { --bg: var(--page-tone); }
+html[data-theme="light"] .s-ink, html[data-theme="light"] .s-ink * { color: var(--page-on) !important; -webkit-text-fill-color: var(--page-on) !important; }
+
+/* Footer illustration tiles: solid colours */
+html[data-theme="light"] .ft-row:first-child .ft-art { background: var(--soft-pink); }
+html[data-theme="light"] .ft-art--doc { background: var(--golden); }
+/* Voyager's block uses Deep Blue, matching the poster palette */
+html[data-theme="light"] { --c-voyager: var(--deep-blue); }
+html[data-theme="light"] body:has(.cs-hero[style*="--c-voyager"]) { --page-tone: var(--deep-blue); }
