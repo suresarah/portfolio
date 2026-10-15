@@ -4404,3 +4404,73 @@ html[data-theme="light"] .deck-card { box-shadow: 0 1px 2px rgba(16, 39, 31, .1)
    :is() list outranked .tl-band), and their links underline in it too */
 .tenet-panel .tl-band.tl-band { --glow: var(--band, var(--lime)); }
 main .tl-list a:not(.read):not(.cta) { text-decoration-color: var(--band) !important; }
+
+/* =====================================================================
+   FOOTER (after sarahleach.design): two contact rows with illustrations
+   beside the office drawing, then a bar with copyright, a joke and
+   social icons. Uses this site's tokens in both themes.
+   ===================================================================== */
+.site-footer.ft {
+  display: block; padding: 0; margin-top: clamp(3rem, 6vw, 5rem);
+  border-top: 1px solid var(--rule) !important; background: var(--paper); color: var(--ink-soft);
+}
+.ft-cta {
+  display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  max-width: 1200px; margin: 0 auto; border-inline: 1px solid var(--rule);
+}
+.ft-rows { display: grid; border-right: 1px solid var(--rule); }
+.ft-row {
+  display: grid; grid-template-columns: clamp(6rem, 11vw, 8.5rem) 1fr; align-items: stretch;
+  text-decoration: none !important; color: var(--ink) !important;
+}
+.ft-row + .ft-row { border-top: 1px solid var(--rule); }
+.ft-art {
+  display: grid; place-items: center; overflow: hidden;
+  background: color-mix(in srgb, var(--soft-pink, #f5a6bc) 45%, var(--paper));
+  border-right: 1px solid var(--rule);
+}
+.ft-art img { width: 100%; height: 100%; object-fit: cover; object-position: center 60%; transition: transform .35s var(--ease, ease); }
+.ft-art--doc svg { width: 58%; fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform .35s var(--ease, ease); }
+.ft-copy { display: grid; align-content: center; gap: .55rem; padding: clamp(1.1rem, 2.4vw, 1.8rem) clamp(1rem, 2.4vw, 1.8rem); }
+.ft-copy b { font-family: var(--display); font-weight: 600; font-size: clamp(1.1rem, 1.7vw, 1.45rem); line-height: 1.2; letter-spacing: -.02em; color: var(--ink); max-width: 24ch; }
+.ft-copy u { justify-self: start; font-size: .9rem; font-weight: 600; text-decoration-color: var(--lime); text-underline-offset: .25em; }
+.ft-row:hover .ft-art img, .ft-row:hover .ft-art svg { transform: scale(1.06) rotate(-2deg); }
+.ft-row:hover u { color: var(--lime-ink, var(--lime)); }
+.ft-row:focus-visible { outline: 2px solid var(--lime); outline-offset: -2px; }
+.ft-office { display: grid; place-items: end center; padding: 1.25rem 1.5rem 0; overflow: hidden; }
+.ft-office img { width: min(100%, 26rem); height: auto; display: block; }
+html:not([data-theme="light"]) .ft-office img { filter: invert(1) brightness(.85); mix-blend-mode: screen; }
+html[data-theme="light"] .ft-office img { mix-blend-mode: multiply; }
+
+.ft-bar {
+  display: flex; align-items: center; flex-wrap: wrap; gap: .75rem 1.75rem;
+  padding: 1.1rem var(--gutter, 24px); border-top: 1px solid var(--rule);
+  background: var(--ink); color: var(--paper);
+  font-size: .85rem;
+}
+.ft-bar .ft-copy-mark { font-family: inherit !important; font-size: inherit !important; color: inherit !important; }
+.ft-joke { opacity: .75; }
+.ft-social { list-style: none; margin: 0 0 0 auto; padding: 0; display: flex; gap: .4rem; }
+.ft-social a { display: grid; place-items: center; width: 2.25rem; height: 2.25rem; border-radius: 8px; color: var(--paper) !important; }
+.ft-social a:hover { background: color-mix(in srgb, var(--paper) 14%, transparent); color: var(--lime) !important; }
+.ft-social svg { width: 1.3rem; height: 1.3rem; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+html:not([data-theme="light"]) .ft-bar { background: #0b0c0d; color: var(--ink); }
+html:not([data-theme="light"]) .ft-social a { color: var(--ink) !important; }
+html:not([data-theme="light"]) .ft-social a:hover { background: rgba(255, 255, 255, .08); color: var(--lime) !important; }
+
+@media (max-width: 760px) {
+  .ft-cta { grid-template-columns: 1fr; border-inline: 0; }
+  .ft-rows { border-right: 0; }
+  .ft-office { border-top: 1px solid var(--rule); }
+  .ft-social { margin-left: 0; }
+}
+.site-footer .ft-bar .ft-social { margin: 0 0 0 auto; gap: .4rem; }
+@media (max-width: 760px) { .site-footer .ft-bar .ft-social { margin-left: -.5rem; } }
+/* Footer sits right under the page's next/back links, full width */
+.site-footer.ft { margin-top: clamp(1.5rem, 3vw, 2.5rem); }
+.ft-cta { max-width: none; border-inline: 0; padding-inline: var(--gutter, 24px); }
+.ft-rows { border-left: 1px solid var(--rule); }
+.ft-office { border-right: 1px solid var(--rule); }
+@media (max-width: 760px) { .ft-cta { padding-inline: 0; } .ft-rows, .ft-office { border-inline: 0; } }
+.ill-decks { padding-bottom: clamp(1.5rem, 3vw, 2.5rem); }
+.site-footer.ft { margin-top: 0; }
