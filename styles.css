@@ -4374,3 +4374,28 @@ html[data-theme="light"] .deck-card { box-shadow: 0 1px 2px rgba(16, 39, 31, .1)
 .ill-decks { grid-template-columns: repeat(3, minmax(0, 17rem)); justify-content: center; gap: 3.5rem clamp(2.5rem, 6vw, 5rem); }
 @media (max-width: 900px) { .ill-decks { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.75rem 1.5rem; padding-inline: 16px; } }
 @media (max-width: 480px) { .ill-decks { grid-template-columns: minmax(0, 18rem); } }
+
+/* About panel: the principles, as a row of mini posters */
+.about-pg { margin: 0 0 2.25rem; }
+.about-pg h3 { margin: 0 0 .4rem; font-family: var(--display); font-weight: 700; font-size: clamp(1.3rem, 2vw, 1.7rem); letter-spacing: -.035em; text-transform: uppercase; color: var(--ink); }
+.about-pg-north { margin: 0 0 1.1rem; max-width: 52ch !important; color: var(--ink-soft); }
+.about-pg-list {
+  list-style: none; margin: 0 0 1rem; padding: 0;
+  display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: .6rem;
+}
+.about-pg-list a {
+  position: relative; display: flex; flex-direction: column; justify-content: flex-end; gap: .4rem;
+  aspect-ratio: 3 / 4; padding: .7rem .65rem; border-radius: 6px; text-decoration: none;
+  background: var(--bg); color: var(--c); transition: transform .25s ease;
+}
+.about-pg-list a:hover { transform: translateY(-3px) rotate(-.6deg); }
+.about-pg-list a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.about-pg-n { position: absolute; top: .5rem; right: .6rem; font: 300 .95rem/1 var(--font); opacity: .55; }
+.about-pg-list b { font: 700 clamp(.8rem, 1vw, .95rem)/1.05 var(--display); letter-spacing: -.02em; }
+.about-pg-list .pg-4 b { font: italic 400 1.02rem/1.05 "Instrument Serif", Georgia, serif; letter-spacing: 0; }
+.about-pg-more { font-weight: 600; color: var(--ink); }
+@media (prefers-reduced-motion: reduce) { .about-pg-list a, .about-pg-list a:hover { transition: none; transform: none; } }
+@media (max-width: 1100px) { .about-pg-list { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .about-pg-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } .about-pg-list a { aspect-ratio: 4 / 3; } }
+.pg-card { scroll-margin-top: calc(var(--header-h) + 1.5rem); }
+.about-pg-list a, .about-pg-list a b, .about-pg-list a .about-pg-n { color: var(--c) !important; -webkit-text-fill-color: var(--c); text-align: left; align-items: stretch; }
