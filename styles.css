@@ -4196,52 +4196,51 @@ html[data-theme="light"] {
 /* Paper grain over the whole day site */
 html[data-theme="light"] body::after {
   content: ""; position: fixed; inset: 0; z-index: 9999; pointer-events: none;
-  background: var(--grain); opacity: .16; mix-blend-mode: multiply;
+  background: var(--grain); opacity: .09; mix-blend-mode: multiply;
 }
 
 /* Page: a sky at the top, sunrise at the bottom, Ivory in between */
 html[data-theme="light"] body {
   background:
-    linear-gradient(180deg, rgba(42, 110, 217, .10) 0%, rgba(242, 166, 198, .08) 14%, transparent 30%),
-    linear-gradient(0deg, rgba(243, 138, 43, .12) 0%, rgba(246, 197, 58, .08) 14%, transparent 32%),
+    linear-gradient(180deg, rgba(42, 110, 217, .05) 0%, rgba(242, 166, 198, .04) 14%, transparent 30%),
+    linear-gradient(0deg, rgba(243, 138, 43, .06) 0%, rgba(246, 197, 58, .04) 14%, transparent 32%),
     var(--paper);
   background-attachment: fixed;
 }
 
-/* Home: each closed tab is one strip of the spectrum */
+/* Home: each closed tab is one soft gradient in its category colour,
+   pale at the top and deepening toward the label, like one strip of the
+   reference */
 html[data-theme="light"] .tenet:not(.is-open) {
-  background:
-    linear-gradient(180deg, rgba(var(--sp-night), var(--sp-dark, 0)) 0%, transparent 16%, transparent 84%, rgba(var(--sp-night), var(--sp-dark, 0)) 100%),
-    var(--spectrum);
-  background-color: var(--sp-haze);
-  border-left-color: rgba(var(--sp-night), .22) !important;
-  box-shadow: inset 10px 0 14px -10px rgba(var(--sp-night), .28);
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--tone) 10%, var(--paper)) 0%,
+    color-mix(in srgb, var(--tone) 22%, var(--paper)) 45%,
+    color-mix(in srgb, var(--tone) 48%, var(--paper)) 100%);
+  border-left-color: rgba(var(--sp-night), .10) !important;
+  box-shadow: inset 8px 0 12px -10px rgba(var(--sp-night), .14);
 }
-html[data-theme="light"] .tenet:not(.is-open) { --sp-h: 50%; --sp-dark: 0; filter: saturate(.78) brightness(1.04); }
-html[data-theme="light"] .tenet:nth-child(2):not(.is-open) { --sp-h: 44%; --sp-dark: .35; filter: none; }
-html[data-theme="light"] .tenet:nth-child(3):not(.is-open) { --sp-h: 40%; --sp-dark: .85; filter: saturate(1.08); }
-html[data-theme="light"] .tenet:nth-child(4):not(.is-open) { --sp-h: 42%; --sp-dark: .6; filter: saturate(1.04); }
-html[data-theme="light"] .tenet:nth-child(5):not(.is-open) { --sp-h: 46%; --sp-dark: .2; filter: none; }
-html[data-theme="light"] .tenet:nth-child(n+6):not(.is-open) { --sp-h: 50%; --sp-dark: 0; filter: saturate(.82) brightness(1.03); }
-html[data-theme="light"] .tenet:not(.is-open):hover { filter: saturate(1.15); }
-html[data-theme="light"] .tenet:not(.is-open) .tenet-tab span { color: #fffaf0; text-shadow: 0 1px 6px rgba(var(--sp-night), .45); }
+html[data-theme="light"] .tenet:not(.is-open):hover {
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--tone) 16%, var(--paper)) 0%,
+    color-mix(in srgb, var(--tone) 32%, var(--paper)) 45%,
+    color-mix(in srgb, var(--tone) 62%, var(--paper)) 100%);
+}
+html[data-theme="light"] .tenet:not(.is-open) .tenet-tab span { color: var(--forest-black); text-shadow: none; }
 html[data-theme="light"] .tenet:not(.is-open) .tenet-tab span::after { box-shadow: 0 0 0 1.5px rgba(255, 255, 255, .85); }
 
 /* Open panel: the horizon glows up from the bottom */
 html[data-theme="light"] .tenet.is-open::before,
 html[data-theme="light"] .tenet--intro.is-open::before {
   background:
-    radial-gradient(70% 38% at 70% 108%, rgba(243, 138, 43, .34) 0%, rgba(246, 197, 58, .22) 40%, transparent 72%),
-    radial-gradient(40% 50% at 104% -6%, rgba(42, 110, 217, .20) 0%, rgba(242, 166, 198, .14) 45%, transparent 72%) !important;
+    radial-gradient(70% 38% at 70% 108%, rgba(243, 138, 43, .16) 0%, rgba(246, 197, 58, .10) 40%, transparent 72%),
+    radial-gradient(40% 50% at 104% -6%, rgba(42, 110, 217, .09) 0%, rgba(242, 166, 198, .07) 45%, transparent 72%) !important;
 }
 
-/* Case-study hero: spectrum strips fading in from the right */
+/* Case-study hero: one soft gradient in the page's colour, from the right */
 html[data-theme="light"] .cs-hero:not([style*="--c-intro"]) {
   background:
-    linear-gradient(90deg, var(--paper) 0%, var(--paper) 38%, color-mix(in srgb, var(--paper) 60%, transparent) 62%, transparent 100%),
-    repeating-linear-gradient(90deg, transparent 0 calc(5% - 1px), rgba(var(--sp-night), .10) calc(5% - 1px) 5%),
-    linear-gradient(180deg, rgba(var(--sp-night), .25) 0%, transparent 14%),
-    var(--spectrum) !important;
+    linear-gradient(90deg, var(--paper) 0%, var(--paper) 40%, transparent 100%),
+    linear-gradient(180deg, color-mix(in srgb, var(--tone) 14%, var(--paper)) 0%, color-mix(in srgb, var(--tone) 40%, var(--paper)) 100%) !important;
 }
 
 /* Looking back: a softer horizon */
@@ -4252,7 +4251,7 @@ html[data-theme="light"] .lookback, html[data-theme="light"] .sheet > .spread.lo
 }
 @media (max-width: 760px) {
   html[data-theme="light"] .tenets:not(.is-compact) .tenet:not(.is-open) {
-    background: linear-gradient(90deg, var(--sp-blue) 0%, var(--sp-peri) 22%, var(--sp-pink) 36%, var(--sp-haze) 50%, var(--sp-yellow) 64%, var(--sp-orange) 82%, var(--sp-red) 100%);
+    background: linear-gradient(90deg, color-mix(in srgb, var(--tone) 40%, var(--paper)) 0%, color-mix(in srgb, var(--tone) 10%, var(--paper)) 100%);
     box-shadow: none;
   }
 }
