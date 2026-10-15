@@ -4556,3 +4556,23 @@ html[data-theme="light"] .ft-art--doc { background: var(--golden); }
 /* Voyager's block uses Deep Blue, matching the poster palette */
 html[data-theme="light"] { --c-voyager: var(--deep-blue); }
 html[data-theme="light"] body:has(.cs-hero[style*="--c-voyager"]) { --page-tone: var(--deep-blue); }
+
+/* Home tabs, day mode: light tabs with the label in the category colour
+   (like night mode). The light colours are deepened a touch so the
+   label stays readable on Ivory; the dot keeps the pure colour. */
+html[data-theme="light"] .tenet { --label: var(--tone); }
+html[data-theme="light"] .tenet:is([data-id="homebot"], [data-id="archive"], [data-id="about"]) { --label: color-mix(in srgb, var(--tone) 62%, var(--forest-black)); }
+html[data-theme="light"] .tenet:not(.is-open),
+html[data-theme="light"] .tenets.is-compact .tenet:not(.is-open) {
+  background: var(--card) !important;
+  border-left: 1px solid var(--rule) !important;
+}
+html[data-theme="light"] .tenet:not(.is-open):hover,
+html[data-theme="light"] .tenets.is-compact .tenet:not(.is-open):hover { background: color-mix(in srgb, var(--tone) 12%, var(--card)) !important; }
+html[data-theme="light"] .tenet .tenet-tab span,
+html[data-theme="light"] .tenet:not(.is-open) .tenet-tab span { color: var(--label) !important; }
+html[data-theme="light"] .tenet .tenet-tab span::after,
+html[data-theme="light"] .tenet:not(.is-open) .tenet-tab span::after { background: var(--tone) !important; box-shadow: none !important; }
+@media (max-width: 760px) {
+  html[data-theme="light"] .tenets:not(.is-compact) .tenet:not(.is-open) { background: var(--card) !important; border-top: 1px solid var(--rule) !important; }
+}
