@@ -4474,3 +4474,23 @@ html:not([data-theme="light"]) .ft-social a:hover { background: rgba(255, 255, 2
 @media (max-width: 760px) { .ft-cta { padding-inline: 0; } .ft-rows, .ft-office { border-inline: 0; } }
 .ill-decks { padding-bottom: clamp(1.5rem, 3vw, 2.5rem); }
 .site-footer.ft { margin-top: 0; }
+/* Stacks wrap in centred rows, so an odd one out sits in the middle */
+.ill-decks { display: flex; flex-wrap: wrap; justify-content: center; max-width: calc(3 * 17rem + 2 * clamp(2.5rem, 6vw, 5rem) + 2 * var(--gutter, 24px)); }
+.ill-decks > .deck { flex: 0 1 17rem; }
+@media (max-width: 900px) { .ill-decks > .deck { flex-basis: calc(50% - .75rem); } }
+@media (max-width: 480px) { .ill-decks > .deck { flex-basis: 18rem; } }
+
+/* Wide screens: the project stacks scatter like the collage at the top */
+@media (min-width: 1180px) {
+  .ill-decks {
+    display: block; position: relative; max-width: 1400px; margin: 0 auto;
+    aspect-ratio: auto; height: calc(min(100vw, 1400px) * .62 + 17rem); padding: 0; margin-block: clamp(2rem, 4vw, 3.5rem) clamp(1rem, 2vw, 2rem);
+  }
+  .ill-decks > .deck {
+    position: absolute; left: var(--x); top: var(--y); width: var(--w); max-width: none;
+    transform: rotate(var(--r)); transition: transform .35s var(--ease, ease); z-index: 1;
+  }
+  .ill-decks > .deck .deck-card { transform: none; }
+  .ill-decks > .deck:hover { transform: rotate(0deg) translateY(-6px); z-index: 3; }
+  .ill-decks > .deck:hover .deck-card { transform: none; }
+}
