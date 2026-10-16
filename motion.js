@@ -3,6 +3,31 @@
 // reading position. Skipped for reduced-motion users; content is fully
 // visible if this script never runs. window.siteMotion(scope) re-runs
 // it for case studies the home page loads inline.
+// Full-size screenshots open in a modal instead of a new tab.
+(function () {
+  let dlg;
+  const build = () => {
+    dlg = document.createElement('dialog');
+    dlg.className = 'shot-modal';
+    dlg.innerHTML = '<button type="button" class="shot-close" aria-label="Close">\u00d7</button><img alt="">';
+    dlg.addEventListener('click', e => { if (e.target === dlg || e.target.closest('.shot-close')) { dlg.close(); document.documentElement.classList.remove('shot-open'); } });
+    dlg.addEventListener('close', () => document.documentElement.classList.remove('shot-open'));
+    document.body.appendChild(dlg);
+  };
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a.app-full');
+    if (!a || e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0 || typeof HTMLDialogElement !== 'function') return;
+    e.preventDefault();
+    if (!dlg) build();
+    const src = a.querySelector('img');
+    const img = dlg.querySelector('img');
+    img.src = a.href; img.alt = src ? src.alt : '';
+    document.documentElement.classList.add('shot-open');
+    dlg.showModal();
+    dlg.scrollTop = 0;
+  });
+})();
+
 (function () {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { window.siteMotion = () => {}; return; }
   const root = document.documentElement;
