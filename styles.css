@@ -4591,3 +4591,17 @@ html[data-theme="light"] .tenet:not(.is-open) .tenet-tab span::after { backgroun
 .about-pg-list a:hover .about-pg-art { transform: scale(1.05) rotate(-2deg); }
 html[data-theme="light"] .about-pg-list .pg-2 { --c: var(--cream, #fbf7ee); }
 @media (prefers-reduced-motion: reduce) { .about-pg-list a:hover .about-pg-art { transform: none; } }
+
+/* Principles posters: Sarah's hand lettering, tinted to each poster's ink */
+.pg-card { justify-content: flex-start; padding-top: clamp(2.8rem, 4vw, 3.4rem); }
+.pg-art {
+  display: block; width: 100%; flex: 1 1 auto; min-height: 7rem;
+  background: var(--c);
+  -webkit-mask: var(--art) center / contain no-repeat; mask: var(--art) center / contain no-repeat;
+  transition: transform .3s var(--ease, ease);
+}
+.pg-card:hover .pg-art { transform: scale(1.03) rotate(-1.5deg); }
+.pg-card p { flex: 0 0 auto; }
+.pg-2 { align-items: stretch; }
+html[data-theme="light"] .pg-2 { --c: var(--cream, #fbf7ee); }
+@media (prefers-reduced-motion: reduce) { .pg-card:hover .pg-art { transform: none; } }
