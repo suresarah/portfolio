@@ -4989,3 +4989,6 @@ html[data-theme="light"] .ft-bar .ft-copy-mark { color: var(--ink) !important; }
 html[data-theme="light"] .ft-joke { color: var(--ink-soft) !important; }
 html[data-theme="light"] .ft-social a { color: var(--ink) !important; }
 html[data-theme="light"] .ft-social a:hover { background: color-mix(in srgb, var(--coral) 12%, transparent) !important; color: var(--coral) !important; }
+/* Compact tab bar: every tab keeps its divider, including the open one */
+.tenets.is-compact .tenet.tenet + .tenet,
+html[data-theme="light"] .tenets.is-compact .tenet.tenet + .tenet { border-left: 1px solid var(--rule) !important; }
