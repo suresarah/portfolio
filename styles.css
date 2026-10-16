@@ -4818,3 +4818,23 @@ html:not([data-theme="light"]) :is(.tenet-panel .read, .cs-section a.read):hover
    lighter fill and close button already mark it */
 .tenets.is-compact .tenet.is-open .tenet-tab span { text-decoration: none !important; }
 .tenets.is-compact .tenet.is-open, html[data-theme="light"] .tenets.is-compact .tenet.is-open { box-shadow: none !important; }
+
+/* Smoother theme switch: no per-element transitions while the page
+   swaps, a wider feathered edge, gentler easing, and the old picture
+   dissolving out at the end */
+html.theme-snap *, html.theme-snap *::before, html.theme-snap *::after { transition: none !important; }
+html[data-sky] ::view-transition-new(root) {
+  -webkit-mask-size: 100% 400%; mask-size: 100% 400%;
+  animation-duration: 1.5s !important; animation-timing-function: cubic-bezier(.65, 0, .35, 1) !important;
+}
+html[data-sky="rise"] ::view-transition-new(root) {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, transparent 25%, #000 75%, #000 100%);
+          mask-image: linear-gradient(to bottom, transparent 0%, transparent 25%, #000 75%, #000 100%);
+}
+html[data-sky="set"] ::view-transition-new(root) {
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, transparent 25%, #000 75%, #000 100%);
+          mask-image: linear-gradient(to top, transparent 0%, transparent 25%, #000 75%, #000 100%);
+}
+html[data-sky] ::view-transition-old(root) { animation: sky-old-out 1.5s cubic-bezier(.65, 0, .35, 1) both; }
+@keyframes sky-old-out { 0%, 55% { opacity: 1; } 100% { opacity: 0; } }
+::view-transition-group(root) { animation-duration: 1.5s; }

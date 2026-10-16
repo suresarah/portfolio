@@ -71,9 +71,14 @@
       if (!reduceMotion && document.startViewTransition) {
         const kind = next === 'light' ? 'rise' : 'set';
         root.setAttribute('data-sky', kind);
+        // Freeze per-element colour transitions so the new picture is final
+        // and nothing keeps shifting after the sweep ends.
+        root.classList.add('theme-snap');
         const t = document.startViewTransition(commit);
-        t.ready.then(() => sweep(kind, btn)).catch(() => {});
-        t.finished.finally(() => root.removeAttribute('data-sky'));
+        t.finished.finally(() => {
+          root.removeAttribute('data-sky');
+          setTimeout(() => root.classList.remove('theme-snap'), 30);
+        });
         return;
       }
       if (!reduceMotion) {
