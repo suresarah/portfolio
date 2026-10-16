@@ -4854,3 +4854,13 @@ html.motion .cs-body figure img, html.motion .collage img { transition: transfor
 html.motion .cs-body figure:hover img, html.motion .collage img:hover { transform: scale(1.015); }
 html.motion .stat, html.motion .tile, html.motion .board-card { transition: transform .35s var(--ease, ease), box-shadow .35s var(--ease, ease); }
 @media (prefers-reduced-motion: reduce) { .read-progress { display: none; } }
+/* Looking back, night: the label's chip fill is near-invisible on the
+   panel, so drop it and line the text up with the statement below */
+html:not([data-theme="light"]) :is(.lookback, .sheet > .spread.lookback) > h2 { background: none !important; box-shadow: none !important; padding-left: 0 !important; padding-right: 0 !important; }
+/* Tilted stacks keep their angle: they fade in without the slide */
+html.motion .ill-decks > .deck.reveal, html.motion .ill-decks > .deck.reveal.is-in { transform: rotate(var(--r, 0deg)); }
+@media (max-width: 1179px) { html.motion .ill-decks > .deck.reveal, html.motion .ill-decks > .deck.reveal.is-in { transform: none; } }
+/* Extreme ownership: warm off-white like the Designing for change poster,
+   not pure white */
+.pg-2, .about-pg-list .pg-2 { --c: var(--pg-paper, #f1eee8); }
+html[data-theme="light"] .pg-2, html[data-theme="light"] .about-pg-list .pg-2 { --c: var(--ivory, #f8f4eb); }

@@ -1,39 +1,36 @@
 // Subtle page motion for case studies: panels ease in as they scroll
 // into view, big numbers count up once, and a thin progress line tracks
-// reading position. Everything is skipped for reduced-motion users, and
-// content is fully visible if this script never runs.
+// reading position. Skipped for reduced-motion users; content is fully
+// visible if this script never runs. window.siteMotion(scope) re-runs
+// it for case studies the home page loads inline.
 (function () {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { window.siteMotion = () => {}; return; }
   const root = document.documentElement;
   root.classList.add('motion');
 
-  // Reading progress
   const bar = document.createElement('div');
   bar.className = 'read-progress'; bar.setAttribute('aria-hidden', 'true');
-  document.body.appendChild(bar);
   const onScroll = () => {
     const max = root.scrollHeight - innerHeight;
     bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, scrollY / max) : 0) + ')';
   };
-  addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
-  // Panels ease in
-  const items = document.querySelectorAll('.sheet > *, .cs-hero .facts');
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      e.target.classList.add('is-in'); io.unobserve(e.target);
+  // Reveal anything whose top has come into view. A plain scroll check is
+  // used (not IntersectionObserver) so very tall sections and background
+  // tabs behave the same.
+  let pending = [];
+  const check = () => {
+    if (!pending.length) return;
+    const line = innerHeight * 0.94;
+    pending = pending.filter(el => {
+      if (el.getBoundingClientRect().top < line) { el.classList.add('is-in'); return false; }
+      return true;
     });
-  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-  items.forEach((el, i) => {
-    el.classList.add('reveal');
-    el.style.setProperty('--d', (i % 3) * 70 + 'ms');
-    io.observe(el);
-  });
+  };
+  addEventListener('scroll', check, { passive: true });
+  addEventListener('resize', check);
 
-  // Numbers count up once
-  const nums = document.querySelectorAll('.stat-n');
-  const run = el => {
+  const count = el => {
     const node = [...el.childNodes].find(n => n.nodeType === 3 && /\d/.test(n.textContent));
     if (!node) return;
     const target = parseFloat(node.textContent.replace(/[^\d.]/g, ''));
@@ -48,7 +45,25 @@
     requestAnimationFrame(step);
   };
   const no = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { run(e.target); no.unobserve(e.target); } });
+    entries.forEach(e => { if (e.isIntersecting) { count(e.target); no.unobserve(e.target); } });
   }, { threshold: 0.6 });
-  nums.forEach(n => no.observe(n));
+
+  window.siteMotion = (scope = document) => {
+    scope.querySelectorAll('.sheet > *, .cs-hero .facts, .ill-decks > .deck, .pg-grid > .pg-card, .tile, .side-grid > *')
+      .forEach((el, i) => {
+        if (el.classList.contains('reveal')) return;
+        el.classList.add('reveal'); el.style.setProperty('--d', (i % 3) * 70 + 'ms'); pending.push(el);
+      });
+    scope.querySelectorAll('.stat-n').forEach(n => no.observe(n));
+    check(); setTimeout(check, 60);
+  };
+
+  const start = () => {
+    if (document.querySelector('.cs-hero, .sheet')) {          // case-study pages only
+      document.body.appendChild(bar);
+      addEventListener('scroll', onScroll, { passive: true }); onScroll();
+    }
+    window.siteMotion(document.querySelector('main') || document);
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
 })();

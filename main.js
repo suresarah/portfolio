@@ -103,6 +103,7 @@
       const content = await loadPage(link.getAttribute('href'));
       if (shownId !== tenet.dataset.id) return; // another panel was picked meanwhile
       detailBody.replaceChildren(content);
+      if (window.siteMotion) window.siteMotion(detailBody);
     } catch (e) {
       // If loading fails (e.g. opened from a file), fall back to the page itself.
       root.classList.remove('is-compact');
