@@ -4667,3 +4667,41 @@ figure:has(> .persona-card--cs) figcaption { margin-top: 1.5rem; }
   box-shadow: 0 0 0 .5cqi var(--card), 0 0 0 .8cqi var(--pink) !important;
 }
 .tl + .about-pg, ol + .about-pg { margin-top: clamp(2.5rem, 5vw, 3.5rem); }
+
+/* Product screenshots shown as an app window on a tinted stage */
+.app-shot { margin: 1.5rem 0 0; }
+.app-shot .app-window {
+  position: relative; overflow: hidden; border-radius: 12px; background: #1a1b1f;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .06), 0 24px 50px rgba(0, 0, 0, .35),
+              0 0 70px color-mix(in srgb, var(--c-homebot, #f5a6bc) 22%, transparent);
+  transform: rotate(-1deg); transition: transform .4s var(--ease, ease);
+}
+.app-shot:hover .app-window { transform: rotate(0deg) translateY(-4px); }
+.app-chrome { display: flex; align-items: center; gap: 6px; padding: 9px 12px; background: #2a2d31; }
+.app-chrome i { width: 9px; height: 9px; border-radius: 50%; background: #ff6159; }
+.app-chrome i:nth-child(2) { background: #ffbd2e; } .app-chrome i:nth-child(3) { background: #28c941; }
+.app-chrome b { margin: 0 auto; padding: 2px 14px; border-radius: 6px; background: #1d1f22; color: #9aa0a6; font: 500 .7rem/1.4 var(--mono); letter-spacing: .02em; }
+.sheet .app-shot .app-window img, .app-shot .app-window img {
+  display: block; width: 100%; height: auto; max-height: none !important; margin: 0;
+  border: 0 !important; border-radius: 0 !important; box-shadow: none !important; object-fit: initial;
+}
+.app-shot figcaption { margin-top: 1.25rem; }
+html[data-theme="light"] .app-shot .app-window {
+  box-shadow: 0 0 0 1px rgba(16, 39, 31, .1), 0 20px 44px rgba(16, 39, 31, .18),
+              0 0 70px color-mix(in srgb, var(--soft-pink) 40%, transparent);
+}
+@media (prefers-reduced-motion: reduce) { .app-shot .app-window, .app-shot:hover .app-window { transform: none; transition: none; } }
+/* Tall screenshots: show the top, fade out, click for the whole thing */
+.app-full { display: block; position: relative; text-decoration: none !important; }
+.app-shot .app-window img { aspect-ratio: 1345 / 860; object-fit: cover !important; object-position: top !important; }
+.app-full::after {
+  content: ""; position: absolute; inset: auto 0 0 0; height: 32%;
+  background: linear-gradient(180deg, transparent, #1a1b1f 88%); pointer-events: none;
+}
+.app-more {
+  position: absolute; left: 50%; bottom: 1.1rem; transform: translateX(-50%); z-index: 1;
+  padding: .45rem 1rem; border-radius: 999px; background: #f15ba7; color: #fff !important;
+  font: 600 .8rem/1.2 var(--font); white-space: nowrap; transition: transform .25s var(--ease, ease);
+}
+.app-full:hover .app-more { transform: translateX(-50%) translateY(-2px); }
+.app-full:focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; }
