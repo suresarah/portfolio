@@ -4605,3 +4605,4 @@ html[data-theme="light"] .about-pg-list .pg-2 { --c: var(--cream, #fbf7ee); }
 .pg-2 { align-items: stretch; }
 html[data-theme="light"] .pg-2 { --c: var(--cream, #fbf7ee); }
 @media (prefers-reduced-motion: reduce) { .pg-card:hover .pg-art { transform: none; } }
+.pg-hero .visually-hidden + .pg-north { margin-top: 1rem; }
