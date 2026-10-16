@@ -4944,7 +4944,7 @@ html:not([data-theme="light"]) .next > a:hover, html:not([data-theme="light"]) .
 /* Case-study headers, day mode: a soft tint of the page colour instead of
    a solid block; text in the page's ink, the label in a deepened tone */
 html[data-theme="light"] .cs-hero.cs-hero:not(.ill-canvas):not(.pg-hero) {
-  background: color-mix(in srgb, var(--tone) 16%, var(--paper)) !important;
+  background: var(--paper) !important;
 }
 html[data-theme="light"] .cs-hero.cs-hero:not(.ill-canvas):not(.pg-hero) :is(h1, h2, p, li, span, dt, dd, b, strong, a, mark) {
   color: var(--ink) !important; -webkit-text-fill-color: var(--ink) !important;
