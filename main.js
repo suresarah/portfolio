@@ -114,7 +114,16 @@
     }
     setHash(tenet.dataset.id + '/read');
     if (scroll) {
-      detail.scrollIntoView({ behavior: jump ? 'auto' : scrollBehavior, block: 'start' });
+      // Land on the case study's top. The panels above are still collapsing
+      // into the tab bar, which shifts the page, so jump now and again as
+      // the layout settles, unless the reader has started scrolling.
+      const toTop = () => detail.scrollIntoView({ behavior: 'auto', block: 'start' });
+      let moved = false;
+      const stop = () => { moved = true; };
+      ['wheel', 'touchmove', 'keydown'].forEach(ev => window.addEventListener(ev, stop, { once: true, passive: true }));
+      toTop();
+      requestAnimationFrame(() => { if (!moved) toTop(); });
+      [200, 450, 800, 1200].forEach(t => setTimeout(() => { if (!moved) toTop(); }, t));
       detailBody.focus({ preventScroll: true });
     }
   }
