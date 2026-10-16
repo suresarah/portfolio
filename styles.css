@@ -4764,3 +4764,38 @@ html:not([data-theme="light"]) .big .hl { color: var(--lime); -webkit-text-fill-
 .persona-table th.is-focus.is-focus b { color: var(--ink); }
 .persona-table th.is-focus.is-focus img { box-shadow: 0 0 0 2px color-mix(in srgb, var(--lime) 70%, transparent); }
 html:not([data-theme="light"]) .persona-table thead th.is-focus.is-focus { box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--lime) 55%, transparent) !important; }
+
+/* Header links, day mode: no box on hover; the text darkens and a thin
+   coral line slides in under the word */
+html[data-theme="light"] .site-header nav a:not(.cta) { position: relative; background: none !important; }
+html[data-theme="light"] .site-header nav a:not(.cta)::after {
+  content: ""; position: absolute; left: 50%; right: 50%; bottom: .45rem; height: 2px; border-radius: 2px;
+  background: var(--coral); transition: left .25s var(--ease, ease), right .25s var(--ease, ease);
+}
+html[data-theme="light"] .site-header nav a:not(.cta):hover,
+html[data-theme="light"] .site-header nav a:not(.cta):focus-visible { color: var(--ink); background: none !important; }
+html[data-theme="light"] .site-header nav a:not(.cta):hover::after,
+html[data-theme="light"] .site-header nav a:not(.cta):focus-visible::after { left: 1rem; right: 1rem; }
+@media (prefers-reduced-motion: reduce) { html[data-theme="light"] .site-header nav a:not(.cta)::after { transition: none; } }
+html[data-theme="light"] .site-header nav a:not(.cta)::after { bottom: -5px; }
+html[data-theme="light"] .site-header nav a:not(.cta):hover::after,
+html[data-theme="light"] .site-header nav a:not(.cta):focus-visible::after { left: 1.4rem; right: 1.4rem; }
+
+/* Header CTA, night: a modern pill. No bottom ledge; a soft highlight on
+   top, a quiet glow, and a small lift on hover */
+html:not([data-theme="light"]) .site-header nav a.cta {
+  border-radius: 999px !important; padding: .5rem 1.15rem !important;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--lime) 88%, #fff) 0%, var(--lime) 100%) !important;
+  color: var(--on-lime) !important; font-weight: 600; letter-spacing: -.005em;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35), 0 0 0 1px color-mix(in srgb, var(--lime) 60%, transparent),
+              0 6px 18px -6px color-mix(in srgb, var(--lime) 55%, transparent) !important;
+  transition: transform .2s var(--ease, ease), box-shadow .2s var(--ease, ease), filter .2s ease;
+}
+html:not([data-theme="light"]) .site-header nav a.cta:hover,
+html:not([data-theme="light"]) .site-header nav a.cta:focus-visible {
+  transform: translateY(-1px); filter: brightness(1.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .4), 0 0 0 1px var(--lime),
+              0 10px 26px -8px color-mix(in srgb, var(--lime) 75%, transparent) !important;
+}
+html:not([data-theme="light"]) .site-header nav a.cta:active { transform: translateY(0); filter: brightness(.97); }
+@media (prefers-reduced-motion: reduce) { html:not([data-theme="light"]) .site-header nav a.cta { transition: none; } }
