@@ -4838,3 +4838,19 @@ html[data-sky="set"] ::view-transition-new(root) {
 html[data-sky] ::view-transition-old(root) { animation: sky-old-out 1.5s cubic-bezier(.65, 0, .35, 1) both; }
 @keyframes sky-old-out { 0%, 55% { opacity: 1; } 100% { opacity: 0; } }
 ::view-transition-group(root) { animation-duration: 1.5s; }
+
+/* =====================================================================
+   MOTION (motion.js): panels ease in on scroll, numbers count up, a thin
+   reading-progress line, and gentle hover on figures. Only applies when
+   the script has run and the reader hasn't asked for reduced motion.
+   ===================================================================== */
+html.motion .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s var(--ease, ease) var(--d, 0ms), transform .7s var(--ease, ease) var(--d, 0ms); }
+html.motion .reveal.is-in { opacity: 1; transform: none; }
+.read-progress {
+  position: fixed; left: 0; right: 0; top: 0; height: 2px; z-index: 1000; pointer-events: none;
+  background: var(--page-tone, var(--lime)); transform: scaleX(0); transform-origin: 0 50%;
+}
+html.motion .cs-body figure img, html.motion .collage img { transition: transform .5s var(--ease, ease), box-shadow .5s var(--ease, ease); }
+html.motion .cs-body figure:hover img, html.motion .collage img:hover { transform: scale(1.015); }
+html.motion .stat, html.motion .tile, html.motion .board-card { transition: transform .35s var(--ease, ease), box-shadow .35s var(--ease, ease); }
+@media (prefers-reduced-motion: reduce) { .read-progress { display: none; } }
