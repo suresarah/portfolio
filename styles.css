@@ -4631,3 +4631,10 @@ p, li, dd, dt, figcaption, blockquote, .tl-desc, .stat-l { text-wrap: pretty; }
 /* Poster 04's line uses the same type as the other posters */
 .pg-4 { font-family: var(--font); }
 .pg-card.pg-4 p { font: 500 .88rem/1.35 var(--font); font-style: normal; }
+/* Marty, sitting next to his credit in the footer */
+.ft-joke { display: inline-flex; align-items: center; gap: .5rem; }
+.ft-marty { height: 2.6rem; width: auto; margin-block: -.9rem -.6rem; transform: rotate(-4deg); transition: transform .3s var(--ease, ease); }
+.ft-joke:hover .ft-marty { transform: rotate(4deg) translateY(-2px); }
+@media (prefers-reduced-motion: reduce) { .ft-joke:hover .ft-marty { transform: rotate(-4deg); } }
+.ft-joke { opacity: 1; color: color-mix(in srgb, currentColor 75%, transparent); }
+.ft-marty { height: 3.1rem; margin-block: -1.2rem -.8rem; }
