@@ -4666,3 +4666,4 @@ figure:has(> .persona-card--cs) figcaption { margin-top: 1.5rem; }
   object-fit: cover; border-radius: 50% !important; margin: 0 !important; border: 0 !important;
   box-shadow: 0 0 0 .5cqi var(--card), 0 0 0 .8cqi var(--pink) !important;
 }
+.tl + .about-pg, ol + .about-pg { margin-top: clamp(2.5rem, 5vw, 3.5rem); }
