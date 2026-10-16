@@ -4628,3 +4628,6 @@ p, li, dd, dt, figcaption, blockquote, .tl-desc, .stat-l { text-wrap: pretty; }
 /* Principles: breathing room between the coral header and the posters */
 .pg-hero.cs-hero { padding-bottom: clamp(3rem, 6vw, 5rem) !important; }
 .pg-hero + .pg-grid { margin-top: clamp(2rem, 4vw, 3.5rem); }
+/* Poster 04's line uses the same type as the other posters */
+.pg-4 { font-family: var(--font); }
+.pg-card.pg-4 p { font: 500 .88rem/1.35 var(--font); font-style: normal; }
