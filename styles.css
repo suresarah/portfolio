@@ -4625,3 +4625,6 @@ p, li, dd, dt, figcaption, blockquote, .tl-desc, .stat-l { text-wrap: pretty; }
 /* Short card text and list items: balance lines so none ends on one word */
 .stat p, .stat span, .stat-l, .content li, .tile-stat span, .board-card p, .board-card li { text-wrap: balance; }
 .tile .body p { text-wrap: balance; }
+/* Principles: breathing room between the coral header and the posters */
+.pg-hero.cs-hero { padding-bottom: clamp(3rem, 6vw, 5rem) !important; }
+.pg-hero + .pg-grid { margin-top: clamp(2rem, 4vw, 3.5rem); }
