@@ -88,6 +88,40 @@
     return frag;
   }
 
+  // Bottom of an inline case study: previous / next case study, switching
+  // in place (the standalone pages' own links would leave the home page).
+  function pager(tenet) {
+    const i = tenets.indexOf(tenet);
+    const readable = t => t && t.querySelector('.read');
+    const name = t => t.querySelector('.tenet-tab span').textContent.trim();
+    let prev = null, next = null;
+    for (let j = i - 1; j >= 0; j--) if (readable(tenets[j])) { prev = tenets[j]; break; }
+    for (let j = i + 1; j < tenets.length; j++) if (readable(tenets[j])) { next = tenets[j]; break; }
+    const nav = document.createElement('nav');
+    nav.className = 'next next--inline';
+    nav.setAttribute('aria-label', 'More case studies');
+    const make = (t, dir) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'next-link next-link--' + dir;
+      b.innerHTML = '<small>' + (dir === 'prev' ? 'Previous' : 'Next case study') + '</small><b></b>';
+      b.querySelector('b').textContent = dir === 'prev' ? '\u2190 ' + name(t) : name(t) + ' \u2192';
+      b.addEventListener('click', () => open(tenets.indexOf(t)));
+      return b;
+    };
+    if (prev) nav.appendChild(make(prev, 'prev')); else nav.appendChild(document.createElement('span'));
+    if (next) nav.appendChild(make(next, 'next'));
+    else {
+      const about = tenets.findIndex(t => t.dataset.id === 'about');
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'next-link next-link--next';
+      b.innerHTML = '<small>That\u2019s the work</small><b>About Sarah \u2192</b>';
+      b.addEventListener('click', () => open(about >= 0 ? about : 0));
+      nav.appendChild(b);
+    }
+    return nav;
+  }
+
   async function showDetail(tenet, { scroll = true, jump = false } = {}) {
     const link = tenet.querySelector('.read');
     if (!link) return;
@@ -103,6 +137,7 @@
       const content = await loadPage(link.getAttribute('href'));
       if (shownId !== tenet.dataset.id) return; // another panel was picked meanwhile
       detailBody.replaceChildren(content);
+      detailBody.appendChild(pager(tenet));
       if (window.siteMotion) window.siteMotion(detailBody);
     } catch (e) {
       // If loading fails (e.g. opened from a file), fall back to the page itself.
