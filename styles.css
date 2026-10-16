@@ -4749,3 +4749,6 @@ html[data-sky="set"] ::view-transition-new(root) {
 /* Voyager diagram: "pays for all" matches the other arrow labels */
 .diagram svg text:nth-of-type(3) { fill: var(--ink-faint) !important; }
 html[data-theme="light"] .diagram svg text:nth-of-type(3) { fill: var(--ink-faint) !important; }
+/* Key phrase inside a statement: the page's own colour */
+.big .hl { color: var(--page-ink, var(--lime)); -webkit-text-fill-color: var(--page-ink, var(--lime)); }
+html:not([data-theme="light"]) .big .hl { color: var(--lime); -webkit-text-fill-color: var(--lime); }
