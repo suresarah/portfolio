@@ -4814,3 +4814,7 @@ html:not([data-theme="light"]) :is(.tenet-panel .read, .cs-section a.read):hover
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .4), 0 0 0 1px var(--lime),
               0 10px 26px -8px color-mix(in srgb, var(--lime) 75%, transparent) !important;
 }
+/* Compact tab bar: the open tab has no underline or bottom rule; its
+   lighter fill and close button already mark it */
+.tenets.is-compact .tenet.is-open .tenet-tab span { text-decoration: none !important; }
+.tenets.is-compact .tenet.is-open, html[data-theme="light"] .tenets.is-compact .tenet.is-open { box-shadow: none !important; }
