@@ -4607,3 +4607,21 @@ html[data-theme="light"] .pg-2 { --c: var(--cream, #fbf7ee); }
 @media (prefers-reduced-motion: reduce) { .pg-card:hover .pg-art { transform: none; } }
 .pg-hero .visually-hidden + .pg-north { margin-top: 1rem; }
 .pg-2 { text-align: left; } .pg-2 p { align-self: flex-start; }
+
+/* Line breaks: use the width that's there, and never strand one word.
+   Short statements get room to run long; headings balance their lines;
+   paragraphs avoid a lone last word. */
+.pg-north { max-width: none; }
+.pg-north-sub { max-width: 72ch; }
+.about-pg-north { max-width: none !important; }
+.bring-lede { max-width: 80ch !important; }
+.cs-hero .lede { max-width: 60ch; }
+h1, h2, h3, h4, .big, .pg-north-big, .slide-serif, .slide-caps, .ic-label, .deck-note, .tl-name, .ft-copy b { text-wrap: balance; }
+p, li, dd, dt, figcaption, blockquote, .tl-desc, .stat-l { text-wrap: pretty; }
+/* Case-study fact row uses the hero's full width so short lists don't
+   wrap into narrow columns */
+.spread-cover .facts { max-width: min(80rem, 100%); }
+.facts dd { text-wrap: balance; }
+/* Short card text and list items: balance lines so none ends on one word */
+.stat p, .stat span, .stat-l, .content li, .tile-stat span, .board-card p, .board-card li { text-wrap: balance; }
+.tile .body p { text-wrap: balance; }
