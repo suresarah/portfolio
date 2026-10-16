@@ -4981,3 +4981,11 @@ html[data-theme="light"] .cs-hero.cs-hero:not(.ill-canvas):not(.pg-hero) :is(.fa
 @media (max-width: 370px) {
   .site-header nav a[href*="linkedin.com"] { display: none !important; }
 }
+
+/* Footer, day mode: light bar on the page's paper, ink text and icons */
+html[data-theme="light"] .site-footer.ft { background: var(--paper) !important; border-top: 1px solid var(--rule) !important; }
+html[data-theme="light"] .ft-bar { background: var(--card) !important; color: var(--ink) !important; border-top: 0 !important; }
+html[data-theme="light"] .ft-bar .ft-copy-mark { color: var(--ink) !important; }
+html[data-theme="light"] .ft-joke { color: var(--ink-soft) !important; }
+html[data-theme="light"] .ft-social a { color: var(--ink) !important; }
+html[data-theme="light"] .ft-social a:hover { background: color-mix(in srgb, var(--coral) 12%, transparent) !important; color: var(--coral) !important; }
