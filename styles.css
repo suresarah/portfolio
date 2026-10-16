@@ -4903,3 +4903,5 @@ html[data-sky] ::view-transition-old(root) { animation-duration: 2.4s !important
 @media (max-width: 640px) { .next { grid-template-columns: 1fr; } .next > a:only-child { grid-column: auto; } }
 @media (prefers-reduced-motion: reduce) { .next > a, .next > .next-link { transition: none; } }
 .next.next--inline { padding-inline: var(--gutter, 24px); margin-top: 0; }
+/* Slower, smoother sun turn on hover */
+.theme-toggle[aria-checked="true"] .tt-knob { transition: transform 2.2s cubic-bezier(.25, .8, .35, 1) !important; }
