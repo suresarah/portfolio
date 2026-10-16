@@ -60,6 +60,22 @@
 
     btn.addEventListener('click', () => {
       const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      const commit = () => {
+        apply(next);
+        try { localStorage.setItem(KEY, next); } catch (e) {}
+        sync();
+      };
+      // Where supported, the whole page cross-fades as one picture: the new
+      // theme is revealed behind a soft edge that rises (sunrise) or sinks
+      // (sunset), so gradients and colours change together with no snap.
+      if (!reduceMotion && document.startViewTransition) {
+        const kind = next === 'light' ? 'rise' : 'set';
+        root.setAttribute('data-sky', kind);
+        const t = document.startViewTransition(commit);
+        t.ready.then(() => sweep(kind, btn)).catch(() => {});
+        t.finished.finally(() => root.removeAttribute('data-sky'));
+        return;
+      }
       if (!reduceMotion) {
         root.classList.add('theme-anim');
         clearTimeout(btn._t);

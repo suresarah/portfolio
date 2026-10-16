@@ -4705,3 +4705,47 @@ html[data-theme="light"] .app-shot .app-window {
 }
 .app-full:hover .app-more { transform: translateX(-50%) translateY(-2px); }
 .app-full:focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; }
+
+/* Principles header, day mode: light background, dark text; coral stays
+   as the accent on the labels and the North Star rule */
+html[data-theme="light"] .cs-hero.pg-hero.pg-hero { background: var(--paper) !important; }
+html[data-theme="light"] .pg-hero :is(h1, h2, p, span) { color: var(--ink) !important; -webkit-text-fill-color: var(--ink) !important; }
+html[data-theme="light"] .pg-hero .pg-north-sub { color: var(--ink-soft) !important; -webkit-text-fill-color: var(--ink-soft) !important; }
+html[data-theme="light"] .pg-hero :is(.eyebrow, .pg-north-label) { color: var(--lime-ink) !important; -webkit-text-fill-color: var(--lime-ink) !important; }
+html[data-theme="light"] .pg-hero .pg-north { border-left-color: var(--coral) !important; }
+html[data-theme="light"] .cs-hero.pg-hero.pg-hero:not(.ill-canvas) :is(h1, h2, p, span, .pg-north-big) { color: var(--ink) !important; -webkit-text-fill-color: var(--ink) !important; }
+html[data-theme="light"] .cs-hero.pg-hero.pg-hero:not(.ill-canvas) .pg-north-sub { color: var(--ink-soft) !important; -webkit-text-fill-color: var(--ink-soft) !important; }
+html[data-theme="light"] .cs-hero.pg-hero.pg-hero:not(.ill-canvas) :is(.eyebrow, .pg-north-label) { color: var(--lime-ink) !important; -webkit-text-fill-color: var(--lime-ink) !important; }
+html[data-theme="light"] .cs-hero.pg-hero.pg-hero .pg-north { border-left-color: var(--coral) !important; }
+
+/* =====================================================================
+   THEME SWITCH, seamless: with the View Transitions API the old and new
+   pages are two pictures. The new one is revealed through a feathered
+   band that rises from the bottom (sunrise) or sinks from the top
+   (sunset); the sky-sweep glow rides along on top.
+   ===================================================================== */
+::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+::view-transition-group(root) { animation-duration: 1.25s; }
+html[data-sky] ::view-transition-new(root) {
+  -webkit-mask-size: 100% 300%; mask-size: 100% 300%;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+  animation: 1.25s cubic-bezier(.45, 0, .25, 1) both;
+}
+html[data-sky="rise"] ::view-transition-new(root) {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, transparent 35%, #000 65%, #000 100%);
+          mask-image: linear-gradient(to bottom, transparent 0%, transparent 35%, #000 65%, #000 100%);
+  animation-name: sky-reveal-up;
+}
+html[data-sky="set"] ::view-transition-new(root) {
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, transparent 35%, #000 65%, #000 100%);
+          mask-image: linear-gradient(to top, transparent 0%, transparent 35%, #000 65%, #000 100%);
+  animation-name: sky-reveal-down;
+}
+@keyframes sky-reveal-up   { from { -webkit-mask-position: 0 0%;   mask-position: 0 0%; }   to { -webkit-mask-position: 0 100%; mask-position: 0 100%; } }
+@keyframes sky-reveal-down { from { -webkit-mask-position: 0 100%; mask-position: 0 100%; } to { -webkit-mask-position: 0 0%;   mask-position: 0 0%; } }
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
+}
+/* Voyager diagram: "pays for all" matches the other arrow labels */
+.diagram svg text:nth-of-type(3) { fill: var(--ink-faint) !important; }
+html[data-theme="light"] .diagram svg text:nth-of-type(3) { fill: var(--ink-faint) !important; }
