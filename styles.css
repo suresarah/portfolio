@@ -5004,3 +5004,16 @@ html[data-theme="light"] .tenets.is-compact .tenet.tenet + .tenet { border-left:
 @media (max-width: 760px) {
   .tenet-panel .panel-media.flow-card { position: static !important; transform: none !important; width: 100% !important; max-width: 26rem; margin: 0 0 1.5rem !important; animation: none !important; }
 }
+/* Agent console "At a glance": dates line up along the bottom of every box,
+   and light mode gets light boxes so the labels read */
+.hz-stats { align-items: stretch !important; }
+.hz-stats > div { box-sizing: border-box; }
+.hz-stats span { text-wrap: balance; line-height: 1.3; }
+.hz-stats small { margin-top: auto; padding-top: .35rem; }
+html[data-theme="light"] .hz-stats > div { background: var(--paper); box-shadow: inset 0 0 0 1px var(--rule); }
+html[data-theme="light"] .hz-stats span { color: var(--ink); }
+@media (max-width: 480px) {
+  .hz-stats { gap: .6rem; }
+  .hz-stats > div { padding: 1rem .9rem .9rem; }
+  .hz-stats small { white-space: nowrap; font-size: .64rem; letter-spacing: -.01em; }
+}
