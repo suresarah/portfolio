@@ -5020,3 +5020,8 @@ html[data-theme="light"] .hz-stats span { color: var(--ink); }
 /* About: the intro line runs two lines at most (no image beside it here) */
 #p-about > h2 { max-width: 22ch !important; }
 @media (max-width: 360px) { #p-about > h2 { font-size: 1.7rem !important; } }
+/* Light mode: the closed-tab hover tint fades in like the dark glow, no snap */
+html[data-theme="light"] .tenet {
+  transition: flex-grow .7s cubic-bezier(.65, 0, .35, 1), flex-basis .7s cubic-bezier(.65, 0, .35, 1), background-color .6s ease;
+}
+@media (prefers-reduced-motion: reduce) { html[data-theme="light"] .tenet { transition: none; } }
