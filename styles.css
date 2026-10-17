@@ -4560,8 +4560,8 @@ html[data-theme="light"] body:has(.cs-hero[style*="--c-voyager"]) { --page-tone:
 /* Home tabs, day mode: light tabs with the label in the category colour
    (like night mode). The light colours are deepened a touch so the
    label stays readable on Ivory; the dot keeps the pure colour. */
-html[data-theme="light"] .tenet { --label: var(--tone); }
-html[data-theme="light"] .tenet:is([data-id="homebot"], [data-id="archive"], [data-id="about"]) { --label: color-mix(in srgb, var(--tone) 62%, var(--forest-black)); }
+html[data-theme="light"] .tenet { --label-c: var(--tone); }
+html[data-theme="light"] .tenet:is([data-id="homebot"], [data-id="archive"], [data-id="about"]) { --label-c: color-mix(in srgb, var(--tone) 62%, var(--forest-black)); }
 html[data-theme="light"] .tenet:not(.is-open),
 html[data-theme="light"] .tenets.is-compact .tenet:not(.is-open) {
   background: var(--card) !important;
@@ -4570,7 +4570,7 @@ html[data-theme="light"] .tenets.is-compact .tenet:not(.is-open) {
 html[data-theme="light"] .tenet:not(.is-open):hover,
 html[data-theme="light"] .tenets.is-compact .tenet:not(.is-open):hover { background: color-mix(in srgb, var(--tone) 12%, var(--card)) !important; }
 html[data-theme="light"] .tenet .tenet-tab span,
-html[data-theme="light"] .tenet:not(.is-open) .tenet-tab span { color: var(--label) !important; }
+html[data-theme="light"] .tenet:not(.is-open) .tenet-tab span { color: var(--label-c) !important; }
 html[data-theme="light"] .tenet .tenet-tab span::after,
 html[data-theme="light"] .tenet:not(.is-open) .tenet-tab span::after { background: var(--tone) !important; box-shadow: none !important; }
 @media (max-width: 760px) {
@@ -5025,3 +5025,12 @@ html[data-theme="light"] .tenet {
   transition: flex-grow .7s cubic-bezier(.65, 0, .35, 1), flex-basis .7s cubic-bezier(.65, 0, .35, 1), background-color .6s ease;
 }
 @media (prefers-reduced-motion: reduce) { html[data-theme="light"] .tenet { transition: none; } }
+/* Light mode: hovering a closed tab keeps its 1px divider (it was growing
+   to 6px and nudging the label sideways) */
+html[data-theme="light"] .tenet:not(.is-open):hover,
+html[data-theme="light"] .tenets.is-compact .tenet:not(.is-open):hover {
+  border-left-width: 1px !important;
+  border-left-color: var(--rule) !important;
+}
+/* Timeline dates: same size as the eyebrow labels */
+.tl-when { font-size: .75rem !important; }
