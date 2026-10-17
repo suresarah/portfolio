@@ -4992,3 +4992,15 @@ html[data-theme="light"] .ft-social a:hover { background: color-mix(in srgb, var
 /* Compact tab bar: every tab keeps its divider, including the open one */
 .tenets.is-compact .tenet.tenet + .tenet,
 html[data-theme="light"] .tenets.is-compact .tenet.tenet + .tenet { border-left: 1px solid var(--rule) !important; }
+/* Marty popover: proof he really is in the lap */
+.ft-joke { position: relative; outline: none; }
+.ft-pop { position: absolute; bottom: calc(100% + .9rem); right: -1rem; z-index: 20; width: 13rem; padding: .45rem .45rem .55rem; border-radius: 14px; background: var(--paper, #fff); color: var(--ink, #111); border: 1px solid var(--rule); box-shadow: 0 14px 34px rgba(0,0,0,.22); display: grid; gap: .45rem; text-align: center; font-size: .85rem; font-weight: 600; opacity: 0; visibility: hidden; transform: translateY(6px) rotate(1.5deg); transform-origin: bottom right; transition: opacity .2s ease, transform .25s var(--ease, ease), visibility 0s .25s; pointer-events: none; }
+.ft-pop img { display: block; width: 100%; height: auto; border-radius: 9px; }
+.ft-pop::after { content: ""; position: absolute; top: 100%; right: 2rem; border: 7px solid transparent; border-top-color: var(--paper, #fff); }
+.ft-joke:hover .ft-pop, .ft-joke:focus-visible .ft-pop { opacity: 1; visibility: visible; transform: none; transition: opacity .2s ease, transform .25s var(--ease, ease), visibility 0s; }
+.ft-joke:focus-visible { border-radius: 6px; box-shadow: 0 0 0 2px var(--accent, currentColor); }
+@media (prefers-reduced-motion: reduce) { .ft-pop { transform: none !important; } }
+/* Phones: the Designing in code flow card sits above the text, not on it */
+@media (max-width: 760px) {
+  .tenet-panel .panel-media.flow-card { position: static !important; transform: none !important; width: 100% !important; max-width: 26rem; margin: 0 0 1.5rem !important; animation: none !important; }
+}
