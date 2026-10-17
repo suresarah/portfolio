@@ -5048,3 +5048,5 @@ html[data-theme="light"] .tenets.is-compact .tenet:not(.is-open):hover {
   .tenets.is-compact .tenet.is-open .tab-close:hover,
   html[data-theme="light"] .tenets.is-compact .tenet.is-open .tab-close:hover { color: var(--ink); }
 }
+/* Principles: every poster's paragraph in the same weight and size */
+.pg-card.pg-card p { font: 500 .88rem/1.35 var(--font) !important; font-style: normal !important; }
