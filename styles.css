@@ -5034,3 +5034,17 @@ html[data-theme="light"] .tenets.is-compact .tenet:not(.is-open):hover {
 }
 /* Timeline dates: same size as the eyebrow labels */
 .tl-when { font-size: .75rem !important; }
+/* Phones: the open tab's close is a bare ✕ in place of its dot, same line */
+@media (max-width: 760px) {
+  .tenets.is-compact .tenet.is-open { flex-direction: row !important; flex-wrap: nowrap; align-items: stretch !important; }
+  .tenets.is-compact .tenet.is-open .tenet-tab { padding-right: 0 !important; }
+  .tenets.is-compact .tenet.is-open .tenet-tab span::after { display: none !important; }
+  .tenets.is-compact .tenet.is-open .tab-close,
+  html[data-theme="light"] .tenets.is-compact .tenet.is-open .tab-close {
+    width: auto; height: auto; margin: 0; padding: 0 .9rem 0 .4rem;
+    border-radius: 0; box-shadow: none; background: transparent !important;
+    color: var(--tone); font-size: .8rem; line-height: 1;
+  }
+  .tenets.is-compact .tenet.is-open .tab-close:hover,
+  html[data-theme="light"] .tenets.is-compact .tenet.is-open .tab-close:hover { color: var(--ink); }
+}
