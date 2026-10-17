@@ -5017,3 +5017,6 @@ html[data-theme="light"] .hz-stats span { color: var(--ink); }
   .hz-stats > div { padding: 1rem .9rem .9rem; }
   .hz-stats small { white-space: nowrap; font-size: .64rem; letter-spacing: -.01em; }
 }
+/* About: the intro line runs two lines at most (no image beside it here) */
+#p-about > h2 { max-width: 22ch !important; }
+@media (max-width: 360px) { #p-about > h2 { font-size: 1.7rem !important; } }
